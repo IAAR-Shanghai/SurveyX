@@ -12,3 +12,8 @@
 - 所有指令預設在 conda 環境 `surveyx` 執行，如需切換其他環境必須先取得使用者同意。
 - 未經使用者授權，嚴禁修改或覆寫 `outputs/` 目錄內的任何檔案（包含 `tmp/`、`latex/`、`metrics/` 等所有副產物）。
 - 未經使用者同意，`resources/` 目錄內的檔案一律禁止改動。
+
+## 暫存問題紀錄
+
+- 已建立 `docs/temporary_issues/` 目錄，專門用來集中紀錄各階段遇到的暫時性問題與分析。
+- 最新紀錄為 `docs/temporary_issues/spacing_glitch.md`，詳述目前 PDF spacing glitch 的觀察、根因分析、建議處理流程與待辦事項，供其他代理快速掌握狀況並延續後續工作。
