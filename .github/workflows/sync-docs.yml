@@ -1,0 +1,26 @@
+name: Sync Documentation Files
+
+on:
+  push:
+    branches:
+      - main # Or your primary branch
+      - 'feature/**' # Or any other branches you want to sync
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          # We need to fetch the history to allow pushing back
+          fetch-depth: 0
+
+      - name: Run Sync Script
+        run: bash scripts/sync_docs.sh
+
+      - name: Commit and push changes
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "chore(docs): auto-sync documentation files"
+          branch: ${{ github.head_ref }} # Pushes to the same branch as the trigger
