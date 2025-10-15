@@ -136,9 +136,15 @@ class LatexComparisonTableBuilder(LatexBaseTableBuilder):
             except Exception as e:
                 return
             if "\input{summary_table}" in section_mainbody:
-                tex = tex.replace(
-                    section_mainbody, f"\\input{{summary_table}}\n{revised_content}"
-                )
+                cleaned_content = revised_content.replace(
+                    "\\input{summary_table}", ""
+                ).strip()
+                replacement_block = "\\input{summary_table}"
+                if cleaned_content:
+                    replacement_block = (
+                        f"{replacement_block}\n{cleaned_content}"
+                    )
+                tex = tex.replace(section_mainbody, replacement_block)
             else:
                 tex = tex.replace(section_mainbody, revised_content)
             save_result(tex, self.main_body_path)

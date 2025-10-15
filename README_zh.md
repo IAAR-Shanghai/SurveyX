@@ -217,7 +217,7 @@ python scripts/download_papers.py \
 # Shell 包装器（与上等价）
 bash scripts/download_papers.sh \
   resources/included_papers_20250825_balanced.json \
-  datasets/papers -- --concurrency 6
+  datasets/papers --concurrency 6
 
 # 或使用 run.sh 子指令
 ./run.sh download resources/included_papers_20250825_balanced.json datasets/papers -- --concurrency 6

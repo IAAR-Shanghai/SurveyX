@@ -26,6 +26,7 @@ fi
 #   DOC_DEVICE               Device for acceleration (default: auto; on macOS uses mps)
 #   DOC_THREADS              --num-threads (default: 2)
 #   DOC_PAGE_BATCH           --page-batch-size (default: 2)
+#   DOC_FORCE_OVERWRITE      If set to 1, bypass existing-output guard (default: 0)
 
 INPUT_PATH=${1:-}
 OUTPUT_DIR=${2:-}
@@ -41,6 +42,7 @@ fi
 : "${DOC_IMAGE_MODE:=placeholder}"
 : "${DOC_USE_OCRMAC:=0}"
 : "${DOC_OCR_LANG:=en-US}"
+: "${DOC_FORCE_OVERWRITE:=0}"
 
 # Device heuristic: prefer MPS on macOS, else leave default
 if [[ "$(uname -s)" == "Darwin" ]]; then
@@ -52,7 +54,66 @@ fi
 : "${DOC_THREADS:=2}"
 : "${DOC_PAGE_BATCH:=2}"
 
-DOC_CMD=(docling "${INPUT_PATH}" --to md --output "${OUTPUT_DIR}" \
+# Guard against clobbering existing Markdown outputs unless explicitly allowed
+DOC_INPUTS=()
+existing_targets=()
+if [[ -f "${INPUT_PATH}" ]]; then
+  DOC_INPUTS=("${INPUT_PATH}")
+  if [[ "${DOC_FORCE_OVERWRITE}" != "1" ]]; then
+    input_basename="${INPUT_PATH##*/}"
+    input_stem="${input_basename%.*}"
+    existing_target="${OUTPUT_DIR%/}/${input_stem}.md"
+    if [[ -f "${existing_target}" ]]; then
+      echo "[skip] Output already exists: ${existing_target}" >&2
+      echo "       Set DOC_FORCE_OVERWRITE=1 to regenerate." >&2
+      exit 0
+    fi
+  fi
+elif [[ -d "${INPUT_PATH}" ]]; then
+  if [[ "${DOC_FORCE_OVERWRITE}" == "1" ]]; then
+    DOC_INPUTS=("${INPUT_PATH}")
+  else
+    while IFS= read -r -d '' doc_src; do
+      doc_base="${doc_src##*/}"
+      doc_stem="${doc_base%.*}"
+      candidate="${OUTPUT_DIR%/}/${doc_stem}.md"
+      if [[ -f "${candidate}" ]]; then
+        existing_targets+=("${candidate}")
+      else
+        DOC_INPUTS+=("${doc_src}")
+      fi
+    done < <(find "${INPUT_PATH}" -type f -iname '*.pdf' -print0 2>/dev/null)
+
+    if (( ${#DOC_INPUTS[@]} == 0 )); then
+      if (( ${#existing_targets[@]} > 0 )); then
+        echo "[skip] All matching sources already have Markdown outputs. Set DOC_FORCE_OVERWRITE=1 to overwrite." >&2
+        printf '  %s\n' "${existing_targets[@]}" >&2
+      else
+        echo "[skip] No convertible sources found under ${INPUT_PATH}" >&2
+      fi
+      exit 0
+    fi
+  fi
+else
+  echo "[error] Input path not found: ${INPUT_PATH}" >&2
+  exit 1
+fi
+
+SKIPPED_COUNT=${#existing_targets[@]:-0}
+if (( ${#DOC_INPUTS[@]} == 0 )); then
+  echo "[skip] Nothing to convert." >&2
+  exit 0
+fi
+
+if (( SKIPPED_COUNT > 0 )); then
+  echo "[info] Skipping ${SKIPPED_COUNT} existing Markdown outputs." >&2
+fi
+
+echo "[info] Converting ${#DOC_INPUTS[@]} source(s)." >&2
+
+DOC_CMD=(docling)
+DOC_CMD+=("${DOC_INPUTS[@]}")
+DOC_CMD+=(--to md --output "${OUTPUT_DIR}" \
   --image-export-mode "${DOC_IMAGE_MODE}" \
   --num-threads "${DOC_THREADS}" --page-batch-size "${DOC_PAGE_BATCH}")
 

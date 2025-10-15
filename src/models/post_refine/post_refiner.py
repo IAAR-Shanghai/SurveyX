@@ -4,6 +4,7 @@
 """
 
 from pathlib import Path
+from typing import Optional
 import traceback
 
 from src.configs.constants import OUTPUT_DIR, RESOURCE_DIR
@@ -31,7 +32,7 @@ from src.modules.post_refine import (
     SectionRewriter,
 )
 from src.modules.post_refine.base_refiner import BaseRefiner
-from src.modules.utils import save_result
+from src.modules.utils import save_result, load_file_as_string
 
 logger = get_logger("src.models.post_refine.PostRefiner")
 
@@ -153,40 +154,122 @@ class PostRefiner(BaseRefiner):
 
         time_monitor.end("generate tabel")
 
-    def run(self, mainbody_path=None):
+    def run(self, mainbody_path=None, start_stage: str = "rag"):
         time_monitor = TimeMonitor(self.task_id)
         time_monitor.start("post refine")
 
         if mainbody_path is None:
             mainbody_path = self.mainbody_path
 
-        try_times = 0
-        while try_times < self.max_retry_times:
-            # rag_refiner
-            self.rag_refiner.run(mainbody_path=mainbody_path)
-            # fig_retrieve_refiner
-            # self.fig_retrieve_refiner.run(mainbody_path=self.rag_refiner.refined_mainbody_path)
-            # sec_rewriter
-            self.sec_rewriter.run(mainbody_path=self.rag_refiner.refined_mainbody_path)
-            # fig_builder
-            self.fig_builder.run(mainbody_path=self.sec_rewriter.refined_mainbody_path)
-            # rule_based_refiner
-            final_refined_content = self.rule_based_refiner.run(
-                mainbody_path=self.fig_builder.fig_mainbody_path
+        allowed_stages = ["rag", "rewrite", "figure", "rule", "tables"]
+        if start_stage not in allowed_stages:
+            raise ValueError(
+                f"Unsupported start_stage '{start_stage}'. Allowed values: {allowed_stages}"
             )
-            # save the final refined content
-            save_result(final_refined_content, self.refined_mainbody_path)
-            # generate tables
-            self.generate_tables()
-            words_count = len(final_refined_content.strip().split())
-            if words_count < self.max_words:
-                logger.debug(f"核验通过，postrefine后的main body总字数为{words_count}")
-                break
-            else:
+
+        if isinstance(mainbody_path, str):
+            mainbody_path = Path(mainbody_path)
+
+        def ensure_path(path: Path, description: str) -> Path:
+            if not path.exists():
+                raise FileNotFoundError(
+                    f"{description} 不存在：{path}. 請先執行對應前置階段。"
+                )
+            return path
+
+        final_refined_content = None
+
+        try_times = 0
+        if start_stage == "rag":
+            while try_times < self.max_retry_times:
+                current_mainbody = mainbody_path
+                # rag_refiner
+                self.rag_refiner.run(mainbody_path=current_mainbody)
+                current_mainbody = self.rag_refiner.refined_mainbody_path
+                # sec_rewriter
+                self.sec_rewriter.run(mainbody_path=current_mainbody)
+                current_mainbody = self.sec_rewriter.refined_mainbody_path
+                # fig_builder
+                self.fig_builder.run(mainbody_path=current_mainbody)
+                current_mainbody = self.fig_builder.fig_mainbody_path
+                # rule_based_refiner
+                final_refined_content = self.rule_based_refiner.run(
+                    mainbody_path=current_mainbody
+                )
+                save_result(final_refined_content, self.refined_mainbody_path)
+                current_mainbody = self.refined_mainbody_path
+                # generate tables
+                self.generate_tables()
+                words_count = len(final_refined_content.strip().split())
+                if words_count < self.max_words:
+                    logger.debug(
+                        f"核验通过，postrefine后的main body总字数为{words_count}"
+                    )
+                    break
                 try_times += 1
                 logger.debug(
-                    f"核验不通过，postrefine后的main body总字数为{words_count}；postrefine后的main重新生成，trying times {try_times}, max trying: {self.max_retry_times}"
+                    "核验不通过，postrefine后的main body总字数为%s；postrefine后的main重新生成，trying times %s, max trying: %s",
+                    words_count,
+                    try_times,
+                    self.max_retry_times,
                 )
+        else:
+            stage_sequence = ["rag", "rewrite", "figure", "rule", "tables"]
+            stages_to_run = stage_sequence[stage_sequence.index(start_stage) :]
+
+            current_mainbody: Optional[Path]
+            if start_stage == "rewrite":
+                current_mainbody = ensure_path(
+                    mainbody_path or self.rag_refiner.refined_mainbody_path,
+                    "RAG 輸出 (mainbody_rag_refined.tex)",
+                )
+            elif start_stage == "figure":
+                current_mainbody = ensure_path(
+                    mainbody_path or self.sec_rewriter.refined_mainbody_path,
+                    "Section rewrite 輸出 (mainbody_sec_rewritten.tex)",
+                )
+            elif start_stage == "rule":
+                current_mainbody = ensure_path(
+                    mainbody_path or self.fig_builder.fig_mainbody_path,
+                    "Figure builder 輸出 (mainbody_fig_refined.tex)",
+                )
+            elif start_stage == "tables":
+                current_mainbody = ensure_path(
+                    mainbody_path or self.refined_mainbody_path,
+                    "Rule-based refiner 輸出 (mainbody_post_refined.tex)",
+                )
+            else:
+                current_mainbody = mainbody_path
+
+            for stage in stages_to_run:
+                if stage == "rewrite":
+                    self.sec_rewriter.run(mainbody_path=current_mainbody)
+                    current_mainbody = self.sec_rewriter.refined_mainbody_path
+                elif stage == "figure":
+                    current_mainbody = ensure_path(
+                        current_mainbody or self.sec_rewriter.refined_mainbody_path,
+                        "Section rewrite 輸出 (mainbody_sec_rewritten.tex)",
+                    )
+                    self.fig_builder.run(mainbody_path=current_mainbody)
+                    current_mainbody = self.fig_builder.fig_mainbody_path
+                elif stage == "rule":
+                    current_mainbody = ensure_path(
+                        current_mainbody or self.fig_builder.fig_mainbody_path,
+                        "Figure builder 輸出 (mainbody_fig_refined.tex)",
+                    )
+                    final_refined_content = self.rule_based_refiner.run(
+                        mainbody_path=current_mainbody
+                    )
+                    save_result(final_refined_content, self.refined_mainbody_path)
+                    current_mainbody = self.refined_mainbody_path
+                elif stage == "tables":
+                    current_mainbody = ensure_path(
+                        current_mainbody or self.refined_mainbody_path,
+                        "Rule-based refiner 輸出 (mainbody_post_refined.tex)",
+                    )
+                    if final_refined_content is None and current_mainbody.exists():
+                        final_refined_content = load_file_as_string(current_mainbody)
+                    self.generate_tables()
 
         logger.info(f"Post refine and save content to {self.refined_mainbody_path}")
         time_monitor.end("post refine")

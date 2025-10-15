@@ -1,0 +1,8 @@
+source ~/.zshrc
+conda activate surveyx
+# bash run.sh offline "Survey of Speech Language Models" "speech tokenizer, language model, token-to-speech, speech encoder, quantizer, vocoder, speech language models, semantic tokens, acoustic tokens, paralinguistic tokens, mixed tokens, discrete tokens, continuous tokens, pre-training, instruction-tuning, post-alignment, cold initialization, continued pretraining, representation alignment, hifi-gan, encodec, soundstream, neural audio codec, vector quantization, residual vector quantization, librispeech, common voice, voxpopuli, libritts, covost2, voxceleb, gigaspeech, aishell, fisher, abx, swuggy, sblimp, sstorycloze, superb, voxeval, semantic tokens, acoustic tokens, hubert, wav2vec, whisper, encodec, speech representation, text llm pre-training, modality adaptation, multi-stage training, supervised fine-tuning, direct preference optimization, chain-of-modality, cascaded systems, end-to-end, interleaving, parallel generation, groupformer, rq-transformer, mos, wer, bleu, bertscore, fr chet audio, real-time factor, streaming, full-duplex, half-duplex, turn-taking, interruption detection, backchanneling" /Users/xjp/Desktop/Survey-with-LLMs/Survey-for-survey-review-with-LLMs/AUTOSR-SDSE/test_artifacts/SpeechLM_mds \
+#   --curated_json /Users/xjp/Desktop/Survey-with-LLMs/Survey-for-survey-review-with-LLMs/AUTOSR-SDSE/test_artifacts/SpeechLM_pdfs/bib_metadata.json # --only_clean
+
+python tasks/workflow/04_gen_content.py --task_id "2025-10-09-1630_speec"
+python tasks/workflow/05_post_refine.py --task_id "2025-10-09-1630_speec"
+python tasks/workflow/06_gen_latex.py --task_id "2025-10-09-1630_speec"

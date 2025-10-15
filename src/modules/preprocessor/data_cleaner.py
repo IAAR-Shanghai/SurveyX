@@ -30,6 +30,21 @@ def _normalize_arxiv_id(s: str | None) -> str | None:
     return s
 
 
+def _normalize_bibkey(s: str | None) -> str | None:
+    if not s:
+        return None
+    return str(s).strip()
+
+
+def _extract_bibkey_from_entry(entry: str | None) -> str | None:
+    if not entry:
+        return None
+    match = re.match(r"@\s*\w+\s*\{\s*([^,]+)", entry.strip())
+    if match:
+        return match.group(1).strip()
+    return None
+
+
 def _parse_filename_info(p: Path) -> tuple[str | None, str | None]:
     """Extract arxiv_id and human title from filename if possible.
     Expected common formats:
@@ -288,31 +303,87 @@ class DataCleaner:
         """Not only complete the bib_name, also need to save all bibnames into a references.bib file"""
         var_name_i = 0
         bib_all = []
-        remove_non_ascii_chars = (
-            lambda input_string: input_string.replace(",", "")
-            .encode("ascii", "ignore")
-            .decode("ascii")
-        )
+
+        def sanitize_bib_key(candidate: str | None) -> str:
+            if not candidate:
+                return ""
+            ascii_only = candidate.encode("ascii", "ignore").decode("ascii")
+            ascii_only = ascii_only.replace(" ", "")
+            return re.sub(r"[^A-Za-z0-9_\-]", "", ascii_only)
+
+        used_bib_names: set[str] = set()
+
+        def ensure_unique_key(candidate: str) -> str:
+            nonlocal var_name_i
+            if not candidate:
+                candidate = f"ref{var_name_i}"
+                var_name_i += 1
+            base_candidate = candidate
+            suffix = 1
+            while candidate in used_bib_names:
+                candidate = f"{base_candidate}{suffix}"
+                suffix += 1
+            used_bib_names.add(candidate)
+            return candidate
+
+        def rewrite_reference_with_key(reference: str, new_key: str) -> str:
+            if not reference:
+                return reference
+            updated = re.sub(
+                r"(@\s*\w+\s*\{)\s*[^,\s\}]*",
+                lambda match: f"{match.group(1)}{new_key}",
+                reference,
+                count=1,
+            )
+            header_pattern = rf"@\s*\w+\s*\{{\s*{re.escape(new_key)}"
+            match = re.search(header_pattern, updated)
+            if match:
+                insert_pos = match.end()
+                remainder = updated[insert_pos:]
+                stripped_remainder = remainder.lstrip()
+                if stripped_remainder.startswith(","):
+                    # keep single comma and drop leading spaces before it
+                    comma_index = remainder.index(",")
+                    updated = (
+                        updated[:insert_pos]
+                        + remainder[comma_index:]
+                    )
+                elif not remainder.startswith(","):
+                    updated = updated[:insert_pos] + "," + remainder
+            return updated
 
         for paper in tqdm(self.papers, desc="completing bibname..."):
             if "reference" in paper:
-                bib_name = paper["reference"].splitlines()[0].split("{")[1].strip(",")
-                new_bib_name = remove_non_ascii_chars(bib_name)
+                reference_header = paper["reference"].splitlines()[0]
+                raw_bib_name = _extract_bibkey_from_entry(reference_header)
+                sanitized_bib_name = sanitize_bib_key(raw_bib_name)
+                new_bib_name = ensure_unique_key(sanitized_bib_name)
 
                 paper["bib_name"] = new_bib_name
-                paper["reference"] = paper["reference"].replace(bib_name, new_bib_name)
+                paper["reference"] = rewrite_reference_with_key(
+                    paper["reference"], new_bib_name
+                )
             else:
                 # Prefer stable key from arxiv_id if available
                 if paper.get("arxiv_id"):
-                    bib_name = remove_non_ascii_chars(str(paper["arxiv_id"]))
+                    arxiv_based = sanitize_bib_key(str(paper["arxiv_id"]))
+                    bib_name = ensure_unique_key(arxiv_based)
                 else:
-                    title = remove_non_ascii_chars(paper.get("title", ""))
-                    bib_name = "".join([c for c in title if not c.isspace()][:10]) + str(
-                        var_name_i
+                    title = paper.get("title", "")
+                    title_ascii = title.encode("ascii", "ignore").decode("ascii")
+                    title_compact = "".join(
+                        [c for c in title_ascii if not c.isspace()][:10]
                     )
-                var_name_i += 1
+                    fallback_candidate = sanitize_bib_key(title_compact)
+                    bib_name = ensure_unique_key(fallback_candidate)
                 # Ensure title present in bib
-                title_field = remove_non_ascii_chars(paper.get("title", ""))
+                title_field = (
+                    paper.get("title", "")
+                    .encode("ascii", "ignore")
+                    .decode("ascii")
+                    .replace("{", "")
+                    .replace("}", "")
+                )
                 bib_tex = f"@article{{{bib_name},\ntitle={{{title_field}}}\n}}"
 
                 paper["reference"] = bib_tex
@@ -466,6 +537,7 @@ class DataCleaner:
                 {
                     "md_text": md_text,
                     "_md_filename": p.name,
+                    "_md_stem": p.stem,
                     "_arxiv_id_from_filename": _normalize_arxiv_id(arxiv_id_from_fn),
                     "_title_from_filename": title_from_fn,
                 }
@@ -490,22 +562,31 @@ class DataCleaner:
         if curated_list:
             # Build indices for robust matching
             curated_by_arxiv: dict[str, dict] = {}
+            curated_by_id: dict[str, dict] = {}
             curated_titles = []
             curated_title_index = []
             for item in curated_list:
                 aid = _normalize_arxiv_id(item.get("arxiv_id") or item.get("id"))
                 if aid:
                     curated_by_arxiv[aid] = item
+                cid = _normalize_bibkey(item.get("id"))
+                if cid:
+                    curated_by_id[cid.lower()] = item
                 t = str(item.get("title") or "").strip()
                 curated_titles.append(t)
                 curated_title_index.append(item)
             used_keys: set[str] = set()
             for paper in self.papers:
                 chosen = None
+                # 0) Try exact id/bibkey match via filename stem
+                stem = _normalize_bibkey(paper.get("_md_stem"))
+                if stem:
+                    chosen = curated_by_id.get(stem.lower())
                 # 1) Try exact arxiv id by filename
-                aid = paper.get("_arxiv_id_from_filename")
-                if aid and aid in curated_by_arxiv:
-                    chosen = curated_by_arxiv[aid]
+                if not chosen:
+                    aid = paper.get("_arxiv_id_from_filename")
+                    if aid and aid in curated_by_arxiv:
+                        chosen = curated_by_arxiv[aid]
                 # 2) Try exact title match by filename-derived title
                 if not chosen:
                     tfn = str(paper.get("_title_from_filename") or "").strip()
@@ -528,7 +609,25 @@ class DataCleaner:
                 # Merge when matched
                 if chosen:
                     # generate stable unique bib key now
-                    bib_key = _make_bib_key(chosen, paper, used_keys)
+                    provided_bibtex = str(chosen.get("bibtex") or "").strip()
+                    bib_key = None
+                    if provided_bibtex:
+                        if not provided_bibtex.endswith("\n"):
+                            provided_bibtex += "\n"
+                        paper["reference"] = provided_bibtex
+                        bib_key = _extract_bibkey_from_entry(provided_bibtex)
+                        if bib_key:
+                            paper["bib_name"] = bib_key
+                            used_keys.add(bib_key)
+                    if not provided_bibtex:
+                        bib_key = _make_bib_key(chosen, paper, used_keys)
+                        try:
+                            paper["reference"] = _build_bibtex_from_curated(
+                                curated=chosen, title_fallback=paper.get("title"), bib_key=bib_key
+                            )
+                            paper["bib_name"] = bib_key
+                        except Exception as e:
+                            logger.debug(f"Failed to build curated bibtex for one paper: {e}")
                     if chosen.get("title"):
                         paper["title"] = str(chosen["title"]).strip()
                     if chosen.get("abstract"):
@@ -538,13 +637,6 @@ class DataCleaner:
                             _normalize_arxiv_id(chosen.get("arxiv_id") or chosen.get("id"))
                         ).strip()
                     # Build a full BibTeX in advance so complete_bib will preserve fields
-                    try:
-                        paper["reference"] = _build_bibtex_from_curated(
-                            curated=chosen, title_fallback=paper.get("title"), bib_key=bib_key
-                        )
-                        paper["bib_name"] = bib_key
-                    except Exception as e:
-                        logger.debug(f"Failed to build curated bibtex for one paper: {e}")
 
         # Fill missing fields via existing fallbacks
         self.complete_title()
