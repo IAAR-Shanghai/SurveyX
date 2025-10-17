@@ -1,0 +1,480 @@
+
+\begin{figure}[h]
+   \centering
+   \begin{adjustbox}{max width=\textwidth, center}
+   \begin{tikzpicture}[
+      node distance=5mm, 
+      node/.style={
+         rectangle, draw,
+         inner sep=1mm,
+         minimum height = 9mm, 
+         text width=30mm, 
+         align=center,
+         font=\linespread{.9}\selectfont
+      }, 
+      nodeB/.style={
+         node, 
+         text width=21mm % 在node的基础上修改text width
+      }
+   ]
+   
+\node[nodeB, fill={teal!15}, anchor=north] (L81) at (81, 0) {Decoder regimes and objectives};
+\begin{scope}[start chain=27 going below]
+\chainin (L81) [on chain, join];
+\node[nodeB, on chain, fill=blue!15, xshift=6mm, yshift=-7mm] (l_81_0) {Autoregressive (AR) over discrete codec/semantic tokens or continuous prompts};
+\node[nodeB, on chain, fill=blue!15] (l_81_1) {Non-autoregressive (NAR) via masked infilling or multi-codebook heads};
+\node[nodeB, on chain, fill=blue!15] (l_81_2) {AR+NAR hybrids: AR on low-entropy channels (e.g., RVQ-1), NAR on high-rate residuals};
+\node[nodeB, on chain, fill=blue!15] (l_81_3) {Interleaved dual-token training with shared vocabulary and schedule-aware masking};
+\node[nodeB, on chain, fill=blue!15] (l_81_4) {Token-conditioned diffusion/flow to recover prosody/timbre at low token rates};
+\node[nodeB, on chain, fill=blue!15] (l_81_5) {Core trade-off: latency versus fidelity versus sequencing flexibility};
+
+\end{scope}
+\draw[->] ($(L81.south west) + (2mm, 0)$) |- (l_81_0.west);
+\draw[->] ($(L81.south west) + (2mm, 0)$) |- (l_81_1.west);
+\draw[->] ($(L81.south west) + (2mm, 0)$) |- (l_81_2.west);
+\draw[->] ($(L81.south west) + (2mm, 0)$) |- (l_81_3.west);
+\draw[->] ($(L81.south west) + (2mm, 0)$) |- (l_81_4.west);
+\draw[->] ($(L81.south west) + (2mm, 0)$) |- (l_81_5.west);
+
+
+\node[nodeB, fill={teal!15}, anchor=north] (L84) at (84, 0) {AR backbones and use cases};
+\begin{scope}[start chain=28 going below]
+\chainin (L84) [on chain, join];
+\node[nodeB, on chain, fill=blue!15, xshift=6mm, yshift=-7mm] (l_84_0) {Textless unit LMs: quantize speech (e.g., HuBERT+k-means) and generate via unit LM + vocoder};
+\node[nodeB, on chain, fill=blue!15] (l_84_1) {Duplex AR decoders: next audio token prediction conditioned on streaming listening embeddings (middle fusion)};
+\node[nodeB, on chain, fill=blue!15] (l_84_2) {Decoder-only ASR: CTC-compressed prompts + sentinel tokens fed to causal decoder (joint CTC+CE training)};
+\node[nodeB, on chain, fill=blue!15] (l_84_3) {Shared objective: single next-token decoder reasoning over text and speech};
+
+\end{scope}
+\draw[->] ($(L84.south west) + (2mm, 0)$) |- (l_84_0.west);
+\draw[->] ($(L84.south west) + (2mm, 0)$) |- (l_84_1.west);
+\draw[->] ($(L84.south west) + (2mm, 0)$) |- (l_84_2.west);
+\draw[->] ($(L84.south west) + (2mm, 0)$) |- (l_84_3.west);
+
+
+\node[nodeB, fill={teal!15}, anchor=north] (L87) at (87, 0) {NAR and hybrid schedules};
+\begin{scope}[start chain=29 going below]
+\chainin (L87) [on chain, join];
+\node[nodeB, on chain, fill=blue!15, xshift=6mm, yshift=-7mm] (l_87_0) {Decode RVQ-1 autoregressively; predict higher RVQ levels in parallel to cut latency};
+\node[nodeB, on chain, fill=blue!15] (l_87_1) {Preserve intelligibility while reducing exposure bias};
+\node[nodeB, on chain, fill=blue!15] (l_87_2) {Best suited for S2ST and retrieval-augmented generation when codecs favor intelligibility};
+\node[nodeB, on chain, fill=blue!15] (l_87_3) {Parallel residual prediction reduces wall-clock delay with minimal quality loss};
+
+\end{scope}
+\draw[->] ($(L87.south west) + (2mm, 0)$) |- (l_87_0.west);
+\draw[->] ($(L87.south west) + (2mm, 0)$) |- (l_87_1.west);
+\draw[->] ($(L87.south west) + (2mm, 0)$) |- (l_87_2.west);
+\draw[->] ($(L87.south west) + (2mm, 0)$) |- (l_87_3.west);
+
+
+\node[nodeB, fill={teal!15}, anchor=north] (L90) at (90, 0) {Interleaved training and fidelity restoration};
+\begin{scope}[start chain=30 going below]
+\chainin (L90) [on chain, join];
+\node[nodeB, on chain, fill=blue!15, xshift=6mm, yshift=-7mm] (l_90_0) {Unified text–speech vocabularies with modality sentinels and loss masking for mixed contexts};
+\node[nodeB, on chain, fill=blue!15] (l_90_1) {Conditional flow/diffusion or vocoder tails to restore waveform fidelity};
+\node[nodeB, on chain, fill=blue!15] (l_90_2) {Especially effective for semantic-only or ultra–low-rate tokens};
+\node[nodeB, on chain, fill=blue!15] (l_90_3) {Single decoder handles text-only, speech-only, and mixed continuations};
+
+\end{scope}
+\draw[->] ($(L90.south west) + (2mm, 0)$) |- (l_90_0.west);
+\draw[->] ($(L90.south west) + (2mm, 0)$) |- (l_90_1.west);
+\draw[->] ($(L90.south west) + (2mm, 0)$) |- (l_90_2.west);
+\draw[->] ($(L90.south west) + (2mm, 0)$) |- (l_90_3.west);
+
+
+\node[nodeB, fill={teal!15}, anchor=north] (L93) at (93, 0) {Operational recipes and diagnostics};
+\begin{scope}[start chain=31 going below]
+\chainin (L93) [on chain, join];
+\node[nodeB, on chain, fill=blue!15, xshift=6mm, yshift=-7mm] (l_93_0) {Chunked unspoken reasoning (STITCH) for quality without extra latency};
+\node[nodeB, on chain, fill=blue!15] (l_93_1) {Paralinguistic infusion from synthetic speech–text pairs (DeSTA2)};
+\node[nodeB, on chain, fill=blue!15] (l_93_2) {Low-budget training via careful init, synthetic interleaving, and preference optimization (Slamming)};
+\node[nodeB, on chain, fill=blue!15] (l_93_3) {Benchmarks and probes: IndicSUPERB, LM-aware tokenization (LM-SPT/LAST), STAB, fastabx};
+
+\end{scope}
+\draw[->] ($(L93.south west) + (2mm, 0)$) |- (l_93_0.west);
+\draw[->] ($(L93.south west) + (2mm, 0)$) |- (l_93_1.west);
+\draw[->] ($(L93.south west) + (2mm, 0)$) |- (l_93_2.west);
+\draw[->] ($(L93.south west) + (2mm, 0)$) |- (l_93_3.west);
+
+
+\node[nodeB, fill={teal!15}, anchor=north] (L96) at (96, 0) {Actionable patterns};
+\begin{scope}[start chain=32 going below]
+\chainin (L96) [on chain, join];
+\node[nodeB, on chain, fill=blue!15, xshift=6mm, yshift=-7mm] (l_96_0) {Use AR decoder-only LMs for unit-based textless generation};
+\node[nodeB, on chain, fill=blue!15] (l_96_1) {Inject streaming listening embeddings with middle fusion for duplex agents};
+\node[nodeB, on chain, fill=blue!15] (l_96_2) {Feed CTC prompts for decoder-only ASR pipelines};
+\node[nodeB, on chain, fill=blue!15] (l_96_3) {Place AR on RVQ-1 and NAR on residuals for low-latency codecs};
+\node[nodeB, on chain, fill=blue!15] (l_96_4) {Attach token-conditioned diffusion/flow decoders at low token rates};
+
+\end{scope}
+\draw[->] ($(L96.south west) + (2mm, 0)$) |- (l_96_0.west);
+\draw[->] ($(L96.south west) + (2mm, 0)$) |- (l_96_1.west);
+\draw[->] ($(L96.south west) + (2mm, 0)$) |- (l_96_2.west);
+\draw[->] ($(L96.south west) + (2mm, 0)$) |- (l_96_3.west);
+\draw[->] ($(L96.south west) + (2mm, 0)$) |- (l_96_4.west);
+
+
+\node[nodeB, fill={teal!30}, anchor=north] (2_88) at (88.5, 2.3) {Modeling objectives and architectures};
+\coordinate (L81_up) at (81, 0.4);
+\draw (L81_up) -- (L81.north);
+\coordinate (L84_up) at (84, 0.4);
+\draw (L84_up) -- (L84.north);
+\coordinate (L87_up) at (87, 0.4);
+\draw (L87_up) -- (L87.north);
+\coordinate (L90_up) at (90, 0.4);
+\draw (L90_up) -- (L90.north);
+\coordinate (L93_up) at (93, 0.4);
+\draw (L93_up) -- (L93.north);
+\coordinate (L96_up) at (96, 0.4);
+\draw (L96_up) -- (L96.north);
+\draw (L81_up) -- (L84_up);
+\draw (L84_up) -- (L87_up);
+\draw (L87_up) -- (L90_up);
+\draw (L90_up) -- (L93_up);
+\draw (L93_up) -- (L96_up);
+\draw (2_88.south) -- (88.5, 0.4);
+\node[nodeB, fill={teal!15}, anchor=north] (L99) at (99, 0) {Transfer strategy and budget axes};
+\begin{scope}[start chain=33 going below]
+\chainin (L99) [on chain, join];
+\node[nodeB, on chain, fill=blue!15, xshift=6mm, yshift=-7mm] (l_99_0) {Freeze strong text LLM; add lightweight speech bridges (projectors/adapters/LoRA) ≈1% extra params};
+\node[nodeB, on chain, fill=blue!15] (l_99_1) {Three axes: initialization (continued vs cold-start), interface (projector vs shared tokens), alignment curricula/losses};
+\node[nodeB, on chain, fill=blue!15] (l_99_2) {Competitive ASR/AST, QA, and mixed-modal dialog with modest compute};
+
+\end{scope}
+\draw[->] ($(L99.south west) + (2mm, 0)$) |- (l_99_0.west);
+\draw[->] ($(L99.south west) + (2mm, 0)$) |- (l_99_1.west);
+\draw[->] ($(L99.south west) + (2mm, 0)$) |- (l_99_2.west);
+
+
+\node[nodeB, fill={teal!15}, anchor=north] (L102) at (102, 0) {Continued interleaved pretraining (shared token space)};
+\begin{scope}[start chain=34 going below]
+\chainin (L102) [on chain, join];
+\node[nodeB, on chain, fill=blue!15, xshift=6mm, yshift=-7mm] (l_102_0) {Extend text LLMs by expanding vocabulary with speech tokens};
+\node[nodeB, on chain, fill=blue!15] (l_102_1) {Interleaved next-token pretraining preserves text skills with broad mixed-modality data};
+\node[nodeB, on chain, fill=blue!15] (l_102_2) {Speech-only S2ST: warm starts help, but multilingual bidirectionality and parameter sharing dominate final quality};
+
+\end{scope}
+\draw[->] ($(L102.south west) + (2mm, 0)$) |- (l_102_0.west);
+\draw[->] ($(L102.south west) + (2mm, 0)$) |- (l_102_1.west);
+\draw[->] ($(L102.south west) + (2mm, 0)$) |- (l_102_2.west);
+
+
+\node[nodeB, fill={teal!15}, anchor=north] (L105) at (105, 0) {Cold-start bridges and adapters};
+\begin{scope}[start chain=35 going below]
+\chainin (L105) [on chain, join];
+\node[nodeB, on chain, fill=blue!15, xshift=6mm, yshift=-7mm] (l_105_0) {Map SSL features into frozen LLM embeddings (USM/Whisper-to-LLM projectors)};
+\node[nodeB, on chain, fill=blue!15] (l_105_1) {Linear/MLP projectors with constrained/partial LoRA mitigate forgetting};
+\node[nodeB, on chain, fill=blue!15] (l_105_2) {Supports decoder-only ASR and duplex listening embeddings with continued joint training};
+
+\end{scope}
+\draw[->] ($(L105.south west) + (2mm, 0)$) |- (l_105_0.west);
+\draw[->] ($(L105.south west) + (2mm, 0)$) |- (l_105_1.west);
+\draw[->] ($(L105.south west) + (2mm, 0)$) |- (l_105_2.west);
+
+
+\node[nodeB, fill={teal!15}, anchor=north] (L108) at (108, 0) {Alignment methods and regularization};
+\begin{scope}[start chain=36 going below]
+\chainin (L108) [on chain, join];
+\node[nodeB, on chain, fill=blue!15, xshift=6mm, yshift=-7mm] (l_108_0) {KL geometry/policy distillation; KL-regularized RL (e.g., Dr.GRPO) for speech without harming text};
+\node[nodeB, on chain, fill=blue!15] (l_108_1) {MI-based training to retain prosody/identity while respecting text geometry};
+\node[nodeB, on chain, fill=blue!15] (l_108_2) {Synchronized listening embeddings for stronger duplex alignment};
+
+\end{scope}
+\draw[->] ($(L108.south west) + (2mm, 0)$) |- (l_108_0.west);
+\draw[->] ($(L108.south west) + (2mm, 0)$) |- (l_108_1.west);
+\draw[->] ($(L108.south west) + (2mm, 0)$) |- (l_108_2.west);
+
+
+\node[nodeB, fill={teal!15}, anchor=north] (L111) at (111, 0) {PEFT and curricula};
+\begin{scope}[start chain=37 going below]
+\chainin (L111) [on chain, join];
+\node[nodeB, on chain, fill=blue!15, xshift=6mm, yshift=-7mm] (l_111_0) {LoRA on mostly frozen LLM (typical ranks/α: 16–64/16–32)};
+\node[nodeB, on chain, fill=blue!15] (l_111_1) {Prompt/prefix-tuning for classification-like tasks; few-shot ICL with Random Label Mapping};
+\node[nodeB, on chain, fill=blue!15] (l_111_2) {Language-aware prompting; progressive unfreezing (encoder → encoder+projector → projector+LLM)};
+\node[nodeB, on chain, fill=blue!15] (l_111_3) {Pseudo-prompt LM training for decoder-only ASR};
+
+\end{scope}
+\draw[->] ($(L111.south west) + (2mm, 0)$) |- (l_111_0.west);
+\draw[->] ($(L111.south west) + (2mm, 0)$) |- (l_111_1.west);
+\draw[->] ($(L111.south west) + (2mm, 0)$) |- (l_111_2.west);
+\draw[->] ($(L111.south west) + (2mm, 0)$) |- (l_111_3.west);
+
+
+\node[nodeB, fill={teal!15}, anchor=north] (L114) at (114, 0) {Blueprints and diagnostics for transfer};
+\begin{scope}[start chain=38 going below]
+\chainin (L114) [on chain, join];
+\node[nodeB, on chain, fill=blue!15, xshift=6mm, yshift=-7mm] (l_114_0) {Tokenization: LAST, LM‑SPT; robustness/knowledge: VoxEval};
+\node[nodeB, on chain, fill=blue!15] (l_114_1) {Tokenizer stability and separability: STAB, fastabx};
+\node[nodeB, on chain, fill=blue!15] (l_114_2) {Efficient cross-modal transfer: large synthetic interleaved token corpora, modality-specific MoE, frozen strong backbones};
+
+\end{scope}
+\draw[->] ($(L114.south west) + (2mm, 0)$) |- (l_114_0.west);
+\draw[->] ($(L114.south west) + (2mm, 0)$) |- (l_114_1.west);
+\draw[->] ($(L114.south west) + (2mm, 0)$) |- (l_114_2.west);
+
+
+\node[nodeB, fill={teal!30}, anchor=north] (2_106) at (106.5, 2.3) {Modality transfer and LLM adaptation};
+\coordinate (L99_up) at (99, 0.4);
+\draw (L99_up) -- (L99.north);
+\coordinate (L102_up) at (102, 0.4);
+\draw (L102_up) -- (L102.north);
+\coordinate (L105_up) at (105, 0.4);
+\draw (L105_up) -- (L105.north);
+\coordinate (L108_up) at (108, 0.4);
+\draw (L108_up) -- (L108.north);
+\coordinate (L111_up) at (111, 0.4);
+\draw (L111_up) -- (L111.north);
+\coordinate (L114_up) at (114, 0.4);
+\draw (L114_up) -- (L114.north);
+\draw (L99_up) -- (L102_up);
+\draw (L102_up) -- (L105_up);
+\draw (L105_up) -- (L108_up);
+\draw (L108_up) -- (L111_up);
+\draw (L111_up) -- (L114_up);
+\draw (2_106.south) -- (106.5, 0.4);
+\node[nodeB, fill={teal!15}, anchor=north] (L117) at (117, 0) {Token-level interleaving and corpora};
+\begin{scope}[start chain=39 going below]
+\chainin (L117) [on chain, join];
+\node[nodeB, on chain, fill=blue!15, xshift=6mm, yshift=-7mm] (l_117_0) {Single decoder over modality-tagged spans: unified ASR, TTS, S2ST, mixed continuation};
+\node[nodeB, on chain, fill=blue!15] (l_117_1) {Shared vocabularies or boundary tokens to insert audio patches};
+\node[nodeB, on chain, fill=blue!15] (l_117_2) {Large token-space corpora via span corruption (e.g., Poisson spans ≈0.3) avoid waveform synthesis};
+\node[nodeB, on chain, fill=blue!15] (l_117_3) {Instruction bridges: prepend adapted speech embeddings before frozen LLM};
+
+\end{scope}
+\draw[->] ($(L117.south west) + (2mm, 0)$) |- (l_117_0.west);
+\draw[->] ($(L117.south west) + (2mm, 0)$) |- (l_117_1.west);
+\draw[->] ($(L117.south west) + (2mm, 0)$) |- (l_117_2.west);
+\draw[->] ($(L117.south west) + (2mm, 0)$) |- (l_117_3.west);
+
+
+\node[nodeB, fill={teal!15}, anchor=north] (L120) at (120, 0) {Inference-time policies and budget cycling};
+\begin{scope}[start chain=40 going below]
+\chainin (L120) [on chain, join];
+\node[nodeB, on chain, fill=blue!15, xshift=6mm, yshift=-7mm] (l_120_0) {Cycle text and speech token budgets to control latency};
+\node[nodeB, on chain, fill=blue!15] (l_120_1) {Stage transcribe→generate to anchor acoustics to refreshed semantics};
+\node[nodeB, on chain, fill=blue!15] (l_120_2) {Example schedule: 13 text then 26 speech tokens};
+
+\end{scope}
+\draw[->] ($(L120.south west) + (2mm, 0)$) |- (l_120_0.west);
+\draw[->] ($(L120.south west) + (2mm, 0)$) |- (l_120_1.west);
+\draw[->] ($(L120.south west) + (2mm, 0)$) |- (l_120_2.west);
+
+
+\node[nodeB, fill={teal!15}, anchor=north] (L123) at (123, 0) {Linguistic–acoustic interleaving schedules};
+\begin{scope}[start chain=41 going below]
+\chainin (L123) [on chain, join];
+\node[nodeB, on chain, fill=blue!15, xshift=6mm, yshift=-7mm] (l_123_0) {Plan-before-speak with explicit phase tags (chain-of-modality prompting)};
+\node[nodeB, on chain, fill=blue!15] (l_123_1) {Streaming schedulers: partial transcripts then translations per chunk};
+\node[nodeB, on chain, fill=blue!15] (l_123_2) {Fixed text:speech ratios as interpretable latency–quality knobs transferable across backbones};
+
+\end{scope}
+\draw[->] ($(L123.south west) + (2mm, 0)$) |- (l_123_0.west);
+\draw[->] ($(L123.south west) + (2mm, 0)$) |- (l_123_1.west);
+\draw[->] ($(L123.south west) + (2mm, 0)$) |- (l_123_2.west);
+
+
+\node[nodeB, fill={teal!15}, anchor=north] (L126) at (126, 0) {Duplex scheduling and robustness};
+\begin{scope}[start chain=42 going below]
+\chainin (L126) [on chain, join];
+\node[nodeB, on chain, fill=blue!15, xshift=6mm, yshift=-7mm] (l_126_0) {Inject streaming listening stream while emitting next audio tokens};
+\node[nodeB, on chain, fill=blue!15] (l_126_1) {IRQ tokens to pause on interruption; middle-fusion for near-ceiling interactivity F1};
+\node[nodeB, on chain, fill=blue!15] (l_126_2) {Turn-level textual guidance and balanced losses boost semantic quality >30% without harming full-duplex timing};
+\node[nodeB, on chain, fill=blue!15] (l_126_3) {Blockwise listening fusion and conservative temperatures improve stability};
+
+\end{scope}
+\draw[->] ($(L126.south west) + (2mm, 0)$) |- (l_126_0.west);
+\draw[->] ($(L126.south west) + (2mm, 0)$) |- (l_126_1.west);
+\draw[->] ($(L126.south west) + (2mm, 0)$) |- (l_126_2.west);
+\draw[->] ($(L126.south west) + (2mm, 0)$) |- (l_126_3.west);
+
+
+\node[nodeB, fill={teal!15}, anchor=north] (L129) at (129, 0) {Exemplar blueprints and fallback strategies};
+\begin{scope}[start chain=43 going below]
+\chainin (L129) [on chain, join];
+\node[nodeB, on chain, fill=blue!15, xshift=6mm, yshift=-7mm] (l_129_0) {DualSpeechLM: semantic-first AR planning + low-latency acoustic realization};
+\node[nodeB, on chain, fill=blue!15] (l_129_1) {FlowSLM: token LM augmented by flow/diffusion decoder};
+\node[nodeB, on chain, fill=blue!15] (l_129_2) {VecTokSpeech: vector-token predictability with ≈0.3 Poisson interleaving};
+\node[nodeB, on chain, fill=blue!15] (l_129_3) {Ichigo-style: interruption tokens + chunk-wise alternation};
+\node[nodeB, on chain, fill=blue!15] (l_129_4) {Projector-first interleaving when vocabularies cannot be shared; span markers and streaming CoT for responsiveness};
+
+\end{scope}
+\draw[->] ($(L129.south west) + (2mm, 0)$) |- (l_129_0.west);
+\draw[->] ($(L129.south west) + (2mm, 0)$) |- (l_129_1.west);
+\draw[->] ($(L129.south west) + (2mm, 0)$) |- (l_129_2.west);
+\draw[->] ($(L129.south west) + (2mm, 0)$) |- (l_129_3.west);
+\draw[->] ($(L129.south west) + (2mm, 0)$) |- (l_129_4.west);
+
+
+\node[nodeB, fill={teal!30}, anchor=north] (2_123) at (123.0, 2.3) {Interleaved and duplex modeling exemplars};
+\coordinate (L117_up) at (117, 0.4);
+\draw (L117_up) -- (L117.north);
+\coordinate (L120_up) at (120, 0.4);
+\draw (L120_up) -- (L120.north);
+\coordinate (L123_up) at (123, 0.4);
+\draw (L123_up) -- (L123.north);
+\coordinate (L126_up) at (126, 0.4);
+\draw (L126_up) -- (L126.north);
+\coordinate (L129_up) at (129, 0.4);
+\draw (L129_up) -- (L129.north);
+\draw (L117_up) -- (L120_up);
+\draw (L120_up) -- (L123_up);
+\draw (L123_up) -- (L126_up);
+\draw (L126_up) -- (L129_up);
+\draw (2_123.south) -- (123.0, 0.4);
+\node[nodeB, fill={teal!15}, anchor=north] (L132) at (132, 0) {Token rate, segmentation, and codec design};
+\begin{scope}[start chain=44 going below]
+\chainin (L132) [on chain, join];
+\node[nodeB, on chain, fill=blue!15, xshift=6mm, yshift=-7mm] (l_132_0) {Interleaved pretraining scales smoothly with a rate knee near ≈12.5 Hz};
+\node[nodeB, on chain, fill=blue!15] (l_132_1) {Coarser cadences expand headroom at fixed FLOPs (e.g., SyllableLM at 5–8.33 Hz)};
+\node[nodeB, on chain, fill=blue!15] (l_132_2) {Ultra–low-rate codecs remain generation-friendly with text-aware decoders};
+\node[nodeB, on chain, fill=blue!15] (l_132_3) {Diffusion/flow decoders: 10–32 steps as efficiency sweet spot; mind reconstruction–generation gap};
+
+\end{scope}
+\draw[->] ($(L132.south west) + (2mm, 0)$) |- (l_132_0.west);
+\draw[->] ($(L132.south west) + (2mm, 0)$) |- (l_132_1.west);
+\draw[->] ($(L132.south west) + (2mm, 0)$) |- (l_132_2.west);
+\draw[->] ($(L132.south west) + (2mm, 0)$) |- (l_132_3.west);
+
+
+\node[nodeB, fill={teal!15}, anchor=north] (L135) at (135, 0) {Backbone capacity and sequence compression};
+\begin{scope}[start chain=45 going below]
+\chainin (L135) [on chain, join];
+\node[nodeB, on chain, fill=blue!15, xshift=6mm, yshift=-7mm] (l_135_0) {Larger decoders consistently improve recognition with identical front ends};
+\node[nodeB, on chain, fill=blue!15] (l_135_1) {Projector pooling/splicing (4:1–5:1; 20→40 ms) halves sequence length with negligible loss};
+\node[nodeB, on chain, fill=blue!15] (l_135_2) {Capacity split between speech front end and language backbone matters for alignment};
+
+\end{scope}
+\draw[->] ($(L135.south west) + (2mm, 0)$) |- (l_135_0.west);
+\draw[->] ($(L135.south west) + (2mm, 0)$) |- (l_135_1.west);
+\draw[->] ($(L135.south west) + (2mm, 0)$) |- (l_135_2.west);
+
+
+\node[nodeB, fill={teal!15}, anchor=north] (L138) at (138, 0) {Task asymmetry and scaling trends};
+\begin{scope}[start chain=46 going below]
+\chainin (L138) [on chain, join];
+\node[nodeB, on chain, fill=blue!15, xshift=6mm, yshift=-7mm] (l_138_0) {Generative targets (TTS/VC) scale faster than ASR};
+\node[nodeB, on chain, fill=blue!15] (l_138_1) {Discrete TTS dWER drops markedly from ~389M→~1B params};
+\node[nodeB, on chain, fill=blue!15] (l_138_2) {Cross-domain generalization remains uneven despite scaling};
+
+\end{scope}
+\draw[->] ($(L138.south west) + (2mm, 0)$) |- (l_138_0.west);
+\draw[->] ($(L138.south west) + (2mm, 0)$) |- (l_138_1.west);
+\draw[->] ($(L138.south west) + (2mm, 0)$) |- (l_138_2.west);
+
+
+\node[nodeB, fill={teal!15}, anchor=north] (L141) at (141, 0) {Scheduling, sampling, and ICL behavior};
+\begin{scope}[start chain=47 going below]
+\chainin (L141) [on chain, join];
+\node[nodeB, on chain, fill=blue!15, xshift=6mm, yshift=-7mm] (l_141_0) {Planning-aware interleaving prefers conservative decoding (temps 0.8–1.0)};
+\node[nodeB, on chain, fill=blue!15] (l_141_1) {Speech-only chunking peaks at higher temperatures (schedule–temperature coupling)};
+\node[nodeB, on chain, fill=blue!15] (l_141_2) {In-context learning typically requires meta-training or prompt-tuning; scale alone insufficient};
+
+\end{scope}
+\draw[->] ($(L141.south west) + (2mm, 0)$) |- (l_141_0.west);
+\draw[->] ($(L141.south west) + (2mm, 0)$) |- (l_141_1.west);
+\draw[->] ($(L141.south west) + (2mm, 0)$) |- (l_141_2.west);
+
+
+\node[nodeB, fill={teal!15}, anchor=north] (L144) at (144, 0) {Data scale and token-space construction};
+\begin{scope}[start chain=48 going below]
+\chainin (L144) [on chain, join];
+\node[nodeB, on chain, fill=blue!15, xshift=6mm, yshift=-7mm] (l_144_0) {Interleaved token-space corpora yield monotonic gains (0→100B→200B→600B tokens)};
+\node[nodeB, on chain, fill=blue!15] (l_144_1) {Support ≈12.5 Hz operating point for training and streaming};
+\node[nodeB, on chain, fill=blue!15] (l_144_2) {Synthetic mixed-token corpora enable large-scale pretraining without waveform synthesis};
+
+\end{scope}
+\draw[->] ($(L144.south west) + (2mm, 0)$) |- (l_144_0.west);
+\draw[->] ($(L144.south west) + (2mm, 0)$) |- (l_144_1.west);
+\draw[->] ($(L144.south west) + (2mm, 0)$) |- (l_144_2.west);
+
+
+\node[nodeB, fill={teal!15}, anchor=north] (L147) at (147, 0) {Capacity planning and practical guidance};
+\begin{scope}[start chain=49 going below]
+\chainin (L147) [on chain, join];
+\node[nodeB, on chain, fill=blue!15, xshift=6mm, yshift=-7mm] (l_147_0) {Choose cadence near ≈12.5 Hz (or 5–8.33 Hz with stronger text-aware decoders and explicit silence/syllable modeling)};
+\node[nodeB, on chain, fill=blue!15] (l_147_1) {Prioritize robust speech front ends and reduce sequence length via pooling/splicing};
+\node[nodeB, on chain, fill=blue!15] (l_147_2) {Prefer LM-aligned tokenizers (LM‑SPT); adapt by language at low rates};
+\node[nodeB, on chain, fill=blue!15] (l_147_3) {Allocate compute to model size over extra tokens; interleaved SLMs scale more efficiently than textless SLMs};
+
+\end{scope}
+\draw[->] ($(L147.south west) + (2mm, 0)$) |- (l_147_0.west);
+\draw[->] ($(L147.south west) + (2mm, 0)$) |- (l_147_1.west);
+\draw[->] ($(L147.south west) + (2mm, 0)$) |- (l_147_2.west);
+\draw[->] ($(L147.south west) + (2mm, 0)$) |- (l_147_3.west);
+
+
+\node[nodeB, fill={teal!15}, anchor=north] (L150) at (150, 0) {Evaluation suites and diagnostics};
+\begin{scope}[start chain=50 going below]
+\chainin (L150) [on chain, join];
+\node[nodeB, on chain, fill=blue!15, xshift=6mm, yshift=-7mm] (l_150_0) {Multilingual SLU: IndicSUPERB};
+\node[nodeB, on chain, fill=blue!15] (l_150_1) {Robustness/knowledge under varied audio: VoxEval};
+\node[nodeB, on chain, fill=blue!15] (l_150_2) {Tokenizer stability and separability: STAB, fastabx};
+
+\end{scope}
+\draw[->] ($(L150.south west) + (2mm, 0)$) |- (l_150_0.west);
+\draw[->] ($(L150.south west) + (2mm, 0)$) |- (l_150_1.west);
+\draw[->] ($(L150.south west) + (2mm, 0)$) |- (l_150_2.west);
+
+
+\node[nodeB, fill={teal!15}, anchor=north] (L153) at (153, 0) {Effective configurations summary};
+\begin{scope}[start chain=51 going below]
+\chainin (L153) [on chain, join];
+\node[nodeB, on chain, fill=blue!15, xshift=6mm, yshift=-7mm] (l_153_0) {Strong text LMs + rate-aware tokenization near ≈12.5 Hz};
+\node[nodeB, on chain, fill=blue!15] (l_153_1) {Carefully scheduled speech–text interleaving and temperature tuning};
+\node[nodeB, on chain, fill=blue!15] (l_153_2) {Compute concentrated in model capacity; ≈600B mixed tokens within ~1T total};
+\node[nodeB, on chain, fill=blue!15] (l_153_3) {Results: steeper quality–compute gains, competitive spoken QA, strong semantics at reduced cost};
+
+\end{scope}
+\draw[->] ($(L153.south west) + (2mm, 0)$) |- (l_153_0.west);
+\draw[->] ($(L153.south west) + (2mm, 0)$) |- (l_153_1.west);
+\draw[->] ($(L153.south west) + (2mm, 0)$) |- (l_153_2.west);
+\draw[->] ($(L153.south west) + (2mm, 0)$) |- (l_153_3.west);
+
+
+\node[nodeB, fill={teal!30}, anchor=north] (2_142) at (142.5, 2.3) {Empirical regularities and scaling};
+\coordinate (L132_up) at (132, 0.4);
+\draw (L132_up) -- (L132.north);
+\coordinate (L135_up) at (135, 0.4);
+\draw (L135_up) -- (L135.north);
+\coordinate (L138_up) at (138, 0.4);
+\draw (L138_up) -- (L138.north);
+\coordinate (L141_up) at (141, 0.4);
+\draw (L141_up) -- (L141.north);
+\coordinate (L144_up) at (144, 0.4);
+\draw (L144_up) -- (L144.north);
+\coordinate (L147_up) at (147, 0.4);
+\draw (L147_up) -- (L147.north);
+\coordinate (L150_up) at (150, 0.4);
+\draw (L150_up) -- (L150.north);
+\coordinate (L153_up) at (153, 0.4);
+\draw (L153_up) -- (L153.north);
+\draw (L132_up) -- (L135_up);
+\draw (L135_up) -- (L138_up);
+\draw (L138_up) -- (L141_up);
+\draw (L141_up) -- (L144_up);
+\draw (L144_up) -- (L147_up);
+\draw (L147_up) -- (L150_up);
+\draw (L150_up) -- (L153_up);
+\draw (2_142.south) -- (142.5, 0.4);
+\node[nodeB, fill={teal!30}, anchor=north, text width=15em] (1_115) at (115.125, 4.6) {Language Modeling over Speech Tokens: Objectives, Transfer, Interleaving, and Scaling};
+\coordinate (2_88_up) at (88.5, 2.6999999999999997);
+\draw (2_88_up) -- (2_88.north);
+\coordinate (2_106_up) at (106.5, 2.6999999999999997);
+\draw (2_106_up) -- (2_106.north);
+\coordinate (2_123_up) at (123.0, 2.6999999999999997);
+\draw (2_123_up) -- (2_123.north);
+\coordinate (2_142_up) at (142.5, 2.6999999999999997);
+\draw (2_142_up) -- (2_142.north);
+\draw (2_88_up) -- (2_106_up);
+\draw (2_106_up) -- (2_123_up);
+\draw (2_123_up) -- (2_142_up);
+\draw (1_115.south) -- (115.125, 2.6999999999999997);
+
+
+\end{tikzpicture}
+\end{adjustbox}
+
+\caption{Figure: Hierarchical taxonomy of language modeling over speech tokens. The chart organizes the field into four top-level pillars: (1) modeling objectives and architectures (AR, NAR, and hybrid decoding with interleaved training and token-conditioned diffusion/flow, plus actionable recipes and diagnostics); (2) modality transfer and LLM adaptation (continued shared-token pretraining vs. cold-start projector bridges, alignment strategies, and PEFT curricula with supporting toolkits); (3) interleaved and duplex modeling exemplars (token-level and linguistic–acoustic interleaving, inference-time budget policies, duplex scheduling with robustness features, and blueprint patterns); and (4) empirical regularities and scaling (token-rate knees around ≈12.5 Hz, capacity/sequence compression effects, task asymmetries, schedule–temperature coupling, token-space data scaling, evaluation suites, and effective configurations). The structure highlights core trade-offs (latency–fidelity–sequencing), where to place AR vs. NAR computation, how to preserve text priors while adding speech skills, and how interleaving policies and token rates shape compute–quality efficiency.}
+\label{fig:tree_figure_Langu}
+
+\end{figure}

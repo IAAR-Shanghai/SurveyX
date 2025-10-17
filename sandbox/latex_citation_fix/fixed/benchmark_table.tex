@@ -1,0 +1,25 @@
+
+    \begin{table}[h!]
+    \centering
+    \footnotesize % 使用更小字體
+    % 不使用 resizebox，讓表格自然寬度（可能超出頁面）
+    \begin{tabular}{p{0.20\textwidth} p{0.10\textwidth} p{0.30\textwidth} p{0.25\textwidth} p{0.18\textwidth}}
+    \toprule
+    \textbf{Benchmark} & \textbf{Size} & \textbf{Domain} & \textbf{Task Format} & \textbf{Metric} \\
+\midrule
+VoxEval \cite{cui2025voxevalbenchmarkingknowledgeunderstandin} & 13,938 & Massive Multitask Language Understanding & Multiple-Choice QA & Accuracy, WER \\
+- \cite{wang2024evaluatingtextspeechsynthesislargediscre} & 4,800 & Text-to-Speech & Speech Synthesis & WER, MOS \\
+LLaSO-Eval \cite{sun2025llasofoundationalframeworkreproduciblere} & 15,044 & Speech-Language Understanding & Instruction Following & WER; GPT-4o \\
+- \cite{zhang2025impactframeratesspeechtokenizercasestudy} & 80,000 & Automatic Speech Recognition & Speech Recognition & ['WER', 'Codebook usage'] \\
+- \cite{park2023howgenerativespokenlanguagemodelingencod} & 183,872 & Spoken Language Modeling & Speech Resynthesis & UER, WER \\
+IndicSUPERB \cite{entry2025indicsuperbspeechprocessinguniversalperf} & 1,684 & Speech Language Understanding & Automatic Speech Recognition & WER, Accuracy \\
+- \cite{wang2025roleaudiovisualintegrationtimecoursephon} & 34,000 & Audio-Visual Speech Perception & Phoneme Classification & Acc, Peak latency \\
+- \cite{li2024investigatingneuralaudiocodecsspeechlang} & 54,000 & Text-to-Speech & Text-to-Speech & WER, NISQA \\
+
+    \bottomrule
+    \end{tabular}%
+    % 移除 resizebox 的結尾
+    \caption{Consolidated overview of representative benchmarks for spoken language modeling and speech-centric evaluation. The table enumerates each benchmark's size, domain, task format, and primary metrics, spanning instruction-following suites, automatic speech recognition, text-to-speech, spoken language modeling, and audio–visual speech perception. Reported metrics include accuracy- and error-based measures (e.g., Accuracy, WER, UER, codebook usage) and perceptual/quality scores (e.g., MOS, NISQA), enabling cross-benchmark comparison.}
+    \label{tab:benchmark_table}
+    \end{table}
+    

@@ -1,0 +1,3 @@
+# Agent workspace - ignore all generated files
+*
+!.gitignore

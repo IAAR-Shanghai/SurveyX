@@ -1,0 +1,93 @@
+
+\definecolor{color_root}{HTML}{9C7C7C}
+\definecolor{color_node}{HTML}{727b83}
+\definecolor{color_list}{HTML}{96a25f}
+
+
+
+\begin{figure}[h]
+   \centering
+   \begin{adjustbox}{max width=\textwidth, center}
+      \begin{tikzpicture}[
+         start chain = going below,
+         node distance=1mm,
+         sibling distance=40mm,
+         edge from parent/.style={->,draw},
+         >=latex,
+         basic/.style  = {
+            draw, text width=1cm, drop shadow, rectangle
+         },
+         root/.style   = {
+            basic, rounded corners=2pt, 
+            thin, align=center,text width=15em, 
+            font=\small\bfseries,
+            fill=blue!20
+         },
+         nodeB/.style = {
+            basic, rounded corners=5pt, 
+            thin,align=center, fill=green!20,
+            font=\scriptsize,
+            text width=8em
+         },
+         nodeL/.style = {
+            basic, thin, 
+            align=center, 
+            font=\scriptsize\itshape, fill=pink!20, text width=9em
+         }
+      ]
+   
+\node[root, fill=color_root!60] {Architectures for streaming and duplex} child {node[nodeB, fill=color_node!40] (leaf_63) {Streamable perception and tokenization designs}}child {node[nodeB, fill=color_node!40] (leaf_64) {Interleaved duplex-aware decoder mechanisms}}child {node[nodeB, fill=color_node!40] (leaf_65) {Chunk-aware synthesis and scheduling strategies}} ;
+\begin{scope}[start chain=63 going below]
+\chainin (leaf_63) [on chain, join];
+\node[nodeL, on chain, fill=color_list!15, xshift=6mm, yshift=-5mm] (l630) {Block-causal tokenizer\\cite{zeng2024scalingspeechtextpretrainingsyntheticint}};
+\node[nodeL, on chain, fill=color_list!15] (l631) {DC-Spin streaming tokens\\cite{chang2024dcspinspeakerinvariantspeechtokenizerspo}};
+\node[nodeL, on chain, fill=color_list!15] (l632) {USTokens understanding input\\cite{wang2025dualspeechlmtowardsunifiedspeechundersta}};
+\node[nodeL, on chain, fill=color_list!15] (l633) {Streaming CoT SimulST\\cite{guo2025streamuniachievingstreamingspeechtransla}};
+
+\end{scope}
+\draw[->] ($(leaf_63.south west) + (2mm, 0)$) |- (l630.west);
+\draw[->] ($(leaf_63.south west) + (2mm, 0)$) |- (l631.west);
+\draw[->] ($(leaf_63.south west) + (2mm, 0)$) |- (l632.west);
+\draw[->] ($(leaf_63.south west) + (2mm, 0)$) |- (l633.west);
+
+
+
+\begin{scope}[start chain=64 going below]
+\chainin (leaf_64) [on chain, join];
+\node[nodeL, on chain, fill=color_list!15, xshift=6mm, yshift=-5mm] (l640) {Listening-while-speaking LM\\cite{ma2024languagemodelcanlistenwhilespeaking}};
+\node[nodeL, on chain, fill=color_list!15] (l641) {SALM-Duplex channel fusion\\cite{hu2025salmduplexefficientdirectmodelingspeechl}};
+\node[nodeL, on chain, fill=color_list!15] (l642) {NTPP shared KV\\cite{wang2025ntppgenerativespeechlanguagemodelingdual}};
+\node[nodeL, on chain, fill=color_list!15] (l643) {TurnGuide turn planning\\cite{cui2025thinkbeforeyoutalkenhancingmeaningfuldia}};
+
+\end{scope}
+\draw[->] ($(leaf_64.south west) + (2mm, 0)$) |- (l640.west);
+\draw[->] ($(leaf_64.south west) + (2mm, 0)$) |- (l641.west);
+\draw[->] ($(leaf_64.south west) + (2mm, 0)$) |- (l642.west);
+\draw[->] ($(leaf_64.south west) + (2mm, 0)$) |- (l643.west);
+
+
+
+\begin{scope}[start chain=65 going below]
+\chainin (leaf_65) [on chain, join];
+\node[nodeL, on chain, fill=color_list!15, xshift=6mm, yshift=-5mm] (l650) {SyncSpeech dual-stream TTS\\cite{sheng2025syncspeechlowlatencyefficientdualstreamt}};
+\node[nodeL, on chain, fill=color_list!15] (l651) {STITCH think-while-talk\\cite{chiang2025stitchsimultaneousthinkingtalkingchunked}};
+\node[nodeL, on chain, fill=color_list!15] (l652) {2 s decode windows\\cite{zeng2024scalingspeechtextpretrainingsyntheticint}};
+\node[nodeL, on chain, fill=color_list!15] (l653) {Duration-synchronous schedules\\cite{sheng2025syncspeechlowlatencyefficientdualstreamt}};
+
+\end{scope}
+\draw[->] ($(leaf_65.south west) + (2mm, 0)$) |- (l650.west);
+\draw[->] ($(leaf_65.south west) + (2mm, 0)$) |- (l651.west);
+\draw[->] ($(leaf_65.south west) + (2mm, 0)$) |- (l652.west);
+\draw[->] ($(leaf_65.south west) + (2mm, 0)$) |- (l653.west);
+
+
+
+
+
+\end{tikzpicture}
+\end{adjustbox}
+
+\caption{This figure summarizes deployable streaming-duplex SLM stacks as three coordinated strata: (1) streamable perception/tokenization that aligns speech with text cues; (2) duplex-aware decoders that interleave listening and speaking with shared caches and channel-aware control; and (3) chunk-aware synthesis that keeps first-audio low via duration/span-synchronous schedules. Arrows indicate data flow from low-rate, streaming tokens into interleaved decoding (e.g., middle fusion, shared KV, turn planning) and onward to chunked synthesis (e.g., dual-stream TTS, fixed-size playback), enabling think-while-talking and responsive barge-in under unified scheduling.}
+\label{fig:tiny_tree_figure_7}
+
+\end{figure}

@@ -1,0 +1,105 @@
+
+\definecolor{color_root}{HTML}{727b83}
+\definecolor{color_node}{HTML}{D3E0EA}
+\definecolor{color_list}{HTML}{96a25f}
+
+
+
+\begin{figure}[h]
+   \centering
+   \begin{adjustbox}{max width=\textwidth, center}
+      \begin{tikzpicture}[
+         start chain = going below,
+         node distance=1mm,
+         sibling distance=40mm,
+         edge from parent/.style={->,draw},
+         >=latex,
+         basic/.style  = {
+            draw, text width=1cm, drop shadow, rectangle
+         },
+         root/.style   = {
+            basic, rounded corners=2pt, 
+            thin, align=center,text width=15em, 
+            font=\small\bfseries,
+            fill=blue!20
+         },
+         nodeB/.style = {
+            basic, rounded corners=5pt, 
+            thin,align=center, fill=green!20,
+            font=\scriptsize,
+            text width=8em
+         },
+         nodeL/.style = {
+            basic, thin, 
+            align=center, 
+            font=\scriptsize\itshape, fill=pink!20, text width=9em
+         }
+      ]
+   
+\node[root, fill=color_root!60] {Interleaved and duplex modeling exemplars} child {node[nodeB, fill=color_node!40] (leaf_51) {Token-level interleaving design for SLMs}}child {node[nodeB, fill=color_node!40] (leaf_52) {Linguistic–acoustic planning interleaving for streaming}}child {node[nodeB, fill=color_node!40] (leaf_53) {Duplex scheduling and interaction control}} ;
+\begin{scope}[start chain=51 going below]
+\chainin (leaf_51) [on chain, join];
+\node[nodeL, on chain, fill=color_list!15, xshift=6mm, yshift=-5mm] (l510) {Unified token objective\cite{zeng2024scalingspeechtextpretrainingsyntheticint}};
+\node[nodeL, on chain, fill=color_list!15] (l511) {Shared speech–text vocab\cite{wu2024speechcomposerunifyingmultiplespeechtask,zeng2024scalingspeechtextpretrainingsyntheticint}};
+\node[nodeL, on chain, fill=color_list!15] (l512) {Adapter-bridged audio\cite{shu2023llasmlargelanguagespeechmodel,wang2023slmbridgethingapbetweenspeechtextfoundat}};
+\node[nodeL, on chain, fill=color_list!15] (l513) {Synthetic span interleaving\cite{zeng2024scalingspeechtextpretrainingsyntheticint}};
+\node[nodeL, on chain, fill=color_list!15] (l514) {Budget-cycled token decoding\cite{zeng2024glm4voicetowardsintelligenthumanlikeends}};
+\node[nodeL, on chain, fill=color_list!15] (l515) {Projector-first mixed contexts\cite{wang2023slmbridgethingapbetweenspeechtextfoundat}};
+
+\end{scope}
+\draw[->] ($(leaf_51.south west) + (2mm, 0)$) |- (l510.west);
+\draw[->] ($(leaf_51.south west) + (2mm, 0)$) |- (l511.west);
+\draw[->] ($(leaf_51.south west) + (2mm, 0)$) |- (l512.west);
+\draw[->] ($(leaf_51.south west) + (2mm, 0)$) |- (l513.west);
+\draw[->] ($(leaf_51.south west) + (2mm, 0)$) |- (l514.west);
+\draw[->] ($(leaf_51.south west) + (2mm, 0)$) |- (l515.west);
+
+
+
+\begin{scope}[start chain=52 going below]
+\chainin (leaf_52) [on chain, join];
+\node[nodeL, on chain, fill=color_list!15, xshift=6mm, yshift=-5mm] (l520) {Plan-before-speak phases\cite{zeng2024scalingspeechtextpretrainingsyntheticint}};
+\node[nodeL, on chain, fill=color_list!15] (l521) {Fixed text:speech ratios\cite{zeng2024glm4voicetowardsintelligenthumanlikeends}};
+\node[nodeL, on chain, fill=color_list!15] (l522) {Transcribe→generate staging policy\cite{zeng2024glm4voicetowardsintelligenthumanlikeends}};
+\node[nodeL, on chain, fill=color_list!15] (l523) {Streaming chunk schedulers\cite{zeng2024scalingspeechtextpretrainingsyntheticint}};
+\node[nodeL, on chain, fill=color_list!15] (l524) {Semantic-first AR planning\cite{wang2025dualspeechlmtowardsunifiedspeechundersta}};
+\node[nodeL, on chain, fill=color_list!15] (l525) {Streaming chain-of-thought\cite{zeng2024glm4voicetowardsintelligenthumanlikeends}};
+
+\end{scope}
+\draw[->] ($(leaf_52.south west) + (2mm, 0)$) |- (l520.west);
+\draw[->] ($(leaf_52.south west) + (2mm, 0)$) |- (l521.west);
+\draw[->] ($(leaf_52.south west) + (2mm, 0)$) |- (l522.west);
+\draw[->] ($(leaf_52.south west) + (2mm, 0)$) |- (l523.west);
+\draw[->] ($(leaf_52.south west) + (2mm, 0)$) |- (l524.west);
+\draw[->] ($(leaf_52.south west) + (2mm, 0)$) |- (l525.west);
+
+
+
+\begin{scope}[start chain=53 going below]
+\chainin (leaf_53) [on chain, join];
+\node[nodeL, on chain, fill=color_list!15, xshift=6mm, yshift=-5mm] (l530) {Simultaneous listen–speak mode\cite{zeng2024glm4voicetowardsintelligenthumanlikeends}};
+\node[nodeL, on chain, fill=color_list!15] (l531) {IRQ interruption tokens\cite{ma2024languagemodelcanlistenwhilespeaking}};
+\node[nodeL, on chain, fill=color_list!15] (l532) {Middle-fusion conditioning scheme\cite{ma2024languagemodelcanlistenwhilespeaking}};
+\node[nodeL, on chain, fill=color_list!15] (l533) {Turn-level text guidance\cite{cui2025thinkbeforeyoutalkenhancingmeaningfuldia}};
+\node[nodeL, on chain, fill=color_list!15] (l534) {Chunk-wise channel alternation\cite{cui2025thinkbeforeyoutalkenhancingmeaningfuldia}};
+\node[nodeL, on chain, fill=color_list!15] (l535) {Conservative sampling temperatures\cite{zeng2024glm4voicetowardsintelligenthumanlikeends}};
+
+\end{scope}
+\draw[->] ($(leaf_53.south west) + (2mm, 0)$) |- (l530.west);
+\draw[->] ($(leaf_53.south west) + (2mm, 0)$) |- (l531.west);
+\draw[->] ($(leaf_53.south west) + (2mm, 0)$) |- (l532.west);
+\draw[->] ($(leaf_53.south west) + (2mm, 0)$) |- (l533.west);
+\draw[->] ($(leaf_53.south west) + (2mm, 0)$) |- (l534.west);
+\draw[->] ($(leaf_53.south west) + (2mm, 0)$) |- (l535.west);
+
+
+
+
+
+\end{tikzpicture}
+\end{adjustbox}
+
+\caption{This figure organizes interleaved and duplex SLM design into three branches: token-level interleaving (shared vocabularies, adapter-bridged embeddings, synthetic span interleaving, and budget-cycled decoding), linguistic–acoustic planning interleaving (plan-before-speak phases, fixed text:speech ratios, and transcribe→generate staging), and duplex scheduling controls (simultaneous listen–speak with IRQ tokens, middle-fusion conditioning, and turn-level text guidance). Together, these threads illustrate how recent systems unify perception, planning, and speech synthesis for low-latency, robust spoken interaction.}
+\label{fig:tiny_tree_figure_3}
+
+\end{figure}

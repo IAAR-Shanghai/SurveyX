@@ -1,0 +1,101 @@
+
+\definecolor{color_root}{HTML}{c1c8cd}
+\definecolor{color_node}{HTML}{727b83}
+\definecolor{color_list}{HTML}{c77fa1}
+
+
+
+\begin{figure}[h]
+   \centering
+   \begin{adjustbox}{max width=\textwidth, center}
+      \begin{tikzpicture}[
+         start chain = going below,
+         node distance=1mm,
+         sibling distance=40mm,
+         edge from parent/.style={->,draw},
+         >=latex,
+         basic/.style  = {
+            draw, text width=1cm, drop shadow, rectangle
+         },
+         root/.style   = {
+            basic, rounded corners=2pt, 
+            thin, align=center,text width=15em, 
+            font=\small\bfseries,
+            fill=blue!20
+         },
+         nodeB/.style = {
+            basic, rounded corners=5pt, 
+            thin,align=center, fill=green!20,
+            font=\scriptsize,
+            text width=8em
+         },
+         nodeL/.style = {
+            basic, thin, 
+            align=center, 
+            font=\scriptsize\itshape, fill=pink!20, text width=9em
+         }
+      ]
+   
+\node[root, fill=color_root!60] {5C framework for reproducible speech-AI} child {node[nodeB, fill=color_node!40] (leaf_78) {Open stack and corpora exemplars}}child {node[nodeB, fill=color_node!40] (leaf_79) {Standardized evaluation and diagnostic anchors}}child {node[nodeB, fill=color_node!40] (leaf_80) {Benchmark card fields and disclosures}} ;
+\begin{scope}[start chain=78 going below]
+\chainin (leaf_78) [on chain, join];
+\node[nodeL, on chain, fill=color_list!15, xshift=6mm, yshift=-5mm] (l780) {dMel streamable tokens\\cite{bai2025dmelspeechtokenizationmadesimple}};
+\node[nodeL, on chain, fill=color_list!15] (l781) {RepCodec semantic tokens\\cite{huang2024repcodecspeechrepresentationcodectokeniz}};
+\node[nodeL, on chain, fill=color_list!15] (l782) {LLaSO open stack\\cite{sun2025llasofoundationalframeworkreproduciblere}};
+
+\end{scope}
+\draw[->] ($(leaf_78.south west) + (2mm, 0)$) |- (l780.west);
+\draw[->] ($(leaf_78.south west) + (2mm, 0)$) |- (l781.west);
+\draw[->] ($(leaf_78.south west) + (2mm, 0)$) |- (l782.west);
+
+
+
+\begin{scope}[start chain=79 going below]
+\chainin (leaf_79) [on chain, join];
+\node[nodeL, on chain, fill=color_list!15, xshift=6mm, yshift=-5mm] (l790) {STAB tokenizer test\\cite{vashishth2024stabspeechtokenizerassessmentbenchmark}};
+\node[nodeL, on chain, fill=color_list!15] (l791) {SALMon acoustic sensitivity\\cite{maimon2025salmonsuiteacousticlanguagemodelevaluati}};
+\node[nodeL, on chain, fill=color_list!15] (l792) {IndicSUPERB multilingual SLU\\cite{entry2025indicsuperbspeechprocessinguniversalperf title=}};
+\node[nodeL, on chain, fill=color_list!15] (l793) {Dynamic-SUPERB phase two\\cite{huang2025dynamicsuperbphase2collaborativelyexpand}};
+\node[nodeL, on chain, fill=color_list!15] (l794) {VoxEval speech QA\\cite{cui2025voxevalbenchmarkingknowledgeunderstandin}};
+\node[nodeL, on chain, fill=color_list!15] (l795) {Hygiene and statistics\\cite{cui2025voxevalbenchmarkingknowledgeunderstandin}};
+
+\end{scope}
+\draw[->] ($(leaf_79.south west) + (2mm, 0)$) |- (l790.west);
+\draw[->] ($(leaf_79.south west) + (2mm, 0)$) |- (l791.west);
+\draw[->] ($(leaf_79.south west) + (2mm, 0)$) |- (l792.west);
+\draw[->] ($(leaf_79.south west) + (2mm, 0)$) |- (l793.west);
+\draw[->] ($(leaf_79.south west) + (2mm, 0)$) |- (l794.west);
+\draw[->] ($(leaf_79.south west) + (2mm, 0)$) |- (l795.west);
+
+
+
+\begin{scope}[start chain=80 going below]
+\chainin (leaf_80) [on chain, join];
+\node[nodeL, on chain, fill=color_list!15, xshift=6mm, yshift=-5mm] (l800) {Coverage and conditions\\cite{mousavi2024dasbdiscreteaudiospeechbenchmark}};
+\node[nodeL, on chain, fill=color_list!15] (l801) {Capabilities and comparability\\cite{cui2025voxevalbenchmarkingknowledgeunderstandin}};
+\node[nodeL, on chain, fill=color_list!15] (l802) {Compute and cost\\cite{maimon2025slammingtrainingspeechlanguagemodelonegp}};
+\node[nodeL, on chain, fill=color_list!15] (l803) {Token and frame rates};
+\node[nodeL, on chain, fill=color_list!15] (l804) {Bitrates and schedules};
+\node[nodeL, on chain, fill=color_list!15] (l805) {Hardware and precision};
+\node[nodeL, on chain, fill=color_list!15] (l806) {Auditable scorer scripts};
+
+\end{scope}
+\draw[->] ($(leaf_80.south west) + (2mm, 0)$) |- (l800.west);
+\draw[->] ($(leaf_80.south west) + (2mm, 0)$) |- (l801.west);
+\draw[->] ($(leaf_80.south west) + (2mm, 0)$) |- (l802.west);
+\draw[->] ($(leaf_80.south west) + (2mm, 0)$) |- (l803.west);
+\draw[->] ($(leaf_80.south west) + (2mm, 0)$) |- (l804.west);
+\draw[->] ($(leaf_80.south west) + (2mm, 0)$) |- (l805.west);
+\draw[->] ($(leaf_80.south west) + (2mm, 0)$) |- (l806.west);
+
+
+
+
+
+\end{tikzpicture}
+\end{adjustbox}
+
+\caption{This figure shows a two-level 5C overview for reproducible speech–AI, grouping content into: (1) open stack exemplars (tokenizers/codecs and corpora), (2) standardized evaluation anchors (low-cost, rate-/robustness-aware diagnostics), and (3) benchmark card disclosures (coverage, conditions, comparability, and compute/cost reporting). Together, these pillars link open, inspectable pipelines to comparable cross-lab evaluation via explicit, auditable reporting.}
+\label{fig:tiny_tree_figure_12}
+
+\end{figure}

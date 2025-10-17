@@ -1,0 +1,480 @@
+
+\begin{figure}[h]
+   \centering
+   \begin{adjustbox}{max width=\textwidth, center}
+   \begin{tikzpicture}[
+      node distance=5mm, 
+      node/.style={
+         rectangle, draw,
+         inner sep=1mm,
+         minimum height = 9mm, 
+         text width=30mm, 
+         align=center,
+         font=\linespread{.9}\selectfont
+      }, 
+      nodeB/.style={
+         node, 
+         text width=21mm % 在node的基础上修改text width
+      }
+   ]
+   
+\node[nodeB, fill={teal!15}, anchor=north] (L0) at (0, 0) {Core levers on the latency–quality frontier};
+\begin{scope}[start chain=0 going below]
+\chainin (L0) [on chain, join];
+\node[nodeB, on chain, fill=blue!15, xshift=6mm, yshift=-7mm] (l_0_0) {Chunking with explicit read–write policies to trade coherence vs look-ahead; duplex interleaving exposes onset–planning trade-offs};
+\node[nodeB, on chain, fill=blue!15] (l_0_1) {Low-rate tokenization and streamable I/O to cut prefill, bandwidth, and per-step cost; leverage hierarchical/NAR decoders and codec–diffusion hybrids};
+\node[nodeB, on chain, fill=blue!15] (l_0_2) {Budget-aware inference via token merging, distillation, conditional acoustic layers, and few-step diffusion to reduce memory/compute};
+
+\end{scope}
+\draw[->] ($(L0.south west) + (2mm, 0)$) |- (l_0_0.west);
+\draw[->] ($(L0.south west) + (2mm, 0)$) |- (l_0_1.west);
+\draw[->] ($(L0.south west) + (2mm, 0)$) |- (l_0_2.west);
+
+
+\node[nodeB, fill={teal!15}, anchor=north] (L3) at (3, 0) {Scheduling and chunking for responsiveness};
+\begin{scope}[start chain=1 going below]
+\chainin (L3) [on chain, join];
+\node[nodeB, on chain, fill=blue!15, xshift=6mm, yshift=-7mm] (l_3_0) {Token- and turn-level interleaving reduces onset; text-first planning can render speech after ~10 speech tokens};
+\node[nodeB, on chain, fill=blue!15] (l_3_1) {Duplex guidance starts at k_start; tau_SC=5 at 12.5 Hz (~400 ms) balances planning with latency};
+\node[nodeB, on chain, fill=blue!15] (l_3_2) {Simultaneous translation uses fixed word-lag k with 320–640 ms chunks; semantic truncation bounds long-context drift};
+
+\end{scope}
+\draw[->] ($(L3.south west) + (2mm, 0)$) |- (l_3_0.west);
+\draw[->] ($(L3.south west) + (2mm, 0)$) |- (l_3_1.west);
+\draw[->] ($(L3.south west) + (2mm, 0)$) |- (l_3_2.west);
+
+
+\node[nodeB, fill={teal!15}, anchor=north] (L6) at (6, 0) {Tokenization and low-rate interfaces};
+\begin{scope}[start chain=2 going below]
+\chainin (L6) [on chain, join];
+\node[nodeB, on chain, fill=blue!15, xshift=6mm, yshift=-7mm] (l_6_0) {Adopt a 12.5 Hz discrete interface with block-causal attention as a default for interleaved training and online synthesis};
+\node[nodeB, on chain, fill=blue!15] (l_6_1) {Streamable tokenizers support chunk-wise expansion (T_chunk≈1.0 s, T_shift≈0.4 s); compact codebooks shorten LM-facing sequences};
+\node[nodeB, on chain, fill=blue!15] (l_6_2) {Ultra-low-rate options (e.g., 6.25 Hz at ~0.0875 kbps) enable real-time decoding on mid-size backbones; text-to-token rates ≈25k tps enable on-the-fly data};
+
+\end{scope}
+\draw[->] ($(L6.south west) + (2mm, 0)$) |- (l_6_0.west);
+\draw[->] ($(L6.south west) + (2mm, 0)$) |- (l_6_1.west);
+\draw[->] ($(L6.south west) + (2mm, 0)$) |- (l_6_2.west);
+
+
+\node[nodeB, fill={teal!15}, anchor=north] (L9) at (9, 0) {Pacing and segmentation};
+\begin{scope}[start chain=3 going below]
+\chainin (L9) [on chain, join];
+\node[nodeB, on chain, fill=blue!15, xshift=6mm, yshift=-7mm] (l_9_0) {Coarser segment-level units reduce sequence length and training compute while remaining real-time compatible};
+\node[nodeB, on chain, fill=blue!15] (l_9_1) {Linear-time syllable segmentation with simple thresholds provides low-compute pacing for 5–12.5 Hz semantic streams};
+
+\end{scope}
+\draw[->] ($(L9.south west) + (2mm, 0)$) |- (l_9_0.west);
+\draw[->] ($(L9.south west) + (2mm, 0)$) |- (l_9_1.west);
+
+
+\node[nodeB, fill={teal!15}, anchor=north] (L12) at (12, 0) {Prefill reduction and fast decoding};
+\begin{scope}[start chain=4 going below]
+\chainin (L12) [on chain, join];
+\node[nodeB, on chain, fill=blue!15, xshift=6mm, yshift=-7mm] (l_12_0) {Few-step diffusion (e.g., 100→4 steps) preserves WER and DNSMOS, enabling diffusion backbones within real-time budgets};
+\node[nodeB, on chain, fill=blue!15] (l_12_1) {Listening-while-speaking LM: AR sampling conditioned on live embeddings minimizes interruption reaction time};
+\node[nodeB, on chain, fill=blue!15] (l_12_2) {Exploit CTC sparsity for earlier emission; align tokenizer and decoder schedules (12.5 Hz, block-causal, chunked emission) to simplify stacks};
+
+\end{scope}
+\draw[->] ($(L12.south west) + (2mm, 0)$) |- (l_12_0.west);
+\draw[->] ($(L12.south west) + (2mm, 0)$) |- (l_12_1.west);
+\draw[->] ($(L12.south west) + (2mm, 0)$) |- (l_12_2.west);
+
+
+\node[nodeB, fill={teal!15}, anchor=north] (L15) at (15, 0) {First-chunk policies and reporting};
+\begin{scope}[start chain=5 going below]
+\chainin (L15) [on chain, join];
+\node[nodeB, on chain, fill=blue!15, xshift=6mm, yshift=-7mm] (l_15_0) {Tight read–write cycles with short speech blocks and brief plan bursts minimize time-to-first-audio (~10 tokens)};
+\node[nodeB, on chain, fill=blue!15] (l_15_1) {Fixed chunk sizes (e.g., tau_SC=5 at 12.5 Hz) keep guidance synchronized without stalling output};
+\node[nodeB, on chain, fill=blue!15] (l_15_2) {Report schedules explicitly: word-lag k and chunk size (ST), tokens-to-speech thresholds and interleaving ratios (duplex chat), CTC sparsity (ASR), token rate/bitrate/decoder/diffusion steps (generation)};
+
+\end{scope}
+\draw[->] ($(L15.south west) + (2mm, 0)$) |- (l_15_0.west);
+\draw[->] ($(L15.south west) + (2mm, 0)$) |- (l_15_1.west);
+\draw[->] ($(L15.south west) + (2mm, 0)$) |- (l_15_2.west);
+
+
+\node[nodeB, fill={teal!15}, anchor=north] (L18) at (18, 0) {Tooling and actionable checklist};
+\begin{scope}[start chain=6 going below]
+\chainin (L18) [on chain, join];
+\node[nodeB, on chain, fill=blue!15, xshift=6mm, yshift=-7mm] (l_18_0) {Ecosystem: ESPnet-SpeechLM, IndicSUPERB/Kathbath, LM-SPT, PAST, SpeechRAG, SLM adapters, fastabx, dMel, Cont-SPT, VoxEval};
+\node[nodeB, on chain, fill=blue!15] (l_18_1) {Checklist: use 12.5 Hz with block-causal; interleave brief text plans; tune k_start and tau_SC; bound lag with fixed word-lag and semantic truncation; prefer ultra-low-rate tokens + few-step diffusion under tight budgets; syllable-based pacing; duplex encoder+compact decoder; exploit CTC sparsity};
+
+\end{scope}
+\draw[->] ($(L18.south west) + (2mm, 0)$) |- (l_18_0.west);
+\draw[->] ($(L18.south west) + (2mm, 0)$) |- (l_18_1.west);
+
+
+\node[nodeB, fill={teal!30}, anchor=north] (2_9) at (9.0, 2.3) {Latency-aware design};
+\coordinate (L0_up) at (0, 0.4);
+\draw (L0_up) -- (L0.north);
+\coordinate (L3_up) at (3, 0.4);
+\draw (L3_up) -- (L3.north);
+\coordinate (L6_up) at (6, 0.4);
+\draw (L6_up) -- (L6.north);
+\coordinate (L9_up) at (9, 0.4);
+\draw (L9_up) -- (L9.north);
+\coordinate (L12_up) at (12, 0.4);
+\draw (L12_up) -- (L12.north);
+\coordinate (L15_up) at (15, 0.4);
+\draw (L15_up) -- (L15.north);
+\coordinate (L18_up) at (18, 0.4);
+\draw (L18_up) -- (L18.north);
+\draw (L0_up) -- (L3_up);
+\draw (L3_up) -- (L6_up);
+\draw (L6_up) -- (L9_up);
+\draw (L9_up) -- (L12_up);
+\draw (L12_up) -- (L15_up);
+\draw (L15_up) -- (L18_up);
+\draw (2_9.south) -- (9.0, 0.4);
+\node[nodeB, fill={teal!15}, anchor=north] (L21) at (21, 0) {Policy families and composition};
+\begin{scope}[start chain=7 going below]
+\chainin (L21) [on chain, join];
+\node[nodeB, on chain, fill=blue!15, xshift=6mm, yshift=-7mm] (l_21_0) {Wait-k/prefix-to-prefix};
+\node[nodeB, on chain, fill=blue!15] (l_21_1) {Read–write alternation};
+\node[nodeB, on chain, fill=blue!15] (l_21_2) {Incremental decoding with request-more-audio control};
+\node[nodeB, on chain, fill=blue!15] (l_21_3) {Duration-synchronous generation};
+\node[nodeB, on chain, fill=blue!15] (l_21_4) {Compose with streamable encoders, fixed-rate tokenizers, and SLM decoders; mitigate discrete token inconsistency for stability};
+
+\end{scope}
+\draw[->] ($(L21.south west) + (2mm, 0)$) |- (l_21_0.west);
+\draw[->] ($(L21.south west) + (2mm, 0)$) |- (l_21_1.west);
+\draw[->] ($(L21.south west) + (2mm, 0)$) |- (l_21_2.west);
+\draw[->] ($(L21.south west) + (2mm, 0)$) |- (l_21_3.west);
+\draw[->] ($(L21.south west) + (2mm, 0)$) |- (l_21_4.west);
+
+
+\node[nodeB, fill={teal!15}, anchor=north] (L24) at (24, 0) {Wait-k and prefix variants};
+\begin{scope}[start chain=8 going below]
+\chainin (L24) [on chain, join];
+\node[nodeB, on chain, fill=blue!15, xshift=6mm, yshift=-7mm] (l_24_0) {Train with K∼U[3,12], small look-ahead (L=4) and pre-decision (P=8); choose task-specific K at inference};
+\node[nodeB, on chain, fill=blue!15] (l_24_1) {Derive test-time wait-k from CIF prompt length to enable prefix decoding without policy-specific online training};
+\node[nodeB, on chain, fill=blue!15] (l_24_2) {Stabilize with frame-synchronous CTC and shallow-fused n-gram LM};
+
+\end{scope}
+\draw[->] ($(L24.south west) + (2mm, 0)$) |- (l_24_0.west);
+\draw[->] ($(L24.south west) + (2mm, 0)$) |- (l_24_1.west);
+\draw[->] ($(L24.south west) + (2mm, 0)$) |- (l_24_2.west);
+
+
+\node[nodeB, fill={teal!15}, anchor=north] (L27) at (27, 0) {Read–write alternation for S2ST};
+\begin{scope}[start chain=9 going below]
+\chainin (L27) [on chain, join];
+\node[nodeB, on chain, fill=blue!15, xshift=6mm, yshift=-7mm] (l_27_0) {Plan-before-speak: emit speech after every R text tokens; onset ≈ LLM(R)+TTS(W)+Flow(W)+Vocoder(2W)};
+\node[nodeB, on chain, fill=blue!15] (l_27_1) {Transcription-driven gates complement alternation; standardize and report AL/LAAL/StreamLAAL};
+
+\end{scope}
+\draw[->] ($(L27.south west) + (2mm, 0)$) |- (l_27_0.west);
+\draw[->] ($(L27.south west) + (2mm, 0)$) |- (l_27_1.west);
+
+
+\node[nodeB, fill={teal!15}, anchor=north] (L30) at (30, 0) {Incremental decoding and request-more-audio};
+\begin{scope}[start chain=10 going below]
+\chainin (L30) [on chain, join];
+\node[nodeB, on chain, fill=blue!15, xshift=6mm, yshift=-7mm] (l_30_0) {Emformer encoder with RNN-T decoder streams semantic tokens (e.g., 25 Hz) with blanks and modest beams};
+\node[nodeB, on chain, fill=blue!15] (l_30_1) {Wrap decoding in EOS-to-request-more-audio loops; use latency multipliers to bound lag};
+
+\end{scope}
+\draw[->] ($(L30.south west) + (2mm, 0)$) |- (l_30_0.west);
+\draw[->] ($(L30.south west) + (2mm, 0)$) |- (l_30_1.west);
+
+
+\node[nodeB, fill={teal!15}, anchor=north] (L33) at (33, 0) {Duration-synchronous generation};
+\begin{scope}[start chain=11 going below]
+\chainin (L33) [on chain, join];
+\node[nodeB, on chain, fill=blue!15, xshift=6mm, yshift=-7mm] (l_33_0) {Predict token durations with minimal look-ahead (q=1) to align emission to text arrivals};
+\node[nodeB, on chain, fill=blue!15] (l_33_1) {Avoid full-context NAR passes by adopting span-/duration-synchronous scheduling};
+
+\end{scope}
+\draw[->] ($(L33.south west) + (2mm, 0)$) |- (l_33_0.west);
+\draw[->] ($(L33.south west) + (2mm, 0)$) |- (l_33_1.west);
+
+
+\node[nodeB, fill={teal!15}, anchor=north] (L36) at (36, 0) {Integration and diagnostics};
+\begin{scope}[start chain=12 going below]
+\chainin (L36) [on chain, join];
+\node[nodeB, on chain, fill=blue!15, xshift=6mm, yshift=-7mm] (l_36_0) {Use Emformer (e.g., 20/4 or 32/6) for low-latency features; CIF prompts expose label-synchronous cues};
+\node[nodeB, on chain, fill=blue!15] (l_36_1) {Audit first-chunk latency via R and W; report AL, LAAL, StreamLAAL with mWERSegmenter};
+\node[nodeB, on chain, fill=blue!15] (l_36_2) {Benchmark breadth and robustness (IndicSUPERB, SALMon, STAB, VoxEval)};
+
+\end{scope}
+\draw[->] ($(L36.south west) + (2mm, 0)$) |- (l_36_0.west);
+\draw[->] ($(L36.south west) + (2mm, 0)$) |- (l_36_1.west);
+\draw[->] ($(L36.south west) + (2mm, 0)$) |- (l_36_2.west);
+
+
+\node[nodeB, fill={teal!15}, anchor=north] (L39) at (39, 0) {Operational guidelines};
+\begin{scope}[start chain=13 going below]
+\chainin (L39) [on chain, join];
+\node[nodeB, on chain, fill=blue!15, xshift=6mm, yshift=-7mm] (l_39_0) {Tight-latency ASR/AST: small L,P; train K-range; incremental CTC beam + n-gram fusion};
+\node[nodeB, on chain, fill=blue!15] (l_39_1) {Unified ST: StreamUni with speech CoT; derive wait-k at test; truncate semantics; report latency metrics};
+\node[nodeB, on chain, fill=blue!15] (l_39_2) {S2ST: tune R and W jointly; under shift, use EOS-to-request loops};
+\node[nodeB, on chain, fill=blue!15] (l_39_3) {Duration-synchronous q=1 for speech; benchmark broadly and report beyond WER/BLEU};
+
+\end{scope}
+\draw[->] ($(L39.south west) + (2mm, 0)$) |- (l_39_0.west);
+\draw[->] ($(L39.south west) + (2mm, 0)$) |- (l_39_1.west);
+\draw[->] ($(L39.south west) + (2mm, 0)$) |- (l_39_2.west);
+\draw[->] ($(L39.south west) + (2mm, 0)$) |- (l_39_3.west);
+
+
+\node[nodeB, fill={teal!30}, anchor=north] (2_30) at (30.0, 2.3) {Streaming policies for ASR/S2ST};
+\coordinate (L21_up) at (21, 0.4);
+\draw (L21_up) -- (L21.north);
+\coordinate (L24_up) at (24, 0.4);
+\draw (L24_up) -- (L24.north);
+\coordinate (L27_up) at (27, 0.4);
+\draw (L27_up) -- (L27.north);
+\coordinate (L30_up) at (30, 0.4);
+\draw (L30_up) -- (L30.north);
+\coordinate (L33_up) at (33, 0.4);
+\draw (L33_up) -- (L33.north);
+\coordinate (L36_up) at (36, 0.4);
+\draw (L36_up) -- (L36.north);
+\coordinate (L39_up) at (39, 0.4);
+\draw (L39_up) -- (L39.north);
+\draw (L21_up) -- (L24_up);
+\draw (L24_up) -- (L27_up);
+\draw (L27_up) -- (L30_up);
+\draw (L30_up) -- (L33_up);
+\draw (L33_up) -- (L36_up);
+\draw (L36_up) -- (L39_up);
+\draw (2_30.south) -- (30.0, 0.4);
+\node[nodeB, fill={teal!15}, anchor=north] (L42) at (42, 0) {Paradigms and objectives};
+\begin{scope}[start chain=14 going below]
+\chainin (L42) [on chain, join];
+\node[nodeB, on chain, fill=blue!15, xshift=6mm, yshift=-7mm] (l_42_0) {Token-level control in unified decoders over discrete speech tokens};
+\node[nodeB, on chain, fill=blue!15] (l_42_1) {Direct prediction of turn events within the token stream};
+\node[nodeB, on chain, fill=blue!15] (l_42_2) {Data-driven scheduling aligned to human statistics for natural alternation};
+
+\end{scope}
+\draw[->] ($(L42.south west) + (2mm, 0)$) |- (l_42_0.west);
+\draw[->] ($(L42.south west) + (2mm, 0)$) |- (l_42_1.west);
+\draw[->] ($(L42.south west) + (2mm, 0)$) |- (l_42_2.west);
+
+
+\node[nodeB, fill={teal!15}, anchor=north] (L45) at (45, 0) {Barge-in and interruption detection};
+\begin{scope}[start chain=15 going below]
+\chainin (L45) [on chain, join];
+\node[nodeB, on chain, fill=blue!15, xshift=6mm, yshift=-7mm] (l_45_0) {IRQ token/head enables sub-second reactions; high interactivity F1 in clean conditions, reduced under noise};
+\node[nodeB, on chain, fill=blue!15] (l_45_1) {Barge-in augmentation (truncate agent + ~0.64 s silence) and standardized false-alarm rules improve success and latency};
+\node[nodeB, on chain, fill=blue!15] (l_45_2) {End-of-turn gating via thresholded token probabilities; silence counters trigger system speech; user barge-in preempts output};
+
+\end{scope}
+\draw[->] ($(L45.south west) + (2mm, 0)$) |- (l_45_0.west);
+\draw[->] ($(L45.south west) + (2mm, 0)$) |- (l_45_1.west);
+\draw[->] ($(L45.south west) + (2mm, 0)$) |- (l_45_2.west);
+
+
+\node[nodeB, fill={teal!15}, anchor=north] (L48) at (48, 0) {Overlap handling and floor control};
+\begin{scope}[start chain=16 going below]
+\chainin (L48) [on chain, join];
+\node[nodeB, on chain, fill=blue!15, xshift=6mm, yshift=-7mm] (l_48_0) {Learned silence insertion caps overlap (e.g., ≤0.3 s when forecasts exceed 0.6 s)};
+\node[nodeB, on chain, fill=blue!15] (l_48_1) {pyannote-based diagnostics align IPU/gap/pause/overlap distributions with human data};
+\node[nodeB, on chain, fill=blue!15] (l_48_2) {Half-duplex modes (press-and-hold) remain viable in constrained settings with high perceived naturalness};
+
+\end{scope}
+\draw[->] ($(L48.south west) + (2mm, 0)$) |- (l_48_0.west);
+\draw[->] ($(L48.south west) + (2mm, 0)$) |- (l_48_1.west);
+\draw[->] ($(L48.south west) + (2mm, 0)$) |- (l_48_2.west);
+
+
+\node[nodeB, fill={teal!15}, anchor=north] (L51) at (51, 0) {Backchanneling and non-verbal cues};
+\begin{scope}[start chain=17 going below]
+\chainin (L51) [on chain, join];
+\node[nodeB, on chain, fill=blue!15, xshift=6mm, yshift=-7mm] (l_51_0) {Map conversation states to motor states (listening→nodding, speaking→head motion, idle→breathing) to improve grounding};
+\node[nodeB, on chain, fill=blue!15] (l_51_1) {Audio-only agents: schedule low-amplitude acknowledgments under overlap ceilings; throttle to avoid elongated overlaps};
+
+\end{scope}
+\draw[->] ($(L51.south west) + (2mm, 0)$) |- (l_51_0.west);
+\draw[->] ($(L51.south west) + (2mm, 0)$) |- (l_51_1.west);
+
+
+\node[nodeB, fill={teal!15}, anchor=north] (L54) at (54, 0) {Policy learning vs inference-time control};
+\begin{scope}[start chain=18 going below]
+\chainin (L54) [on chain, join];
+\node[nodeB, on chain, fill=blue!15, xshift=6mm, yshift=-7mm] (l_54_0) {NTPP: next-token-pair prediction with channel embeddings, pair-wise causal masks, and depth-aware masking to unify overlaps/backchannels/interruptions};
+\node[nodeB, on chain, fill=blue!15] (l_54_1) {Plan-first TurnGuide: insert short textual guidance before assistant speech to preserve duplex dynamics and improve coherence};
+
+\end{scope}
+\draw[->] ($(L54.south west) + (2mm, 0)$) |- (l_54_0.west);
+\draw[->] ($(L54.south west) + (2mm, 0)$) |- (l_54_1.west);
+
+
+\node[nodeB, fill={teal!15}, anchor=north] (L57) at (57, 0) {Evaluation and augmentation};
+\begin{scope}[start chain=19 going below]
+\chainin (L57) [on chain, join];
+\node[nodeB, on chain, fill=blue!15, xshift=6mm, yshift=-7mm] (l_57_0) {Use per-channel, time-normalized stats; measure barge-in success/latency, interactivity F1; test channel-swapped robustness};
+\node[nodeB, on chain, fill=blue!15] (l_57_1) {Prefer duplex-native evaluations; correlate turn-level IPU/pause/gap/overlap on open-domain corpora};
+\node[nodeB, on chain, fill=blue!15] (l_57_2) {Augment with barge-in truncation and synthetic interruption suites; bootstrap duplex with inference-only controls};
+
+\end{scope}
+\draw[->] ($(L57.south west) + (2mm, 0)$) |- (l_57_0.west);
+\draw[->] ($(L57.south west) + (2mm, 0)$) |- (l_57_1.west);
+\draw[->] ($(L57.south west) + (2mm, 0)$) |- (l_57_2.west);
+
+
+\node[nodeB, fill={teal!15}, anchor=north] (L60) at (60, 0) {Operational blueprint};
+\begin{scope}[start chain=20 going below]
+\chainin (L60) [on chain, join];
+\node[nodeB, on chain, fill=blue!15, xshift=6mm, yshift=-7mm] (l_60_0) {Data and benchmarks: multilingual speech; evaluate SLU, acoustic robustness, tokenizer quality, speech QA/reasoning};
+\node[nodeB, on chain, fill=blue!15] (l_60_1) {Model/runtime: decoder-only real-time full-duplex S2S with chunked CoT; ~1% adapters on frozen foundations; low-bitrate codecs};
+\node[nodeB, on chain, fill=blue!15] (l_60_2) {Turn-taking mechanisms: IRQ heads, overlap caps via silence insertion, end-of-turn + silence triggers, scheduled backchannels};
+\node[nodeB, on chain, fill=blue!15] (l_60_3) {Evaluation: report barge-in success/latency and interactivity F1 under clean/noisy; document channel-swap robustness and leakage controls};
+
+\end{scope}
+\draw[->] ($(L60.south west) + (2mm, 0)$) |- (l_60_0.west);
+\draw[->] ($(L60.south west) + (2mm, 0)$) |- (l_60_1.west);
+\draw[->] ($(L60.south west) + (2mm, 0)$) |- (l_60_2.west);
+\draw[->] ($(L60.south west) + (2mm, 0)$) |- (l_60_3.west);
+
+
+\node[nodeB, fill={teal!30}, anchor=north] (2_51) at (51.0, 2.3) {Duplex and turn-taking};
+\coordinate (L42_up) at (42, 0.4);
+\draw (L42_up) -- (L42.north);
+\coordinate (L45_up) at (45, 0.4);
+\draw (L45_up) -- (L45.north);
+\coordinate (L48_up) at (48, 0.4);
+\draw (L48_up) -- (L48.north);
+\coordinate (L51_up) at (51, 0.4);
+\draw (L51_up) -- (L51.north);
+\coordinate (L54_up) at (54, 0.4);
+\draw (L54_up) -- (L54.north);
+\coordinate (L57_up) at (57, 0.4);
+\draw (L57_up) -- (L57.north);
+\coordinate (L60_up) at (60, 0.4);
+\draw (L60_up) -- (L60.north);
+\draw (L42_up) -- (L45_up);
+\draw (L45_up) -- (L48_up);
+\draw (L48_up) -- (L51_up);
+\draw (L51_up) -- (L54_up);
+\draw (L54_up) -- (L57_up);
+\draw (L57_up) -- (L60_up);
+\draw (2_51.south) -- (51.0, 0.4);
+\node[nodeB, fill={teal!15}, anchor=north] (L63) at (63, 0) {Three-strata architectural pattern};
+\begin{scope}[start chain=21 going below]
+\chainin (L63) [on chain, join];
+\node[nodeB, on chain, fill=blue!15, xshift=6mm, yshift=-7mm] (l_63_0) {Perception/tokenization: streamable with low-latency chunk- or label-synchronous cues};
+\node[nodeB, on chain, fill=blue!15] (l_63_1) {Core decoders: interleaved, duplex-aware with shared caches and read–write control};
+\node[nodeB, on chain, fill=blue!15] (l_63_2) {Synthesis back-ends: chunk-aware rendering with bounded look-ahead};
+\node[nodeB, on chain, fill=blue!15] (l_63_3) {Warm-start from text LMs; dual-token frameworks align semantic and acoustic tokens};
+
+\end{scope}
+\draw[->] ($(L63.south west) + (2mm, 0)$) |- (l_63_0.west);
+\draw[->] ($(L63.south west) + (2mm, 0)$) |- (l_63_1.west);
+\draw[->] ($(L63.south west) + (2mm, 0)$) |- (l_63_2.west);
+\draw[->] ($(L63.south west) + (2mm, 0)$) |- (l_63_3.west);
+
+
+\node[nodeB, fill={teal!15}, anchor=north] (L66) at (66, 0) {Streamable encoders and tokenizers};
+\begin{scope}[start chain=22 going below]
+\chainin (L66) [on chain, join];
+\node[nodeB, on chain, fill=blue!15, xshift=6mm, yshift=-7mm] (l_66_0) {Unified speech–text SLM with block-causal streaming attention and block-wise ~2 s decoding; single vocabulary for online S2S};
+\node[nodeB, on chain, fill=blue!15] (l_66_1) {Training-free chunk-wise expansion via expanding context windows enables streaming/duplex without retraining};
+\node[nodeB, on chain, fill=blue!15] (l_66_2) {For ST: streaming CoT prompting per chunk with real-time transcription, truncation queue, and delay-controlled rules; transferable across LSLMs};
+
+\end{scope}
+\draw[->] ($(L66.south west) + (2mm, 0)$) |- (l_66_0.west);
+\draw[->] ($(L66.south west) + (2mm, 0)$) |- (l_66_1.west);
+\draw[->] ($(L66.south west) + (2mm, 0)$) |- (l_66_2.west);
+
+
+\node[nodeB, fill={teal!15}, anchor=north] (L69) at (69, 0) {Interleaved, duplex-aware decoders};
+\begin{scope}[start chain=23 going below]
+\chainin (L69) [on chain, join];
+\node[nodeB, on chain, fill=blue!15, xshift=6mm, yshift=-7mm] (l_69_0) {Listening-while-speaking LM: middle fusion of streaming encoder signals at every block balances quality and responsiveness};
+\node[nodeB, on chain, fill=blue!15] (l_69_1) {Unified decoder over discrete speech tokens conditioned on live encodings supports barge-in and overlap};
+\node[nodeB, on chain, fill=blue!15] (l_69_2) {NTPP: channel embeddings, pair-wise causal masking, depth-aware masking for RVQ tokens; one KV cache serves both streams through overlaps};
+\node[nodeB, on chain, fill=blue!15] (l_69_3) {Text-initialized stacks emit short plan bursts before speech to keep shared caches warm across modalities};
+
+\end{scope}
+\draw[->] ($(L69.south west) + (2mm, 0)$) |- (l_69_0.west);
+\draw[->] ($(L69.south west) + (2mm, 0)$) |- (l_69_1.west);
+\draw[->] ($(L69.south west) + (2mm, 0)$) |- (l_69_2.west);
+\draw[->] ($(L69.south west) + (2mm, 0)$) |- (l_69_3.west);
+
+
+\node[nodeB, fill={teal!15}, anchor=north] (L72) at (72, 0) {Chunk-aware, low-look-ahead synthesis};
+\begin{scope}[start chain=24 going below]
+\chainin (L72) [on chain, join];
+\node[nodeB, on chain, fill=blue!15, xshift=6mm, yshift=-7mm] (l_72_0) {Duration-/span-synchronous scheduling (e.g., SyncSpeech) enables online decoding without full-context NAR passes};
+\node[nodeB, on chain, fill=blue!15] (l_72_1) {Simultaneous thinking-and-talking (Stitch) via chunked language and acoustic decoders exploits playback slack to avoid stalls};
+\node[nodeB, on chain, fill=blue!15] (l_72_2) {Unified decoders compose chunking with block-causal tokenizers and block-wise windows to minimize time-to-first-audio};
+
+\end{scope}
+\draw[->] ($(L72.south west) + (2mm, 0)$) |- (l_72_0.west);
+\draw[->] ($(L72.south west) + (2mm, 0)$) |- (l_72_1.west);
+\draw[->] ($(L72.south west) + (2mm, 0)$) |- (l_72_2.west);
+
+
+\node[nodeB, fill={teal!15}, anchor=north] (L75) at (75, 0) {Turn-aware interleaving in I/O};
+\begin{scope}[start chain=25 going below]
+\chainin (L75) [on chain, join];
+\node[nodeB, on chain, fill=blue!15, xshift=6mm, yshift=-7mm] (l_75_0) {Chunk-level interleaving with explicit UID/AID tokens (e.g., tau_SC=5 at 12.5 Hz) preserves per-channel timing and enables barge-in/overlap};
+\node[nodeB, on chain, fill=blue!15] (l_75_1) {Align assistant turns using VAD, timestamps, and punctuation for coherent duplex segments};
+\node[nodeB, on chain, fill=blue!15] (l_75_2) {Combine chunk-level alternation with token-level read–write using a single shared KV cache};
+
+\end{scope}
+\draw[->] ($(L75.south west) + (2mm, 0)$) |- (l_75_0.west);
+\draw[->] ($(L75.south west) + (2mm, 0)$) |- (l_75_1.west);
+\draw[->] ($(L75.south west) + (2mm, 0)$) |- (l_75_2.west);
+
+
+\node[nodeB, fill={teal!15}, anchor=north] (L78) at (78, 0) {Cross-stack blueprint and outcomes};
+\begin{scope}[start chain=26 going below]
+\chainin (L78) [on chain, join];
+\node[nodeB, on chain, fill=blue!15, xshift=6mm, yshift=-7mm] (l_78_0) {Perception: block-causal tokenizer + decode windows or chunk-wise expansion};
+\node[nodeB, on chain, fill=blue!15] (l_78_1) {Core: single decoder with shared KV; duplex-aware masking/fusion; short text plans interleaved with speech chunks};
+\node[nodeB, on chain, fill=blue!15] (l_78_2) {Synthesis: unit or flow/diffusion decoders with duration-/span-synchronous scheduling};
+\node[nodeB, on chain, fill=blue!15] (l_78_3) {Simultaneous translation layer: streaming CoT and delay control atop same backbone};
+\node[nodeB, on chain, fill=blue!15] (l_78_4) {Outcomes: low WER, high interactivity F1, responsive barge-in via unified, rate-aware scheduling};
+
+\end{scope}
+\draw[->] ($(L78.south west) + (2mm, 0)$) |- (l_78_0.west);
+\draw[->] ($(L78.south west) + (2mm, 0)$) |- (l_78_1.west);
+\draw[->] ($(L78.south west) + (2mm, 0)$) |- (l_78_2.west);
+\draw[->] ($(L78.south west) + (2mm, 0)$) |- (l_78_3.west);
+\draw[->] ($(L78.south west) + (2mm, 0)$) |- (l_78_4.west);
+
+
+\node[nodeB, fill={teal!30}, anchor=north] (2_70) at (70.5, 2.3) {Architectures for streaming and duplex};
+\coordinate (L63_up) at (63, 0.4);
+\draw (L63_up) -- (L63.north);
+\coordinate (L66_up) at (66, 0.4);
+\draw (L66_up) -- (L66.north);
+\coordinate (L69_up) at (69, 0.4);
+\draw (L69_up) -- (L69.north);
+\coordinate (L72_up) at (72, 0.4);
+\draw (L72_up) -- (L72.north);
+\coordinate (L75_up) at (75, 0.4);
+\draw (L75_up) -- (L75.north);
+\coordinate (L78_up) at (78, 0.4);
+\draw (L78_up) -- (L78.north);
+\draw (L63_up) -- (L66_up);
+\draw (L66_up) -- (L69_up);
+\draw (L69_up) -- (L72_up);
+\draw (L72_up) -- (L75_up);
+\draw (L75_up) -- (L78_up);
+\draw (2_70.south) -- (70.5, 0.4);
+\node[nodeB, fill={teal!30}, anchor=north, text width=15em] (1_40) at (40.125, 4.6) {Real-Time Streaming and Duplex Dialogue};
+\coordinate (2_9_up) at (9.0, 2.6999999999999997);
+\draw (2_9_up) -- (2_9.north);
+\coordinate (2_30_up) at (30.0, 2.6999999999999997);
+\draw (2_30_up) -- (2_30.north);
+\coordinate (2_51_up) at (51.0, 2.6999999999999997);
+\draw (2_51_up) -- (2_51.north);
+\coordinate (2_70_up) at (70.5, 2.6999999999999997);
+\draw (2_70_up) -- (2_70.north);
+\draw (2_9_up) -- (2_30_up);
+\draw (2_30_up) -- (2_51_up);
+\draw (2_51_up) -- (2_70_up);
+\draw (1_40.south) -- (40.125, 2.6999999999999997);
+
+
+\end{tikzpicture}
+\end{adjustbox}
+
+\caption{Figure: Hierarchical map of real-time streaming and duplex dialogue. The tree organizes the section into four pillars—Latency-aware design, Streaming policies, Duplex/turn-taking, and Architectures—each decomposed into operational sub-areas and leaf-level practices. It highlights how low-rate tokenization, chunking/read–write schedules, and few-step diffusion drive onset and steady-state latency; how wait-k, alternation, incremental, and duration-synchronous policies compose with streamable encoders and tokenizers; how duplex agents handle barge-in, overlap, and backchannels via IRQ heads, learned silence insertion, and plan-first guidance; and how three-strata architectures (streamable perception, duplex-aware decoders, chunk-aware synthesis) deliver full-duplex interaction. The structure emphasizes relationships—e.g., token cadence reduces prefill; plan bursts keep caches warm; policy metrics (AL/LAAL/StreamLAAL) align with first-chunk decomposition—providing a concise blueprint for building and evaluating latency-robust, duplex-capable systems.}
+\label{fig:tree_figure_Real }
+
+\end{figure}

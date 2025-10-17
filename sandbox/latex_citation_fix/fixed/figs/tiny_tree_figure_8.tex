@@ -1,0 +1,99 @@
+
+\definecolor{color_root}{HTML}{bc966f}
+\definecolor{color_node}{HTML}{b8a9a9}
+\definecolor{color_list}{HTML}{fdcee4}
+
+
+
+\begin{figure}[h]
+   \centering
+   \begin{adjustbox}{max width=\textwidth, center}
+      \begin{tikzpicture}[
+         start chain = going below,
+         node distance=1mm,
+         sibling distance=40mm,
+         edge from parent/.style={->,draw},
+         >=latex,
+         basic/.style  = {
+            draw, text width=1cm, drop shadow, rectangle
+         },
+         root/.style   = {
+            basic, rounded corners=2pt, 
+            thin, align=center,text width=15em, 
+            font=\small\bfseries,
+            fill=blue!20
+         },
+         nodeB/.style = {
+            basic, rounded corners=5pt, 
+            thin,align=center, fill=green!20,
+            font=\scriptsize,
+            text width=8em
+         },
+         nodeL/.style = {
+            basic, thin, 
+            align=center, 
+            font=\scriptsize\itshape, fill=pink!20, text width=9em
+         }
+      ]
+   
+\node[root, fill=color_root!60] {Benchmark suites and leaderboards} child {node[nodeB, fill=color_node!40] (leaf_66) {Instructional multi-task benchmark suites}}child {node[nodeB, fill=color_node!40] (leaf_67) {Dialogue, style, and diversity evaluations}}child {node[nodeB, fill=color_node!40] (leaf_68) {Robustness, tokens, and long context}} ;
+\begin{scope}[start chain=66 going below]
+\chainin (leaf_66) [on chain, join];
+\node[nodeL, on chain, fill=color_list!15, xshift=6mm, yshift=-5mm] (l660) {Dynamic-SUPERB Phase-2\cite{huang2025dynamicsuperbphase2collaborativelyexpand}};
+\node[nodeL, on chain, fill=color_list!15] (l661) {BESTOW streamable SLMs\cite{chen2024bestowefficientstreamablespeechlanguagem}};
+\node[nodeL, on chain, fill=color_list!15] (l662) {DeSTA2 scoring adoption\cite{lu2025desta2developinginstructionfollowingspee}};
+\node[nodeL, on chain, fill=color_list!15] (l663) {IndicSUPERB regional standardization\cite{entry2025indicsuperbspeechprocessinguniversalperf}};
+
+\end{scope}
+\draw[->] ($(leaf_66.south west) + (2mm, 0)$) |- (l660.west);
+\draw[->] ($(leaf_66.south west) + (2mm, 0)$) |- (l661.west);
+\draw[->] ($(leaf_66.south west) + (2mm, 0)$) |- (l662.west);
+\draw[->] ($(leaf_66.south west) + (2mm, 0)$) |- (l663.west);
+
+
+
+\begin{scope}[start chain=67 going below]
+\chainin (leaf_67) [on chain, join];
+\node[nodeL, on chain, fill=color_list!15, xshift=6mm, yshift=-5mm] (l670) {TELEVAL Chinese interactive\cite{li2025televaldynamicbenchmarkdesignedspokenlan}};
+\node[nodeL, on chain, fill=color_list!15] (l671) {SALMon acoustic awareness\cite{maimon2025salmonsuiteacousticlanguagemodelevaluati}};
+\node[nodeL, on chain, fill=color_list!15] (l672) {MADSpeech acoustic diversity\cite{futeral2025madspeechmeasuresacousticdiversity}};
+\node[nodeL, on chain, fill=color_list!15] (l673) {ALLM style judges\cite{chiang2025audioawarelargelanguagemodelsasjudgesspe}};
+
+\end{scope}
+\draw[->] ($(leaf_67.south west) + (2mm, 0)$) |- (l670.west);
+\draw[->] ($(leaf_67.south west) + (2mm, 0)$) |- (l671.west);
+\draw[->] ($(leaf_67.south west) + (2mm, 0)$) |- (l672.west);
+\draw[->] ($(leaf_67.south west) + (2mm, 0)$) |- (l673.west);
+
+
+
+\begin{scope}[start chain=68 going below]
+\chainin (leaf_68) [on chain, join];
+\node[nodeL, on chain, fill=color_list!15, xshift=6mm, yshift=-5mm] (l680) {VoxEval speech QA\cite{cui2025voxevalbenchmarkingknowledgeunderstandin}};
+\node[nodeL, on chain, fill=color_list!15] (l681) {DASB discrete tokens\cite{mousavi2024dasbdiscreteaudiospeechbenchmark}};
+\node[nodeL, on chain, fill=color_list!15] (l682) {STAB tokenizer assessment\cite{vashishth2024stabspeechtokenizerassessmentbenchmark}};
+\node[nodeL, on chain, fill=color_list!15] (l683) {Token survey insights\cite{guo2025recentadvancesdiscretespeechtokensreview}};
+\node[nodeL, on chain, fill=color_list!15] (l684) {LongSpeech-Eval stability\cite{park2025longformspeechgenerationspokenlanguagemo}};
+\node[nodeL, on chain, fill=color_list!15] (l685) {SLM-TTS six axes\cite{wang2024evaluatingtextspeechsynthesislargediscre}};
+\node[nodeL, on chain, fill=color_list!15] (l686) {Reporting best practices\cite{vashishth2024stabspeechtokenizerassessmentbenchmark,noroozi2024instructiondatagenerationunsupervisedada}};
+
+\end{scope}
+\draw[->] ($(leaf_68.south west) + (2mm, 0)$) |- (l680.west);
+\draw[->] ($(leaf_68.south west) + (2mm, 0)$) |- (l681.west);
+\draw[->] ($(leaf_68.south west) + (2mm, 0)$) |- (l682.west);
+\draw[->] ($(leaf_68.south west) + (2mm, 0)$) |- (l683.west);
+\draw[->] ($(leaf_68.south west) + (2mm, 0)$) |- (l684.west);
+\draw[->] ($(leaf_68.south west) + (2mm, 0)$) |- (l685.west);
+\draw[->] ($(leaf_68.south west) + (2mm, 0)$) |- (l686.west);
+
+
+
+
+
+\end{tikzpicture}
+\end{adjustbox}
+
+\caption{This figure organizes recent benchmark suites and leaderboards for spoken language modeling into three branches: (1) instruction-style, multi-task suites spanning global and regional settings; (2) dialogue-, style-, and diversity-focused evaluations including audio-aware LLM judges; and (3) specialized robustness and design fronts covering end-to-end spoken knowledge QA, discrete-token benchmarks and surveys, long-context stability, SLM-TTS axes, and reporting conventions. The layout highlights complementary coverage and logical progression from broad capability suites to interaction quality and robustness/engineering concerns.}
+\label{fig:tiny_tree_figure_8}
+
+\end{figure}

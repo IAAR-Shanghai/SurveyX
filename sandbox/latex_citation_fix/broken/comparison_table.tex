@@ -1,0 +1,17 @@
+\begin{table}[ht]
+    \centering
+    \small
+    \setlength{\tabcolsep}{6pt}
+    \renewcommand{\arraystretch}{1.2}
+    \begin{tabular}{p{0.27\linewidth} p{0.33\linewidth} p{0.33\linewidth}}
+        \toprule
+        \textbf{Pillar} & \textbf{What to report} & \textbf{Why it matters} \\
+        \midrule
+        Metric taxonomy & Separate semantic fidelity (WER/CER, BLEU/COMET), acoustic quality (MOS/UTMOS, ViSQOL), identity/prosody (SIM, FAD), and tokenizer diagnostics (STAB, fastabx). & Prevents incompatible comparisons and surfaces regressions in controllability, latency, and robustness. \\
+        End-to-end protocols & Publish prompts, judges, decoding settings, and contamination checks; align on Dynamic-SUPERB/TELEVAL-style official inference for fairness; couple duplex metrics with streaming cadences. & Enables replication and reduces silent prompt/judge drift across speech–LLM evaluations. \\
+        Rate-aware evaluation & Tie every score to LM-facing token clock, bitrate, sequence length, TTFA/RTF, and batching hardware; share iso-rate/iso-bitrate scorecards. & Grounds quality and safety claims in the practical operating points needed for deployment. \\
+        \bottomrule
+    \end{tabular}
+    \caption{Mapping the evaluation framework to actionable reporting pillars. Table~\ref{tab:summary_table} complements this view with a broader survey-wide taxonomy.}
+    \label{tab:comparison_table}
+\end{table}

@@ -1,0 +1,19 @@
+
+    \begin{table}[h!]
+    \centering
+    \resizebox{\textwidth}{!}{%
+    \begin{tabular}{p{0.2\textwidth} p{0.4\textwidth} p{0.4\textwidth} p{0.4\textwidth}}
+    \toprule
+    \textbf{Method Name} & \textbf{Metric Definitions} & \textbf{Compute Attribution} & \textbf{Reporting Standards} \\
+\midrule
+FastAdaSP\cite{lu2024fastadaspmultitaskadaptedefficientinfere} & Real Time Factor & Constant/decay Scheduling & A100 80gb \\
+StreamUni\cite{guo2025streamuniachievingstreamingspeechtransla} & Al, Laal, Streamlaal & Delay K & Al, Sacrebleu, Comet \\
+LSLM\cite{ma2024languagemodelcanlistenwhilespeaking} & Success Window 1S & Middle Fusion & Wer And F1 \\
+SyllableLM\cite{baade2024syllablelmlearningcoarsesemanticunitsspe} & Rtf Measured & Unit Rates Controlled & Nvidia A40 Hardware \\
+
+    \bottomrule
+    \end{tabular}%
+    }
+    \caption{Comparison of representative recent systems across the three pillars of latency evaluation: metric definitions, compute attribution and scheduling, and reporting standards/hardware. For each method, the table records the primary latency/quality metrics (e.g., RTF, AL/LAAL/StreamLAAL, success-window), the scheduling or attribution policy (e.g., delay-k, mid-fusion, unit-rate/decay), and the reported baselines or devices (e.g., BLEU/COMET/WER, A100/A40). The heterogeneity highlights the need for the standardized measurement, scheduling, and reporting practices articulated in the accompanying framework.}
+    
+\label{tab:Arbitrary_table_1}\end{table}

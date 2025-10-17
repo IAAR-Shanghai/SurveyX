@@ -1,0 +1,123 @@
+
+\definecolor{color_root}{HTML}{96a25f}
+\definecolor{color_node}{HTML}{f3e6f1}
+\definecolor{color_list}{HTML}{727b83}
+
+
+
+\begin{figure}[h]
+   \centering
+   \begin{adjustbox}{max width=\textwidth, center}
+      \begin{tikzpicture}[
+         start chain = going below,
+         node distance=1mm,
+         sibling distance=40mm,
+         edge from parent/.style={->,draw},
+         >=latex,
+         basic/.style  = {
+            draw, text width=1cm, drop shadow, rectangle
+         },
+         root/.style   = {
+            basic, rounded corners=2pt, 
+            thin, align=center,text width=15em, 
+            font=\small\bfseries,
+            fill=blue!20
+         },
+         nodeB/.style = {
+            basic, rounded corners=5pt, 
+            thin,align=center, fill=green!20,
+            font=\scriptsize,
+            text width=8em
+         },
+         nodeL/.style = {
+            basic, thin, 
+            align=center, 
+            font=\scriptsize\itshape, fill=pink!20, text width=9em
+         }
+      ]
+   
+\node[root, fill=color_root!60] {Latency metrics and evaluation methodology} child {node[nodeB, fill=color_node!40] (leaf_69) {Latency definitions and measurement protocol}}child {node[nodeB, fill=color_node!40] (leaf_70) {Compute accounting and path latency}}child {node[nodeB, fill=color_node!40] (leaf_71) {Reporting fields and normalization guidance}} ;
+\begin{scope}[start chain=69 going below]
+\chainin (leaf_69) [on chain, join];
+\node[nodeL, on chain, fill=color_list!15, xshift=6mm, yshift=-5mm] (l690) {Real-time factor basics\cite{lu2024fastadaspmultitaskadaptedefficientinfere}};
+\node[nodeL, on chain, fill=color_list!15] (l691) {Report throughput recipe\cite{lu2024fastadaspmultitaskadaptedefficientinfere}};
+\node[nodeL, on chain, fill=color_list!15] (l692) {TTFT (text vs speech)\cite{tsunoo2024decoderonlyarchitecturespeechrecognition}};
+\node[nodeL, on chain, fill=color_list!15] (l693) {First audio-chunk time\cite{lu2024fastadaspmultitaskadaptedefficientinfere}};
+\node[nodeL, on chain, fill=color_list!15] (l694) {Streaming lag metrics\cite{guo2025streamuniachievingstreamingspeechtransla}};
+\node[nodeL, on chain, fill=color_list!15] (l695) {Quality versus lag\cite{guo2025streamuniachievingstreamingspeechtransla}};
+\node[nodeL, on chain, fill=color_list!15] (l696) {Duplex IRQ evaluation\cite{ma2024languagemodelcanlistenwhilespeaking}};
+\node[nodeL, on chain, fill=color_list!15] (l697) {Shared long-audio workloads\cite{li2025televaldynamicbenchmarkdesignedspokenlan}};
+
+\end{scope}
+\draw[->] ($(leaf_69.south west) + (2mm, 0)$) |- (l690.west);
+\draw[->] ($(leaf_69.south west) + (2mm, 0)$) |- (l691.west);
+\draw[->] ($(leaf_69.south west) + (2mm, 0)$) |- (l692.west);
+\draw[->] ($(leaf_69.south west) + (2mm, 0)$) |- (l693.west);
+\draw[->] ($(leaf_69.south west) + (2mm, 0)$) |- (l694.west);
+\draw[->] ($(leaf_69.south west) + (2mm, 0)$) |- (l695.west);
+\draw[->] ($(leaf_69.south west) + (2mm, 0)$) |- (l696.west);
+\draw[->] ($(leaf_69.south west) + (2mm, 0)$) |- (l697.west);
+
+
+
+\begin{scope}[start chain=70 going below]
+\chainin (leaf_70) [on chain, join];
+\node[nodeL, on chain, fill=color_list!15, xshift=6mm, yshift=-5mm] (l700) {Encoder buffering breakdown\cite{lu2024fastadaspmultitaskadaptedefficientinfere}};
+\node[nodeL, on chain, fill=color_list!15] (l701) {Tokenizer/adaptor overhead\cite{vashishth2024stabspeechtokenizerassessmentbenchmark}};
+\node[nodeL, on chain, fill=color_list!15] (l702) {LLM prefill versus decoding\cite{lu2024fastadaspmultitaskadaptedefficientinfere}};
+\node[nodeL, on chain, fill=color_list!15] (l703) {Token-to-waveform decoding\cite{baade2024syllablelmlearningcoarsesemanticunitsspe}};
+\node[nodeL, on chain, fill=color_list!15] (l704) {Unified policy handling\cite{guo2025streamuniachievingstreamingspeechtransla}};
+\node[nodeL, on chain, fill=color_list!15] (l705) {Token-rate effects\cite{baade2024syllablelmlearningcoarsesemanticunitsspe}};
+\node[nodeL, on chain, fill=color_list!15] (l706) {Fixed device precision\cite{lu2024fastadaspmultitaskadaptedefficientinfere}};
+\node[nodeL, on chain, fill=color_list!15] (l707) {No-batch first packet\cite{lu2024fastadaspmultitaskadaptedefficientinfere}};
+
+\end{scope}
+\draw[->] ($(leaf_70.south west) + (2mm, 0)$) |- (l700.west);
+\draw[->] ($(leaf_70.south west) + (2mm, 0)$) |- (l701.west);
+\draw[->] ($(leaf_70.south west) + (2mm, 0)$) |- (l702.west);
+\draw[->] ($(leaf_70.south west) + (2mm, 0)$) |- (l703.west);
+\draw[->] ($(leaf_70.south west) + (2mm, 0)$) |- (l704.west);
+\draw[->] ($(leaf_70.south west) + (2mm, 0)$) |- (l705.west);
+\draw[->] ($(leaf_70.south west) + (2mm, 0)$) |- (l706.west);
+\draw[->] ($(leaf_70.south west) + (2mm, 0)$) |- (l707.west);
+
+
+
+\begin{scope}[start chain=71 going below]
+\chainin (leaf_71) [on chain, join];
+\node[nodeL, on chain, fill=color_list!15, xshift=6mm, yshift=-5mm] (l710) {Minimum latency fields\cite{tsunoo2024decoderonlyarchitecturespeechrecognition}};
+\node[nodeL, on chain, fill=color_list!15] (l711) {Tokens-per-second reporting\cite{lu2024fastadaspmultitaskadaptedefficientinfere}};
+\node[nodeL, on chain, fill=color_list!15] (l712) {Memory and VRAM\cite{lu2024fastadaspmultitaskadaptedefficientinfere}};
+\node[nodeL, on chain, fill=color_list!15] (l713) {AL/LAAL reporting\cite{guo2025streamuniachievingstreamingspeechtransla}};
+\node[nodeL, on chain, fill=color_list!15] (l714) {Duplex sheet metrics\cite{ma2024languagemodelcanlistenwhilespeaking}};
+\node[nodeL, on chain, fill=color_list!15] (l715) {Acoustic condition standardization\cite{maimon2025salmonsuiteacousticlanguagemodelevaluati}};
+\node[nodeL, on chain, fill=color_list!15] (l716) {Tokenizer-aware controls\cite{messica2024nastnoiseawarespeechtokenizationlanguage}};
+\node[nodeL, on chain, fill=color_list!15] (l717) {Dataset/split normalization\cite{entry2025indicsuperbspeechprocessinguniversalperf}};
+\node[nodeL, on chain, fill=color_list!15] (l718) {Tokenization alignment effects\cite{turetzky2024lastlanguagemodelawarespeechtokenization}};
+\node[nodeL, on chain, fill=color_list!15] (l719) {Quality–latency curves\cite{zhao2024textlessstreamingspeechtranslationsemant}};
+\node[nodeL, on chain, fill=color_list!15] (l7110) {Compute and training time\cite{maimon2025slammingtrainingspeechlanguagemodelonegp}};
+
+\end{scope}
+\draw[->] ($(leaf_71.south west) + (2mm, 0)$) |- (l710.west);
+\draw[->] ($(leaf_71.south west) + (2mm, 0)$) |- (l711.west);
+\draw[->] ($(leaf_71.south west) + (2mm, 0)$) |- (l712.west);
+\draw[->] ($(leaf_71.south west) + (2mm, 0)$) |- (l713.west);
+\draw[->] ($(leaf_71.south west) + (2mm, 0)$) |- (l714.west);
+\draw[->] ($(leaf_71.south west) + (2mm, 0)$) |- (l715.west);
+\draw[->] ($(leaf_71.south west) + (2mm, 0)$) |- (l716.west);
+\draw[->] ($(leaf_71.south west) + (2mm, 0)$) |- (l717.west);
+\draw[->] ($(leaf_71.south west) + (2mm, 0)$) |- (l718.west);
+\draw[->] ($(leaf_71.south west) + (2mm, 0)$) |- (l719.west);
+\draw[->] ($(leaf_71.south west) + (2mm, 0)$) |- (l7110.west);
+
+
+
+
+
+\end{tikzpicture}
+\end{adjustbox}
+
+\caption{Figure: Hierarchical map of latency evaluation for speech/SLM systems. Top-level categories organize (1) core latency definitions and protocols (RTF, TTFT, streaming lag, duplex IRQ) anchored to shared long-audio workloads; (2) compute accounting and path-wise latency decomposition across encoder buffering, tokenization/adapters, LLM prefill/decoding, and token-to-waveform synthesis with policy and token-rate effects; and (3) reporting fields and normalization guidance, covering required fields, duplex sheets, acoustic standardization, dataset/split and tokenization alignment controls, quality–latency curves, and compute/time disclosure. Citations indicate exemplar methods and benchmarks supporting each element.}
+\label{fig:tiny_tree_figure_9}
+
+\end{figure}

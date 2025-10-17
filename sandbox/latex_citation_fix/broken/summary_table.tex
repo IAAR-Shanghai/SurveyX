@@ -1,0 +1,19 @@
+\begin{table}[ht]
+    \centering
+    \small
+    \setlength{\tabcolsep}{6pt}
+    \renewcommand{\arraystretch}{1.25}
+    \begin{tabular}{p{0.23\linewidth} p{0.47\linewidth} p{0.22\linewidth}}
+        \toprule
+        \textbf{Axis} & \textbf{Representative coverage in this survey} & \textbf{Indicative references} \\
+        \midrule
+        Tokenization \& codecs & LM-aligned semantic units, phonetic/streamable designs, text-aware diffusion codecs, and RVQ stacks that trade bitrate for controllability. & \cite{har-tuv2025pastphoneticacousticspeechtokenizer,li2025continuousspeechtokenizertext,wang2025tadicodectextawarediffusionspeechtokeniz} \\
+        Encoders \& representations & Layer-specialized SSL encoders, projector-based alignment, contextual biasing, and multilingual robustness probes (fastabx, MAD Speech). & \cite{labrak2025empiricalanalysisdiscreteunitrepresentat,chiang2025audioawarelargelanguagemodelsasjudgesspe,futeral2025madspeechmeasuresacousticdiversity} \\
+        Modeling \& generation & Duplex/streaming schedules, semantic-planner + acoustic-renderer stacks, and interleaved speech--text training that preserves text priors. & \cite{ma2024languagemodelcanlistenwhilespeaking,chiang2025stitchsimultaneousthinkingtalkingchunked,zeng2024scalingspeechtextpretrainingsyntheticint} \\
+        Training \& alignment & Multi-stage pipelines coupling tokenizer pretraining, modality adaptation, supervised specialization, and instruction/post-alignment with standardized diagnostics. & \cite{maimon2025scalinganalysisinterleavedspeechtextlang,li2025continuousspeechtokenizertext,vashishth2024stabspeechtokenizerassessmentbenchmark} \\
+        Evaluation \& deployment & Rate/latency-aware scorecards, judge governance, acoustic robustness audits, and safety/ethics release checklists anchored by IndicSUPERB, SALMon, VoxEval, and TELEVAL. & \cite{entry2025indicsuperbspeechprocessinguniversalperf,maimon2025salmonsuiteacousticlanguagemodelevaluati,cui2025voxevalbenchmarkingknowledgeunderstandin,li2025televaldynamicbenchmarkdesignedspokenlan} \\
+        \bottomrule
+    \end{tabular}
+    \caption{High-level map from the survey’s five recurring axes to the themes emphasized in each major section.}
+    \label{tab:summary_table}
+\end{table}

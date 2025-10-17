@@ -1,0 +1,125 @@
+
+\definecolor{color_root}{HTML}{c77fa1}
+\definecolor{color_node}{HTML}{b8a9a9}
+\definecolor{color_list}{HTML}{b9ac99}
+
+
+
+\begin{figure}[h]
+   \centering
+   \begin{adjustbox}{max width=\textwidth, center}
+      \begin{tikzpicture}[
+         start chain = going below,
+         node distance=1mm,
+         sibling distance=40mm,
+         edge from parent/.style={->,draw},
+         >=latex,
+         basic/.style  = {
+            draw, text width=1cm, drop shadow, rectangle
+         },
+         root/.style   = {
+            basic, rounded corners=2pt, 
+            thin, align=center,text width=15em, 
+            font=\small\bfseries,
+            fill=blue!20
+         },
+         nodeB/.style = {
+            basic, rounded corners=5pt, 
+            thin,align=center, fill=green!20,
+            font=\scriptsize,
+            text width=8em
+         },
+         nodeL/.style = {
+            basic, thin, 
+            align=center, 
+            font=\scriptsize\itshape, fill=pink!20, text width=9em
+         }
+      ]
+   
+\node[root, fill=color_root!60] {Multi-stage speech–text pipeline overview} child {node[nodeB, fill=color_node!40] (leaf_54) {Stage 0 interfaces and tokenizers}}child {node[nodeB, fill=color_node!40] (leaf_55) {Stages 1–2 alignment and consolidation}}child {node[nodeB, fill=color_node!40] (leaf_56) {Stages 3–4 specialization and stability}} ;
+\begin{scope}[start chain=54 going below]
+\chainin (leaf_54) [on chain, join];
+\node[nodeL, on chain, fill=color_list!15, xshift=6mm, yshift=-5mm] (l540) {LM-aware tokenizer LAST\\cite{turetzky2024lastlanguagemodelawarespeechtokenization}};
+\node[nodeL, on chain, fill=color_list!15] (l541) {Phonetic-acoustic PAST\\cite{har-tuv2025pastphoneticacousticspeechtokenizer}};
+\node[nodeL, on chain, fill=color_list!15] (l542) {Ultra-low-rate TaDiCodec\\cite{wang2025tadicodectextawarediffusionspeechtokeniz}};
+\node[nodeL, on chain, fill=color_list!15] (l543) {Training-free dMel tokens\\cite{bai2025dmelspeechtokenizationmadesimple}};
+\node[nodeL, on chain, fill=color_list!15] (l544) {AV pretraining VQ-MAE-AV\\cite{sadok2025vectorquantizedmaskedautoencoderaudiovis}};
+\node[nodeL, on chain, fill=color_list!15] (l545) {Discrete consistency SC/PC\\cite{liu2024analyzingmitigatinginconsistencydiscrete}};
+\node[nodeL, on chain, fill=color_list!15] (l546) {STAB tokenizer diagnostics\\cite{vashishth2024stabspeechtokenizerassessmentbenchmark}};
+\node[nodeL, on chain, fill=color_list!15] (l547) {fastabx separability probes\\cite{poli2025fastabxlibraryefficientcomputationabxdis}};
+\node[nodeL, on chain, fill=color_list!15] (l548) {IndicSUPERB SLU benchmark\\cite{entry2025indicsuperbspeechprocessinguniversalperf title=}};
+\node[nodeL, on chain, fill=color_list!15] (l549) {Hybrid AR/NAR S2ST\\cite{peng2024mslms2stmultitaskspeechlanguagemodeltext}};
+
+\end{scope}
+\draw[->] ($(leaf_54.south west) + (2mm, 0)$) |- (l540.west);
+\draw[->] ($(leaf_54.south west) + (2mm, 0)$) |- (l541.west);
+\draw[->] ($(leaf_54.south west) + (2mm, 0)$) |- (l542.west);
+\draw[->] ($(leaf_54.south west) + (2mm, 0)$) |- (l543.west);
+\draw[->] ($(leaf_54.south west) + (2mm, 0)$) |- (l544.west);
+\draw[->] ($(leaf_54.south west) + (2mm, 0)$) |- (l545.west);
+\draw[->] ($(leaf_54.south west) + (2mm, 0)$) |- (l546.west);
+\draw[->] ($(leaf_54.south west) + (2mm, 0)$) |- (l547.west);
+\draw[->] ($(leaf_54.south west) + (2mm, 0)$) |- (l548.west);
+\draw[->] ($(leaf_54.south west) + (2mm, 0)$) |- (l549.west);
+
+
+
+\begin{scope}[start chain=55 going below]
+\chainin (leaf_55) [on chain, join];
+\node[nodeL, on chain, fill=color_list!15, xshift=6mm, yshift=-5mm] (l550) {Connector-first SLM adapter\\cite{wang2023slmbridgethingapbetweenspeechtextfoundat}};
+\node[nodeL, on chain, fill=color_list!15] (l551) {LM-SPT semantic tokens\\cite{jo2025lmsptalignedsemanticdistillationspeechto}};
+\node[nodeL, on chain, fill=color_list!15] (l552) {Shared-vocab interleaving pretraining\\cite{zeng2024scalingspeechtextpretrainingsyntheticint}};
+\node[nodeL, on chain, fill=color_list!15] (l553) {Whisper→LLM projector bridges\\cite{nguyen2025qwenvsgemmaintegrationwhispercomparative}};
+\node[nodeL, on chain, fill=color_list!15] (l554) {Affect-first BLSP-Emo\\cite{wang2024blspemotowardsempatheticlargespeechlangu}};
+\node[nodeL, on chain, fill=color_list!15] (l555) {Descriptive captions DeSTA\\cite{lu2024destaenhancingspeechlanguagemodelsthroug}};
+\node[nodeL, on chain, fill=color_list!15] (l556) {Unified caption DeSTA2\\cite{lu2025desta2developinginstructionfollowingspee}};
+\node[nodeL, on chain, fill=color_list!15] (l557) {Instruction data synthesis\\cite{noroozi2024instructiondatagenerationunsupervisedada}};
+\node[nodeL, on chain, fill=color_list!15] (l558) {Prompt-tuning textless SLMs\\cite{hsu2024exploringcontextlearningtextlessspeechla}};
+\node[nodeL, on chain, fill=color_list!15] (l559) {Decoder-only ASR CTC\\cite{tsunoo2024decoderonlyarchitecturespeechrecognition}};
+
+\end{scope}
+\draw[->] ($(leaf_55.south west) + (2mm, 0)$) |- (l550.west);
+\draw[->] ($(leaf_55.south west) + (2mm, 0)$) |- (l551.west);
+\draw[->] ($(leaf_55.south west) + (2mm, 0)$) |- (l552.west);
+\draw[->] ($(leaf_55.south west) + (2mm, 0)$) |- (l553.west);
+\draw[->] ($(leaf_55.south west) + (2mm, 0)$) |- (l554.west);
+\draw[->] ($(leaf_55.south west) + (2mm, 0)$) |- (l555.west);
+\draw[->] ($(leaf_55.south west) + (2mm, 0)$) |- (l556.west);
+\draw[->] ($(leaf_55.south west) + (2mm, 0)$) |- (l557.west);
+\draw[->] ($(leaf_55.south west) + (2mm, 0)$) |- (l558.west);
+\draw[->] ($(leaf_55.south west) + (2mm, 0)$) |- (l559.west);
+
+
+
+\begin{scope}[start chain=56 going below]
+\chainin (leaf_56) [on chain, join];
+\node[nodeL, on chain, fill=color_list!15, xshift=6mm, yshift=-5mm] (l560) {Duplex streaming IRQ\\cite{ma2024languagemodelcanlistenwhilespeaking}};
+\node[nodeL, on chain, fill=color_list!15] (l561) {Streaming curricula plans\\cite{zeng2024scalingspeechtextpretrainingsyntheticint}};
+\node[nodeL, on chain, fill=color_list!15] (l562) {SpeechRAG listen-retrieve\\cite{min2025speechretrievalaugmentedgenerationwithou}};
+\node[nodeL, on chain, fill=color_list!15] (l563) {Preference RL with constraints\\cite{li2025seewossubmissionmlcslmlessonslearnedspee}};
+\node[nodeL, on chain, fill=color_list!15] (l564) {Optimal transport regularization\\cite{xu2025optimaltransportregularizationspeechtext}};
+\node[nodeL, on chain, fill=color_list!15] (l565) {Contextual bias rescoring\\cite{sun2023contextualbiasingnamedentitieslargelangu}};
+\node[nodeL, on chain, fill=color_list!15] (l566) {Freeze connectors, LoRA\\cite{hsu2024exploringcontextlearningtextlessspeechla}};
+\node[nodeL, on chain, fill=color_list!15] (l567) {Standardized STAB reports\\cite{vashishth2024stabspeechtokenizerassessmentbenchmark}};
+
+\end{scope}
+\draw[->] ($(leaf_56.south west) + (2mm, 0)$) |- (l560.west);
+\draw[->] ($(leaf_56.south west) + (2mm, 0)$) |- (l561.west);
+\draw[->] ($(leaf_56.south west) + (2mm, 0)$) |- (l562.west);
+\draw[->] ($(leaf_56.south west) + (2mm, 0)$) |- (l563.west);
+\draw[->] ($(leaf_56.south west) + (2mm, 0)$) |- (l564.west);
+\draw[->] ($(leaf_56.south west) + (2mm, 0)$) |- (l565.west);
+\draw[->] ($(leaf_56.south west) + (2mm, 0)$) |- (l566.west);
+\draw[->] ($(leaf_56.south west) + (2mm, 0)$) |- (l567.west);
+
+
+
+
+
+\end{tikzpicture}
+\end{adjustbox}
+
+\caption{This figure shows a concise two-level map of multi-stage pipelines for speech–text models. Stage 0 aggregates interface and tokenization choices (LM-aware and phonetic tokenizers, ultra-low-rate codecs, audiovisual pretraining, and diagnostics). Stages 1–2 cover modality alignment and consolidation via connector-first adapters, interleaved shared-vocabulary pretraining, caption-based alignment, and paralinguistic grounding. Stages 3–4 highlight specialization and optimization for streaming/duplex use, ASR-free retrieval (SpeechRAG), preference learning with structural constraints, contextual biasing, and stability/reporting practices, with representative works cited at each leaf.}
+\label{fig:tiny_tree_figure_4}
+
+\end{figure}

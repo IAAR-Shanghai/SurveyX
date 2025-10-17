@@ -1,0 +1,101 @@
+
+\definecolor{color_root}{HTML}{c77fa1}
+\definecolor{color_node}{HTML}{D3E0EA}
+\definecolor{color_list}{HTML}{9C7C7C}
+
+
+
+\begin{figure}[h]
+   \centering
+   \begin{adjustbox}{max width=\textwidth, center}
+      \begin{tikzpicture}[
+         start chain = going below,
+         node distance=1mm,
+         sibling distance=40mm,
+         edge from parent/.style={->,draw},
+         >=latex,
+         basic/.style  = {
+            draw, text width=1cm, drop shadow, rectangle
+         },
+         root/.style   = {
+            basic, rounded corners=2pt, 
+            thin, align=center,text width=15em, 
+            font=\small\bfseries,
+            fill=blue!20
+         },
+         nodeB/.style = {
+            basic, rounded corners=5pt, 
+            thin,align=center, fill=green!20,
+            font=\scriptsize,
+            text width=8em
+         },
+         nodeL/.style = {
+            basic, thin, 
+            align=center, 
+            font=\scriptsize\itshape, fill=pink!20, text width=9em
+         }
+      ]
+   
+\node[root, fill=color_root!60] {Implementation recipes and benchmarks overview} child {node[nodeB, fill=color_node!40] (leaf_72) {Tokenization and alignment best practices}}child {node[nodeB, fill=color_node!40] (leaf_73) {Modeling blueprints and compute recipes}}child {node[nodeB, fill=color_node!40] (leaf_74) {Evaluation protocols and open benchmarks}} ;
+\begin{scope}[start chain=72 going below]
+\chainin (leaf_72) [on chain, join];
+\node[nodeL, on chain, fill=color_list!15, xshift=6mm, yshift=-5mm] (l720) {Efficient k-means unitization\\cite{bai2025dmelspeechtokenizationmadesimple,turetzky2024lastlanguagemodelawarespeechtokenization,kando2025exploringeffectsegmentationvocabularysiz}};
+\node[nodeL, on chain, fill=color_list!15] (l721) {In-memory cross-node k-means\\cite{chen2023reducingbarriersselfsupervisedlearninghu}};
+\node[nodeL, on chain, fill=color_list!15] (l722) {OTReg two-stage schedule\\cite{xu2025optimaltransportregularizationspeechtext}};
+\node[nodeL, on chain, fill=color_list!15] (l723) {LM-aware tokenizers set\\cite{turetzky2024lastlanguagemodelawarespeechtokenization,har-tuv2025pastphoneticacousticspeechtokenizer,bai2025dmelspeechtokenizationmadesimple}};
+
+\end{scope}
+\draw[->] ($(leaf_72.south west) + (2mm, 0)$) |- (l720.west);
+\draw[->] ($(leaf_72.south west) + (2mm, 0)$) |- (l721.west);
+\draw[->] ($(leaf_72.south west) + (2mm, 0)$) |- (l722.west);
+\draw[->] ($(leaf_72.south west) + (2mm, 0)$) |- (l723.west);
+
+
+
+\begin{scope}[start chain=73 going below]
+\chainin (leaf_73) [on chain, join];
+\node[nodeL, on chain, fill=color_list!15, xshift=6mm, yshift=-5mm] (l730) {Slam 24h single-GPU\\cite{maimon2025slammingtrainingspeechlanguagemodelonegp}};
+\node[nodeL, on chain, fill=color_list!15] (l731) {HuBERT SSL 8-GPU\\cite{chen2023reducingbarriersselfsupervisedlearninghu}};
+\node[nodeL, on chain, fill=color_list!15] (l732) {SSR-Connector alignment compression\\cite{tan2025ssralignmentawaremodalityconnectorspeech}};
+\node[nodeL, on chain, fill=color_list!15] (l733) {SpeechComposer unified tasks\\cite{wu2024speechcomposerunifyingmultiplespeechtask}};
+\node[nodeL, on chain, fill=color_list!15] (l734) {SyllableLM low-rate pacing\\cite{baade2024syllablelmlearningcoarsesemanticunitsspe}};
+\node[nodeL, on chain, fill=color_list!15] (l735) {LLM contextual biasing\\cite{sun2023contextualbiasingnamedentitieslargelangu}};
+
+\end{scope}
+\draw[->] ($(leaf_73.south west) + (2mm, 0)$) |- (l730.west);
+\draw[->] ($(leaf_73.south west) + (2mm, 0)$) |- (l731.west);
+\draw[->] ($(leaf_73.south west) + (2mm, 0)$) |- (l732.west);
+\draw[->] ($(leaf_73.south west) + (2mm, 0)$) |- (l733.west);
+\draw[->] ($(leaf_73.south west) + (2mm, 0)$) |- (l734.west);
+\draw[->] ($(leaf_73.south west) + (2mm, 0)$) |- (l735.west);
+
+
+
+\begin{scope}[start chain=74 going below]
+\chainin (leaf_74) [on chain, join];
+\node[nodeL, on chain, fill=color_list!15, xshift=6mm, yshift=-5mm] (l740) {STAB tokenizer diagnostics\\cite{vashishth2024stabspeechtokenizerassessmentbenchmark}};
+\node[nodeL, on chain, fill=color_list!15] (l741) {Standardized decoding settings\\cite{vashishth2024stabspeechtokenizerassessmentbenchmark,onda2025benchmarkingprosodyencodingdiscretespeec,entry2025indicsuperbspeechprocessinguniversalperf title=}};
+\node[nodeL, on chain, fill=color_list!15] (l742) {Runtime and budget reporting\\cite{maimon2025slammingtrainingspeechlanguagemodelonegp,chen2023reducingbarriersselfsupervisedlearninghu,maimon2025scalinganalysisinterleavedspeechtextlang}};
+\node[nodeL, on chain, fill=color_list!15] (l743) {Open tokenizer pipelines\\cite{chen2023reducingbarriersselfsupervisedlearninghu,huang2024repcodecspeechrepresentationcodectokeniz,mousavi2024dasbdiscreteaudiospeechbenchmark}};
+\node[nodeL, on chain, fill=color_list!15] (l744) {VoxEval speech QA\\cite{cui2025voxevalbenchmarkingknowledgeunderstandin}};
+\node[nodeL, on chain, fill=color_list!15] (l745) {IndicSUPERB SLU suite\\cite{entry2025indicsuperbspeechprocessinguniversalperf title=}};
+
+\end{scope}
+\draw[->] ($(leaf_74.south west) + (2mm, 0)$) |- (l740.west);
+\draw[->] ($(leaf_74.south west) + (2mm, 0)$) |- (l741.west);
+\draw[->] ($(leaf_74.south west) + (2mm, 0)$) |- (l742.west);
+\draw[->] ($(leaf_74.south west) + (2mm, 0)$) |- (l743.west);
+\draw[->] ($(leaf_74.south west) + (2mm, 0)$) |- (l744.west);
+\draw[->] ($(leaf_74.south west) + (2mm, 0)$) |- (l745.west);
+
+
+
+
+
+\end{tikzpicture}
+\end{adjustbox}
+
+\caption{Figure: Hierarchical map of implementation recipes and benchmarks for spoken language modeling. Top-level categories summarize best practices in tokenization/alignment, practical modeling and compute-efficient recipes, and evaluation with open benchmarks. The leaves highlight concise, cited action items (e.g., efficient k-means, OTReg, Slam, SSR-Connector, STAB, VoxEval) to guide reproducible, rate/latency-aware development and fair reporting.}
+\label{fig:tiny_tree_figure_10}
+
+\end{figure}

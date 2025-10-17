@@ -1,0 +1,111 @@
+
+\definecolor{color_root}{HTML}{fdcee4}
+\definecolor{color_node}{HTML}{b9ac99}
+\definecolor{color_list}{HTML}{9C7C7C}
+
+
+
+\begin{figure}[h]
+   \centering
+   \begin{adjustbox}{max width=\textwidth, center}
+      \begin{tikzpicture}[
+         start chain = going below,
+         node distance=1mm,
+         sibling distance=40mm,
+         edge from parent/.style={->,draw},
+         >=latex,
+         basic/.style  = {
+            draw, text width=1cm, drop shadow, rectangle
+         },
+         root/.style   = {
+            basic, rounded corners=2pt, 
+            thin, align=center,text width=15em, 
+            font=\small\bfseries,
+            fill=blue!20
+         },
+         nodeB/.style = {
+            basic, rounded corners=5pt, 
+            thin,align=center, fill=green!20,
+            font=\scriptsize,
+            text width=8em
+         },
+         nodeL/.style = {
+            basic, thin, 
+            align=center, 
+            font=\scriptsize\itshape, fill=pink!20, text width=9em
+         }
+      ]
+   
+\node[root, fill=color_root!60] {Defense-in-depth for speech models} child {node[nodeB, fill=color_node!40] (leaf_75) {Data and training safety stack}}child {node[nodeB, fill=color_node!40] (leaf_76) {Runtime defenses and provenance controls}}child {node[nodeB, fill=color_node!40] (leaf_77) {Reference stack and reporting standards}} ;
+\begin{scope}[start chain=75 going below]
+\chainin (leaf_75) [on chain, join];
+\node[nodeL, on chain, fill=color_list!15, xshift=6mm, yshift=-5mm] (l750) {Multilingual corpora coverage\\cite{entry2025indicsuperbspeechprocessinguniversalperf title=}};
+\node[nodeL, on chain, fill=color_list!15] (l751) {STAB tokenizer audits\\cite{vashishth2024stabspeechtokenizerassessmentbenchmark}};
+\node[nodeL, on chain, fill=color_list!15] (l752) {LM-aligned discrete units\\cite{jo2025lmsptalignedsemanticdistillationspeechto,har-tuv2025pastphoneticacousticspeechtokenizer}};
+\node[nodeL, on chain, fill=color_list!15] (l753) {ASR-free SpeechRAG\\cite{min2025speechretrievalaugmentedgenerationwithou}};
+\node[nodeL, on chain, fill=color_list!15] (l754) {Misuse-aware filtering\\cite{zhao2024advancingspeechlanguagemodelsscalingsupe}};
+\node[nodeL, on chain, fill=color_list!15] (l755) {Refusal-shaping exemplars\\cite{dao2025ichigomixedmodalearlyfusionrealtimevoice}};
+\node[nodeL, on chain, fill=color_list!15] (l756) {Compute-efficient SSL\\cite{chen2023reducingbarriersselfsupervisedlearninghu}};
+\node[nodeL, on chain, fill=color_list!15] (l757) {Forgetting mitigation replay\\cite{hsiao2025analyzingmitigationstrategiescatastrophi}};
+\node[nodeL, on chain, fill=color_list!15] (l758) {Watermark-by-default\\cite{wang2025ssrspeechtowardsstablesaferobustzeroshot}};
+
+\end{scope}
+\draw[->] ($(leaf_75.south west) + (2mm, 0)$) |- (l750.west);
+\draw[->] ($(leaf_75.south west) + (2mm, 0)$) |- (l751.west);
+\draw[->] ($(leaf_75.south west) + (2mm, 0)$) |- (l752.west);
+\draw[->] ($(leaf_75.south west) + (2mm, 0)$) |- (l753.west);
+\draw[->] ($(leaf_75.south west) + (2mm, 0)$) |- (l754.west);
+\draw[->] ($(leaf_75.south west) + (2mm, 0)$) |- (l755.west);
+\draw[->] ($(leaf_75.south west) + (2mm, 0)$) |- (l756.west);
+\draw[->] ($(leaf_75.south west) + (2mm, 0)$) |- (l757.west);
+\draw[->] ($(leaf_75.south west) + (2mm, 0)$) |- (l758.west);
+
+
+
+\begin{scope}[start chain=76 going below]
+\chainin (leaf_76) [on chain, join];
+\node[nodeL, on chain, fill=color_list!15, xshift=6mm, yshift=-5mm] (l760) {Noise flooding defense\\cite{peri2024speechguardexploringadversarialrobustnes}};
+\node[nodeL, on chain, fill=color_list!15] (l761) {Dialect-aware refusals\\cite{dao2025ichigomixedmodalearlyfusionrealtimevoice}};
+\node[nodeL, on chain, fill=color_list!15] (l762) {Generation-time watermarking\\cite{wang2025ssrspeechtowardsstablesaferobustzeroshot}};
+\node[nodeL, on chain, fill=color_list!15] (l763) {Activation patching SPIRIT\\cite{djanibekov2025spiritpatchingspeechlanguagemodelsagains}};
+\node[nodeL, on chain, fill=color_list!15] (l764) {Edited-region localization\\cite{wang2025ssrspeechtowardsstablesaferobustzeroshot}};
+\node[nodeL, on chain, fill=color_list!15] (l765) {Corpus-scale verification\\cite{zhao2024advancingspeechlanguagemodelsscalingsupe}};
+\node[nodeL, on chain, fill=color_list!15] (l766) {Risk disclosure limits\\cite{zhao2024advancingspeechlanguagemodelsscalingsupe,park2025longformspeechgenerationspokenlanguagemo}};
+
+\end{scope}
+\draw[->] ($(leaf_76.south west) + (2mm, 0)$) |- (l760.west);
+\draw[->] ($(leaf_76.south west) + (2mm, 0)$) |- (l761.west);
+\draw[->] ($(leaf_76.south west) + (2mm, 0)$) |- (l762.west);
+\draw[->] ($(leaf_76.south west) + (2mm, 0)$) |- (l763.west);
+\draw[->] ($(leaf_76.south west) + (2mm, 0)$) |- (l764.west);
+\draw[->] ($(leaf_76.south west) + (2mm, 0)$) |- (l765.west);
+\draw[->] ($(leaf_76.south west) + (2mm, 0)$) |- (l766.west);
+
+
+
+\begin{scope}[start chain=77 going below]
+\chainin (leaf_77) [on chain, join];
+\node[nodeL, on chain, fill=color_list!15, xshift=6mm, yshift=-5mm] (l770) {Robust discrete units\\cite{mousavi2024dasbdiscreteaudiospeechbenchmark,har-tuv2025pastphoneticacousticspeechtokenizer,jo2025lmsptalignedsemanticdistillationspeechto,messica2024nastnoiseawarespeechtokenizationlanguage}};
+\node[nodeL, on chain, fill=color_list!15] (l771) {Dual audio watermarking\\cite{zhao2024advancingspeechlanguagemodelsscalingsupe,wang2025ssrspeechtowardsstablesaferobustzeroshot}};
+\node[nodeL, on chain, fill=color_list!15] (l772) {Noise flooding + patching\\cite{peri2024speechguardexploringadversarialrobustnes,djanibekov2025spiritpatchingspeechlanguagemodelsagains}};
+\node[nodeL, on chain, fill=color_list!15] (l773) {Standardized defense reports\\cite{peri2024speechguardexploringadversarialrobustnes,djanibekov2025spiritpatchingspeechlanguagemodelsagains,vashishth2024stabspeechtokenizerassessmentbenchmark}};
+\node[nodeL, on chain, fill=color_list!15] (l774) {Hybrid retrieval conditioning\\cite{verma2024whispergpthybridrepresentationaudiolarge,min2025speechretrievalaugmentedgenerationwithou}};
+
+\end{scope}
+\draw[->] ($(leaf_77.south west) + (2mm, 0)$) |- (l770.west);
+\draw[->] ($(leaf_77.south west) + (2mm, 0)$) |- (l771.west);
+\draw[->] ($(leaf_77.south west) + (2mm, 0)$) |- (l772.west);
+\draw[->] ($(leaf_77.south west) + (2mm, 0)$) |- (l773.west);
+\draw[->] ($(leaf_77.south west) + (2mm, 0)$) |- (l774.west);
+
+
+
+
+
+\end{tikzpicture}
+\end{adjustbox}
+
+\caption{Figure: Defense-in-depth for speech-language systems. The tree organizes safeguards into (1) data and training measures that improve coverage, robustness, and safety alignment; (2) runtime defenses and provenance tools that harden inputs/outputs and enable post-hoc mitigation and verification; and (3) a reference stack with recommended components and reporting standards. Arrows in the conceptual figure flow from pre-deployment preparation to inference-time protection and auditing, emphasizing layered, complementary controls across the lifecycle.}
+\label{fig:tiny_tree_figure_11}
+
+\end{figure}

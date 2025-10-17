@@ -1,0 +1,111 @@
+
+\definecolor{color_root}{HTML}{b8a9a9}
+\definecolor{color_node}{HTML}{fdcee4}
+\definecolor{color_list}{HTML}{c1c8cd}
+
+
+
+\begin{figure}[h]
+   \centering
+   \begin{adjustbox}{max width=\textwidth, center}
+      \begin{tikzpicture}[
+         start chain = going below,
+         node distance=1mm,
+         sibling distance=40mm,
+         edge from parent/.style={->,draw},
+         >=latex,
+         basic/.style  = {
+            draw, text width=1cm, drop shadow, rectangle
+         },
+         root/.style   = {
+            basic, rounded corners=2pt, 
+            thin, align=center,text width=15em, 
+            font=\small\bfseries,
+            fill=blue!20
+         },
+         nodeB/.style = {
+            basic, rounded corners=5pt, 
+            thin,align=center, fill=green!20,
+            font=\scriptsize,
+            text width=8em
+         },
+         nodeL/.style = {
+            basic, thin, 
+            align=center, 
+            font=\scriptsize\itshape, fill=pink!20, text width=9em
+         }
+      ]
+   
+\node[root, fill=color_root!60] {Speech system design regimes comparison} child {node[nodeB, fill=color_node!40] (leaf_57) {Cascaded pipelines: controllability and costs}}child {node[nodeB, fill=color_node!40] (leaf_58) {Unified end-to-end SLM strategies}}child {node[nodeB, fill=color_node!40] (leaf_59) {Interleaved/parallel decoding for latency}} ;
+\begin{scope}[start chain=57 going below]
+\chainin (leaf_57) [on chain, join];
+\node[nodeL, on chain, fill=color_list!15, xshift=6mm, yshift=-5mm] (l570) {Strong control, debug\cite{huang2023holisticcascadesystembenchmarkhumanevalu}};
+\node[nodeL, on chain, fill=color_list!15] (l571) {Error compounding risk\cite{huang2023holisticcascadesystembenchmarkhumanevalu}};
+\node[nodeL, on chain, fill=color_list!15] (l572) {Prosody and affect loss\cite{huang2023holisticcascadesystembenchmarkhumanevalu}};
+\node[nodeL, on chain, fill=color_list!15] (l573) {Semantic SLU strong\cite{huang2025dynamicsuperbphase2collaborativelyexpand}};
+\node[nodeL, on chain, fill=color_list!15] (l574) {Weaker paralinguistic cues\cite{huang2025dynamicsuperbphase2collaborativelyexpand}};
+\node[nodeL, on chain, fill=color_list!15] (l575) {Best with perfect transcripts\cite{wang2024whydospeechlanguagemodelsfailgeneratesem}};
+
+\end{scope}
+\draw[->] ($(leaf_57.south west) + (2mm, 0)$) |- (l570.west);
+\draw[->] ($(leaf_57.south west) + (2mm, 0)$) |- (l571.west);
+\draw[->] ($(leaf_57.south west) + (2mm, 0)$) |- (l572.west);
+\draw[->] ($(leaf_57.south west) + (2mm, 0)$) |- (l573.west);
+\draw[->] ($(leaf_57.south west) + (2mm, 0)$) |- (l574.west);
+\draw[->] ($(leaf_57.south west) + (2mm, 0)$) |- (l575.west);
+
+
+
+\begin{scope}[start chain=58 going below]
+\chainin (leaf_58) [on chain, join];
+\node[nodeL, on chain, fill=color_list!15, xshift=6mm, yshift=-5mm] (l580) {Unified perception and synthesis\cite{ma2024languagemodelcanlistenwhilespeaking}};
+\node[nodeL, on chain, fill=color_list!15] (l581) {Duplex listening while speaking\cite{ma2024languagemodelcanlistenwhilespeaking}};
+\node[nodeL, on chain, fill=color_list!15] (l582) {Thin bridges ~1%\cite{wang2023slmbridgethingapbetweenspeechtextfoundat}};
+\node[nodeL, on chain, fill=color_list!15] (l583) {Contextual biasing control\cite{wang2023slmbridgethingapbetweenspeechtextfoundat}};
+\node[nodeL, on chain, fill=color_list!15] (l584) {Connector-first temporal alignment\cite{nguyen2025qwenvsgemmaintegrationwhispercomparative}};
+\node[nodeL, on chain, fill=color_list!15] (l585) {Decoder-only ASR stable\cite{tsunoo2024decoderonlyarchitecturespeechrecognition}};
+\node[nodeL, on chain, fill=color_list!15] (l586) {Affect behavior alignment\cite{wang2024blspemotowardsempatheticlargespeechlangu}};
+
+\end{scope}
+\draw[->] ($(leaf_58.south west) + (2mm, 0)$) |- (l580.west);
+\draw[->] ($(leaf_58.south west) + (2mm, 0)$) |- (l581.west);
+\draw[->] ($(leaf_58.south west) + (2mm, 0)$) |- (l582.west);
+\draw[->] ($(leaf_58.south west) + (2mm, 0)$) |- (l583.west);
+\draw[->] ($(leaf_58.south west) + (2mm, 0)$) |- (l584.west);
+\draw[->] ($(leaf_58.south west) + (2mm, 0)$) |- (l585.west);
+\draw[->] ($(leaf_58.south west) + (2mm, 0)$) |- (l586.west);
+
+
+
+\begin{scope}[start chain=59 going below]
+\chainin (leaf_59) [on chain, join];
+\node[nodeL, on chain, fill=color_list!15, xshift=6mm, yshift=-5mm] (l590) {Shared vocabulary interleaving\cite{zeng2024scalingspeechtextpretrainingsyntheticint}};
+\node[nodeL, on chain, fill=color_list!15] (l591) {Plan-first text interleaves\cite{cui2025thinkbeforeyoutalkenhancingmeaningfuldia}};
+\node[nodeL, on chain, fill=color_list!15] (l592) {AR semantics NAR refinement\cite{peng2024mslms2stmultitaskspeechlanguagemodeltext,wu2024speechcomposerunifyingmultiplespeechtask}};
+\node[nodeL, on chain, fill=color_list!15] (l593) {Fixed cycles, chunking\cite{zeng2024glm4voicetowardsintelligenthumanlikeends}};
+\node[nodeL, on chain, fill=color_list!15] (l594) {Low latency, expressive speech\cite{zeng2024glm4voicetowardsintelligenthumanlikeends}};
+\node[nodeL, on chain, fill=color_list!15] (l595) {Holistic eval: IndicSUPERB};
+\node[nodeL, on chain, fill=color_list!15] (l596) {ABX discriminability probing\cite{fily2024establishingdegreesclosenessbetweenaudio}};
+\node[nodeL, on chain, fill=color_list!15] (l597) {Syntax probing peaks\cite{shen2023wavesyntaxprobingspokenlanguagemodels}};
+
+\end{scope}
+\draw[->] ($(leaf_59.south west) + (2mm, 0)$) |- (l590.west);
+\draw[->] ($(leaf_59.south west) + (2mm, 0)$) |- (l591.west);
+\draw[->] ($(leaf_59.south west) + (2mm, 0)$) |- (l592.west);
+\draw[->] ($(leaf_59.south west) + (2mm, 0)$) |- (l593.west);
+\draw[->] ($(leaf_59.south west) + (2mm, 0)$) |- (l594.west);
+\draw[->] ($(leaf_59.south west) + (2mm, 0)$) |- (l595.west);
+\draw[->] ($(leaf_59.south west) + (2mm, 0)$) |- (l596.west);
+\draw[->] ($(leaf_59.south west) + (2mm, 0)$) |- (l597.west);
+
+
+
+
+
+\end{tikzpicture}
+\end{adjustbox}
+
+\caption{Cascaded, end-to-end, and interleaved speech systems}
+\label{fig:tiny_tree_figure_5}
+
+\end{figure}

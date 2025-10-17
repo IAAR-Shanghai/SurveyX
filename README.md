@@ -274,6 +274,24 @@ Details:
 
 These advanced modules are only available in the full version of Surveyx, which is hosted by MemTensor (Shanghai) Technology Co., Ltd. If you would like to experience the complete features, please visit our official website: [surveyx.cn](https://surveyx.cn)
 
+---
+
+## 🧪 Sandbox - AI Agent Practice Environment
+
+The `sandbox/` directory contains practice scenarios for AI agents to learn debugging and problem-solving:
+
+- **`latex_citation_fix/`** - LaTeX compilation errors and citation escaping issues (Difficulty: ⭐⭐⭐⭐)
+
+Each sandbox provides:
+- Original problematic files
+- Verification scripts
+- Reset tools
+- Reference solutions (optional)
+
+See `sandbox/README.md` for details.
+
+---
+
 For questions or issues, please open an issue on the repository.
 
 ## ⚠️ Disclaimer

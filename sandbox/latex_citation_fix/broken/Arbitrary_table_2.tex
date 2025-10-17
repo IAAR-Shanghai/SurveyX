@@ -1,0 +1,18 @@
+\begin{table}[ht]
+    \centering
+    \small
+    \renewcommand{\arraystretch}{1.15}
+    \begin{tabular}{p{0.32\linewidth} p{0.28\linewidth} p{0.28\linewidth}}
+        \toprule
+        \textbf{Streaming metric} & \textbf{Definition} & \textbf{Recommended disclosure} \\
+        \midrule
+        Time-to-first-audio (TTFA) & Delay between user input and first synthesized audio frame. & Report median/95th percentile under shared hardware and chunk sizes. \\
+        Steady-state real-time factor (RTF) & Generation time divided by utterance duration once streaming stabilizes. & Provide per-language breakdown and batching assumptions. \\
+        Interruption latency & Time to honor barge-in or user stop requests. & Include evaluation scripts, noise conditions, and fallback policies. \\
+        Commit policy & Wait-$k$, CIF thresholds, or transducer blank rules governing emission. & Publish tuned hyperparameters and language-specific adjustments. \\
+        Duplex quality & Consistency of speaker identity, prosody, and lexical accuracy during simultaneous listen/speak. & Pair automated metrics (COMET, fastabx) with human MOS or judge panels. \\
+        \bottomrule
+    \end{tabular}
+    \caption{Deployment-focused metrics for streaming and duplex speech-language systems.}
+    \label{tab:streaming_metrics}
+\end{table}

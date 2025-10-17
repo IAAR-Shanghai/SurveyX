@@ -1,0 +1,18 @@
+\begin{table}[ht]
+    \centering
+    \small
+    \renewcommand{\arraystretch}{1.2}
+    \begin{tabular}{p{0.32\linewidth} p{0.58\linewidth}}
+        \toprule
+        \textbf{Safety / governance lever} & \textbf{Implementation guidance} \\
+        \midrule
+        Adversarial testing & Release jailbreak prompts, perturbation budgets, and mitigation settings (e.g., SPIRIT patching, SpeechGuard defenses) with success rates across SNR bands. \\
+        Provenance \& watermarking & Document tokenizer/vocoder compatibility, detection latency, false-positive rates under matched frame clocks, and public verifier scripts. \\
+        Human-subject protocols & Provide IRB/ethics approvals, consent workflows, compensation, demographic balance, and hallucination disclaimers for user-facing deployments. \\
+        Data governance & Track licenses, deduplication, contamination filters, and multilingual/spontaneous coverage; publish removal requests and version histories. \\
+        Release policy & Specify model availability (weights vs API), rate limits, abuse monitoring, and red-teaming cadence. \\
+        \bottomrule
+    \end{tabular}
+    \caption{Governance checklist consolidating the safety and deployment recommendations discussed in Section~\ref{sec:Safety Robustness and Ethics}.}
+    \label{tab:safety_governance}
+\end{table}

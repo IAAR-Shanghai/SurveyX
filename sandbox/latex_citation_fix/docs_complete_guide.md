@@ -1,0 +1,1 @@
+../../docs/resolved_issues/latex_citation_fix/LaTeX_Fix_Complete_Guide.md

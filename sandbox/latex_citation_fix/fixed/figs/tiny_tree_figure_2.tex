@@ -1,0 +1,99 @@
+
+\definecolor{color_root}{HTML}{c1c8cd}
+\definecolor{color_node}{HTML}{b9ac99}
+\definecolor{color_list}{HTML}{c77fa1}
+
+
+
+\begin{figure}[h]
+   \centering
+   \begin{adjustbox}{max width=\textwidth, center}
+      \begin{tikzpicture}[
+         start chain = going below,
+         node distance=1mm,
+         sibling distance=40mm,
+         edge from parent/.style={->,draw},
+         >=latex,
+         basic/.style  = {
+            draw, text width=1cm, drop shadow, rectangle
+         },
+         root/.style   = {
+            basic, rounded corners=2pt, 
+            thin, align=center,text width=15em, 
+            font=\small\bfseries,
+            fill=blue!20
+         },
+         nodeB/.style = {
+            basic, rounded corners=5pt, 
+            thin,align=center, fill=green!20,
+            font=\scriptsize,
+            text width=8em
+         },
+         nodeL/.style = {
+            basic, thin, 
+            align=center, 
+            font=\scriptsize\itshape, fill=pink!20, text width=9em
+         }
+      ]
+   
+\node[root, fill=color_root!60] {Speech decoding targets and pathways} child {node[nodeB, fill=color_node!40] (leaf_48) {Codec-aligned decoding and hybrid latents}}child {node[nodeB, fill=color_node!40] (leaf_49) {Unit vocoder token-to-waveform decoding paths}}child {node[nodeB, fill=color_node!40] (leaf_50) {Token-to-mel with neural vocoders streaming}} ;
+\begin{scope}[start chain=48 going below]
+\chainin (leaf_48) [on chain, join];
+\node[nodeL, on chain, fill=color_list!15, xshift=6mm, yshift=-5mm] (l480) {Latency equals codec rate};
+\node[nodeL, on chain, fill=color_list!15] (l481) {Remove spectrogram stage};
+\node[nodeL, on chain, fill=color_list!15] (l482) {Clean RVQ integration};
+\node[nodeL, on chain, fill=color_list!15] (l483) {EnCodec token S2ST\cite{peng2024mslms2stmultitaskspeechlanguagemodeltext}};
+\node[nodeL, on chain, fill=color_list!15] (l484) {Hybrid latent diffusion\cite{yang2025diffsoundstreamefficientspeechtokenizati}};
+
+\end{scope}
+\draw[->] ($(leaf_48.south west) + (2mm, 0)$) |- (l480.west);
+\draw[->] ($(leaf_48.south west) + (2mm, 0)$) |- (l481.west);
+\draw[->] ($(leaf_48.south west) + (2mm, 0)$) |- (l482.west);
+\draw[->] ($(leaf_48.south west) + (2mm, 0)$) |- (l483.west);
+\draw[->] ($(leaf_48.south west) + (2mm, 0)$) |- (l484.west);
+
+
+
+\begin{scope}[start chain=49 going below]
+\chainin (leaf_49) [on chain, join];
+\node[nodeL, on chain, fill=color_list!15, xshift=6mm, yshift=-5mm] (l490) {Token-to-waveform GAN\cite{ma2024languagemodelcanlistenwhilespeaking}};
+\node[nodeL, on chain, fill=color_list!15] (l491) {Prompted timbre control};
+\node[nodeL, on chain, fill=color_list!15] (l492) {Decouple identity content};
+\node[nodeL, on chain, fill=color_list!15] (l493) {Full-duplex interaction support\cite{ma2024languagemodelcanlistenwhilespeaking}};
+
+\end{scope}
+\draw[->] ($(leaf_49.south west) + (2mm, 0)$) |- (l490.west);
+\draw[->] ($(leaf_49.south west) + (2mm, 0)$) |- (l491.west);
+\draw[->] ($(leaf_49.south west) + (2mm, 0)$) |- (l492.west);
+\draw[->] ($(leaf_49.south west) + (2mm, 0)$) |- (l493.west);
+
+
+
+\begin{scope}[start chain=50 going below]
+\chainin (leaf_50) [on chain, join];
+\node[nodeL, on chain, fill=color_list!15, xshift=6mm, yshift=-5mm] (l500) {Tokens-to-mel mapping};
+\node[nodeL, on chain, fill=color_list!15] (l501) {Flow or diffusion models};
+\node[nodeL, on chain, fill=color_list!15] (l502) {BigVGAN or Vocos rendering};
+\node[nodeL, on chain, fill=color_list!15] (l503) {Chunkable streaming S2S\cite{zeng2024scalingspeechtextpretrainingsyntheticint}};
+\node[nodeL, on chain, fill=color_list!15] (l504) {Ultra-low bitrate tokens\cite{wang2025tadicodectextawarediffusionspeechtokeniz}};
+\node[nodeL, on chain, fill=color_list!15] (l505) {LLM-ready tokens (STAB)\cite{vashishth2024stabspeechtokenizerassessmentbenchmark,guo2025streamuniachievingstreamingspeechtransla}};
+
+\end{scope}
+\draw[->] ($(leaf_50.south west) + (2mm, 0)$) |- (l500.west);
+\draw[->] ($(leaf_50.south west) + (2mm, 0)$) |- (l501.west);
+\draw[->] ($(leaf_50.south west) + (2mm, 0)$) |- (l502.west);
+\draw[->] ($(leaf_50.south west) + (2mm, 0)$) |- (l503.west);
+\draw[->] ($(leaf_50.south west) + (2mm, 0)$) |- (l504.west);
+\draw[->] ($(leaf_50.south west) + (2mm, 0)$) |- (l505.west);
+
+
+
+
+
+\end{tikzpicture}
+\end{adjustbox}
+
+\caption{Figure: Decoding targets and pathways. The tree groups practical speech decoding routes into three categories: codec-aligned decoding (including hybrid token-conditioned latents) for minimal conversion loss and codec-rate latency; unit vocoder token-to-waveform paths that preserve modularity and enable promptable style control and full-duplex behavior; and token-to-mel pipelines that map tokens to mel spectrograms, leveraging flow/diffusion and mature neural vocoders for chunkable, streaming-friendly synthesis. The LLM-ready token interface vetted by STAB facilitates controllable streaming and policy-aware scheduling, exemplified by StreamUni.}
+\label{fig:tiny_tree_figure_2}
+
+\end{figure}

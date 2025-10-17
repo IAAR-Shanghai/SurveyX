@@ -1,0 +1,111 @@
+
+\definecolor{color_root}{HTML}{a44c34}
+\definecolor{color_node}{HTML}{bc966f}
+\definecolor{color_list}{HTML}{c1c8cd}
+
+
+
+\begin{figure}[h]
+   \centering
+   \begin{adjustbox}{max width=\textwidth, center}
+      \begin{tikzpicture}[
+         start chain = going below,
+         node distance=1mm,
+         sibling distance=40mm,
+         edge from parent/.style={->,draw},
+         >=latex,
+         basic/.style  = {
+            draw, text width=1cm, drop shadow, rectangle
+         },
+         root/.style   = {
+            basic, rounded corners=2pt, 
+            thin, align=center,text width=15em, 
+            font=\small\bfseries,
+            fill=blue!20
+         },
+         nodeB/.style = {
+            basic, rounded corners=5pt, 
+            thin,align=center, fill=green!20,
+            font=\scriptsize,
+            text width=8em
+         },
+         nodeL/.style = {
+            basic, thin, 
+            align=center, 
+            font=\scriptsize\itshape, fill=pink!20, text width=9em
+         }
+      ]
+   
+\node[root, fill=color_root!60] {Long context and conversational memory} child {node[nodeB, fill=color_node!40] (leaf_81) {Streaming context limits and gaps}}child {node[nodeB, fill=color_node!40] (leaf_82) {Duplex-aware memory design blueprint}}child {node[nodeB, fill=color_node!40] (leaf_83) {Phased curriculum and evaluation reporting}} ;
+\begin{scope}[start chain=81 going below]
+\chainin (leaf_81) [on chain, join];
+\node[nodeL, on chain, fill=color_list!15, xshift=6mm, yshift=-5mm] (l810) {ICL saturates at four\\cite{hsu2024exploringcontextlearningtextlessspeechla}};
+\node[nodeL, on chain, fill=color_list!15] (l811) {Fixed-length prompts favored\\cite{hsu2024exploringcontextlearningtextlessspeechla}};
+\node[nodeL, on chain, fill=color_list!15] (l812) {30 s overlapped segments\\cite{nguyen2025qwenvsgemmaintegrationwhispercomparative}};
+\node[nodeL, on chain, fill=color_list!15] (l813) {Two-utterance context gains\\cite{li2025seewossubmissionmlcslmlessonslearnedspee}};
+\node[nodeL, on chain, fill=color_list!15] (l814) {Heuristic boundary reliance\\cite{guo2025streamuniachievingstreamingspeechtransla}};
+\node[nodeL, on chain, fill=color_list!15] (l815) {Longer-audio evaluation emerges\\cite{huang2025dynamicsuperbphase2collaborativelyexpand}};
+
+\end{scope}
+\draw[->] ($(leaf_81.south west) + (2mm, 0)$) |- (l810.west);
+\draw[->] ($(leaf_81.south west) + (2mm, 0)$) |- (l811.west);
+\draw[->] ($(leaf_81.south west) + (2mm, 0)$) |- (l812.west);
+\draw[->] ($(leaf_81.south west) + (2mm, 0)$) |- (l813.west);
+\draw[->] ($(leaf_81.south west) + (2mm, 0)$) |- (l814.west);
+\draw[->] ($(leaf_81.south west) + (2mm, 0)$) |- (l815.west);
+
+
+
+\begin{scope}[start chain=82 going below]
+\chainin (leaf_82) [on chain, join];
+\node[nodeL, on chain, fill=color_list!15, xshift=6mm, yshift=-5mm] (l820) {Small fast local window\\cite{hsu2024exploringcontextlearningtextlessspeechla}};
+\node[nodeL, on chain, fill=color_list!15] (l821) {Sparse turn summaries\\cite{nguyen2025qwenvsgemmaintegrationwhispercomparative}};
+\node[nodeL, on chain, fill=color_list!15] (l822) {Prosody-anchored compression\\cite{guo2025streamuniachievingstreamingspeechtransla}};
+\node[nodeL, on chain, fill=color_list!15] (l823) {Boundary-aware memory policy\\cite{guo2025streamuniachievingstreamingspeechtransla}};
+\node[nodeL, on chain, fill=color_list!15] (l824) {Short-window inference, long-writes\\cite{nguyen2025qwenvsgemmaintegrationwhispercomparative}};
+\node[nodeL, on chain, fill=color_list!15] (l825) {Joint encoder–LSLM training\\cite{guo2025streamuniachievingstreamingspeechtransla}};
+\node[nodeL, on chain, fill=color_list!15] (l826) {Speaker-turn retrieval};
+
+\end{scope}
+\draw[->] ($(leaf_82.south west) + (2mm, 0)$) |- (l820.west);
+\draw[->] ($(leaf_82.south west) + (2mm, 0)$) |- (l821.west);
+\draw[->] ($(leaf_82.south west) + (2mm, 0)$) |- (l822.west);
+\draw[->] ($(leaf_82.south west) + (2mm, 0)$) |- (l823.west);
+\draw[->] ($(leaf_82.south west) + (2mm, 0)$) |- (l824.west);
+\draw[->] ($(leaf_82.south west) + (2mm, 0)$) |- (l825.west);
+\draw[->] ($(leaf_82.south west) + (2mm, 0)$) |- (l826.west);
+
+
+
+\begin{scope}[start chain=83 going below]
+\chainin (leaf_83) [on chain, join];
+\node[nodeL, on chain, fill=color_list!15, xshift=6mm, yshift=-5mm] (l830) {Begin with fixed windows\\cite{hsu2024exploringcontextlearningtextlessspeechla}};
+\node[nodeL, on chain, fill=color_list!15] (l831) {Supervise boundaries, delay\\cite{guo2025streamuniachievingstreamingspeechtransla}};
+\node[nodeL, on chain, fill=color_list!15] (l832) {Distant write supervision\\cite{huang2025dynamicsuperbphase2collaborativelyexpand}};
+\node[nodeL, on chain, fill=color_list!15] (l833) {Progressively unfreeze encoder\\cite{nguyen2025qwenvsgemmaintegrationwhispercomparative}};
+\node[nodeL, on chain, fill=color_list!15] (l834) {Minute-scale memory probes\\cite{huang2025dynamicsuperbphase2collaborativelyexpand}};
+\node[nodeL, on chain, fill=color_list!15] (l835) {Recall–lag curves\\cite{guo2025streamuniachievingstreamingspeechtransla}};
+\node[nodeL, on chain, fill=color_list!15] (l836) {Two-utterance ablations\\cite{li2025seewossubmissionmlcslmlessonslearnedspee}};
+\node[nodeL, on chain, fill=color_list!15] (l837) {Compute, reproducibility notes\\cite{chen2023reducingbarriersselfsupervisedlearninghu,hsiao2025analyzingmitigationstrategiescatastrophi}};
+
+\end{scope}
+\draw[->] ($(leaf_83.south west) + (2mm, 0)$) |- (l830.west);
+\draw[->] ($(leaf_83.south west) + (2mm, 0)$) |- (l831.west);
+\draw[->] ($(leaf_83.south west) + (2mm, 0)$) |- (l832.west);
+\draw[->] ($(leaf_83.south west) + (2mm, 0)$) |- (l833.west);
+\draw[->] ($(leaf_83.south west) + (2mm, 0)$) |- (l834.west);
+\draw[->] ($(leaf_83.south west) + (2mm, 0)$) |- (l835.west);
+\draw[->] ($(leaf_83.south west) + (2mm, 0)$) |- (l836.west);
+\draw[->] ($(leaf_83.south west) + (2mm, 0)$) |- (l837.west);
+
+
+
+
+
+\end{tikzpicture}
+\end{adjustbox}
+
+\caption{Figure: Duplex-aware long-context memory for streaming speech agents. The chart organizes (1) current streaming limitations (few-shot ICL saturation, segmentation and boundary heuristics), (2) a practical memory blueprint (small local windows plus sparse, turn-synchronous summaries with prosody-aware compression and joint encoder–LSLM policy alignment), and (3) a phased curriculum with evaluation/reporting (fixed-window warmup, boundary/delay supervision, distant supervision, progressive unfreezing, and memory-centric probes/metrics). Together, these components map constraints to design choices and training–evaluation practices for robust, low-latency duplex dialogue.}
+\label{fig:tiny_tree_figure_13}
+
+\end{figure}

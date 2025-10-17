@@ -1,0 +1,99 @@
+
+\definecolor{color_root}{HTML}{b8a9a9}
+\definecolor{color_node}{HTML}{bc966f}
+\definecolor{color_list}{HTML}{727b83}
+
+
+
+\begin{figure}[h]
+   \centering
+   \begin{adjustbox}{max width=\textwidth, center}
+      \begin{tikzpicture}[
+         start chain = going below,
+         node distance=1mm,
+         sibling distance=40mm,
+         edge from parent/.style={->,draw},
+         >=latex,
+         basic/.style  = {
+            draw, text width=1cm, drop shadow, rectangle
+         },
+         root/.style   = {
+            basic, rounded corners=2pt, 
+            thin, align=center,text width=15em, 
+            font=\small\bfseries,
+            fill=blue!20
+         },
+         nodeB/.style = {
+            basic, rounded corners=5pt, 
+            thin,align=center, fill=green!20,
+            font=\scriptsize,
+            text width=8em
+         },
+         nodeL/.style = {
+            basic, thin, 
+            align=center, 
+            font=\scriptsize\itshape, fill=pink!20, text width=9em
+         }
+      ]
+   
+\node[root, fill=color_root!60] {Rate and sequence management} child {node[nodeB, fill=color_node!40] (leaf_42) {Rate strategies and decoders}}child {node[nodeB, fill=color_node!40] (leaf_43) {Sequence compression and alignment}}child {node[nodeB, fill=color_node!40] (leaf_44) {Reporting and metrics protocol}} ;
+\begin{scope}[start chain=42 going below]
+\chainin (leaf_42) [on chain, join];
+\node[nodeL, on chain, fill=color_list!15, xshift=6mm, yshift=-5mm] (l420) {12.5 Hz sweet spot\\cite{zeng2024scalingspeechtextpretrainingsyntheticint}};
+\node[nodeL, on chain, fill=color_list!15] (l421) {Depth-trimmed 12.5 Hz\\cite{yang2025diffsoundstreamefficientspeechtokenizati}};
+\node[nodeL, on chain, fill=color_list!15] (l422) {Ultra-low 6.25 Hz\\cite{wang2025tadicodectextawarediffusionspeechtokeniz}};
+\node[nodeL, on chain, fill=color_list!15] (l423) {Language-aware selection\\cite{zhang2025impactframeratesspeechtokenizercasestudy}};
+
+\end{scope}
+\draw[->] ($(leaf_42.south west) + (2mm, 0)$) |- (l420.west);
+\draw[->] ($(leaf_42.south west) + (2mm, 0)$) |- (l421.west);
+\draw[->] ($(leaf_42.south west) + (2mm, 0)$) |- (l422.west);
+\draw[->] ($(leaf_42.south west) + (2mm, 0)$) |- (l423.west);
+
+
+
+\begin{scope}[start chain=43 going below]
+\chainin (leaf_43) [on chain, join];
+\node[nodeL, on chain, fill=color_list!15, xshift=6mm, yshift=-5mm] (l430) {Projector pooling 4–5×\\cite{nguyen2025qwenvsgemmaintegrationwhispercomparative}};
+\node[nodeL, on chain, fill=color_list!15] (l431) {CTC blank removal\\cite{tsunoo2024decoderonlyarchitecturespeechrecognition}};
+\node[nodeL, on chain, fill=color_list!15] (l432) {Acoustic BPE/unigram\\cite{li2024effectivenessacousticbpedecoderonlytts,guo2025recentadvancesdiscretespeechtokensreview}};
+\node[nodeL, on chain, fill=color_list!15] (l433) {Alignment-aware connectors\\cite{guo2025recentadvancesdiscretespeechtokensreview}};
+\node[nodeL, on chain, fill=color_list!15] (l434) {Block-causal streaming\\cite{zeng2024scalingspeechtextpretrainingsyntheticint}};
+
+\end{scope}
+\draw[->] ($(leaf_43.south west) + (2mm, 0)$) |- (l430.west);
+\draw[->] ($(leaf_43.south west) + (2mm, 0)$) |- (l431.west);
+\draw[->] ($(leaf_43.south west) + (2mm, 0)$) |- (l432.west);
+\draw[->] ($(leaf_43.south west) + (2mm, 0)$) |- (l433.west);
+\draw[->] ($(leaf_43.south west) + (2mm, 0)$) |- (l434.west);
+
+
+
+\begin{scope}[start chain=44 going below]
+\chainin (leaf_44) [on chain, join];
+\node[nodeL, on chain, fill=color_list!15, xshift=6mm, yshift=-5mm] (l440) {Frame/token rates\\cite{guo2025recentadvancesdiscretespeechtokensreview}};
+\node[nodeL, on chain, fill=color_list!15] (l441) {Bitrate, tokens/s\\cite{guo2025recentadvancesdiscretespeechtokensreview}};
+\node[nodeL, on chain, fill=color_list!15] (l442) {Codec specifics, RVQ\\cite{yang2025diffsoundstreamefficientspeechtokenizati}};
+\node[nodeL, on chain, fill=color_list!15] (l443) {Latency reporting\\cite{zeng2024scalingspeechtextpretrainingsyntheticint}};
+\node[nodeL, on chain, fill=color_list!15] (l444) {WER/CER+perceptual\\cite{yang2025diffsoundstreamefficientspeechtokenizati,wang2025tadicodectextawarediffusionspeechtokeniz}};
+\node[nodeL, on chain, fill=color_list!15] (l445) {Language-BPE notes\\cite{zhang2025impactframeratesspeechtokenizercasestudy,li2024effectivenessacousticbpedecoderonlytts}};
+
+\end{scope}
+\draw[->] ($(leaf_44.south west) + (2mm, 0)$) |- (l440.west);
+\draw[->] ($(leaf_44.south west) + (2mm, 0)$) |- (l441.west);
+\draw[->] ($(leaf_44.south west) + (2mm, 0)$) |- (l442.west);
+\draw[->] ($(leaf_44.south west) + (2mm, 0)$) |- (l443.west);
+\draw[->] ($(leaf_44.south west) + (2mm, 0)$) |- (l444.west);
+\draw[->] ($(leaf_44.south west) + (2mm, 0)$) |- (l445.west);
+
+
+
+
+
+\end{tikzpicture}
+\end{adjustbox}
+
+\caption{Figure: Hierarchical overview of rate and sequence management. Left: strategy space balancing frame rates and decoder strength (12.5 Hz sweet spot, depth-trimmed hybrids, and ultra-low 6.25 Hz with text-aware diffusion). Middle: sequence compression and alignment mechanisms (projector pooling, CTC blank removal, acoustic BPE, alignment-aware connectors, and block-causal streaming). Right: standardized reporting protocol covering rates, bitrate, compression stats, codec specifics, latency, and coupled accuracy–perceptual metrics with language/BPE notes.}
+\label{fig:tiny_tree_figure_0}
+
+\end{figure}

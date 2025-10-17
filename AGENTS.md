@@ -106,20 +106,99 @@
 - 測試若生成大量檔案，可放置於 `test_artifacts/` 或 `tests/.tmp/`（如需）並於完成後清理或回報。
 - 對流程或環境的疑慮，可於 `docs/temporary_issues/` 建立紀錄檔案並於回覆中引用。
 
-## 10) 文件與協作紀錄
+## 10) Sandbox 測試環境
+
+### LaTeX Citation Fix (`sandbox/latex_citation_fix/`)
+
+- **目的**：測試 AI Agent 對 LaTeX 引用問題的診斷與修復能力。
+- **入口**：`sandbox/latex_citation_fix/README.md` 為完整導覽文件。
+- **結構**：
+  - `broken/`：包含已植入問題的 LaTeX 原始檔（85 頁，602KB）
+  - `fixed/`：所有問題已修復的標準答案（80 頁，634KB）
+  - `reference_only/`：6 份完整修復文件與步驟說明（6 個 MD 檔案）
+  - `tools/`：統一修復工具 `latex_fix_toolkit.py` 與輔助腳本
+  - `agent_workspace/`：Agent 測試專用工作區（由 `reset.sh` 填充）
+- **測試模式（重要）**：
+  - Agent 測試時**禁止查看** `reference_only/` 與 `fixed/` 目錄內容
+  - 僅能操作 `agent_workspace/` 內檔案，並使用 `tools/` 中提供的工具
+  - 開發者與維護者可閱讀所有資料進行學習與驗證
+- **已植入問題**：
+  1. `survey.tex` Line 578: `\ref{fig:tree_figure_Langu}` (將顯示 "??")
+  2. `survey.tex` Line 701: `\ref{fig:tiny_tree_figure_5}` (將顯示 "??")
+  3. `figs/structure_fig.tex` Line ~131: en-dash 字元問題
+- **啟動測試**：
+
+  ```bash
+  cd sandbox/latex_citation_fix
+  ./reset.sh        # 填充 agent_workspace/ 並清除舊輸出
+  cd agent_workspace
+  # Agent 開始診斷與修復...
+  ```
+
+- **預期結果**：修復後應從 85 頁減少至 80 頁，檔案大小從 602KB 增至 634KB。
+
+## 11) 文件與協作紀錄
 
 - 撰寫或補充文件時請維持既有格式；涉及流程變更者需同步更新 `docs/` 內對應說明（如 `docs/qa-notes/`、`pipeline&modules.md`、`paper_outline_zh.md`）。
 - 若新增操作守則或保護項，請同步更新 `docs/agent-protected-files.md` 與本檔案相關段落。
 - 暫存問題的詳細維護流程請遵循 `docs/guides/temporary_issue_maintenance.md`。
 - 重要發現、疑難或待辦事項可記錄於 `docs/temporary_issues/` 與 `docs/qa-notes/`，並在回覆中標註檔名與重點。
 
-## 11) 受保護檔案（請勿修改）
+## 12) 問題追蹤與歸檔流程
+
+### temporary_issues/ - 進行中問題
+
+- **用途**: 僅存放**尚未解決或需持續追蹤**的問題
+- **檔名**: `YYYYMMDD_<主題>.md`（例：`20251017_pdf_conversion_error.md`）
+- **維護**: 遵循 `docs/guides/temporary_issue_maintenance.md`
+- **原則**: 
+  - 保持目錄精簡（理想狀態：0-3 個進行中問題）
+  - 定期檢視是否仍需追蹤
+  - 清楚標註狀態（🔄 進行中 / ⏸️ 待觀察 / ⚠️ 阻塞中）
+
+### resolved_issues/ - 已解決問題歸檔
+
+- **用途**: 按主題歸檔已解決的問題與解決方案
+- **結構**: `resolved_issues/<主題>/`
+  - `README.md`: 該主題總覽與導覽
+  - 相關文件（問題記錄、解決方案、指南等）
+  - `archive/`: 該主題的詳細歷史文件
+- **歸檔流程**:
+  1. **結案確認**: 問題已完全解決且解決方案已驗證
+  2. **建立主題目錄**（若不存在）: `mkdir -p docs/resolved_issues/<主題>/archive`
+  3. **移動文件**: 從 `temporary_issues/` 移至對應主題目錄
+  4. **建立或更新 README**: 在主題目錄建立總覽文件
+  5. **更新索引**:
+     - 在 `docs/resolved_issues/README.md` 新增該主題條目
+     - 從 `docs/temporary_issues/README.md` 移除該問題
+  6. **回報使用者**: 說明歸檔路徑、關鍵解決方案與結案理由
+
+### 操作原則
+
+- ❌ **禁止**在 `temporary_issues/` 堆積已解決問題
+- ✅ 問題解決後**24 小時內**完成歸檔
+- ✅ 按**主題分類**，避免混雜不同類型問題（例：latex_citation_fix、pdf_conversion、pipeline_optimization）
+- ✅ 保留完整歷史記錄於 `archive/` 供追溯
+- ✅ 相關工具與 sandbox 環境獨立維護，用 symlink 連結文檔供參考
+
+### 範例：LaTeX Citation Fix
+
+已歸檔至 `docs/resolved_issues/latex_citation_fix/`，包含：
+- 完整指南、快速參考、修復報告
+- 7 個歷史追蹤文件於 `archive/`
+- Sandbox 測試環境位於 `sandbox/latex_citation_fix/`（獨立維護）
+- 透過 symlink 從 sandbox 連結文檔供參考
+
+## 13) 受保護檔案（請勿修改）
 
 - 最新清單與允許操作詳見 `docs/agent-protected-files.md`。
 - 需特別留意的核心檔案包含：`src/configs/config.py`、`tasks/offline_run.py`、`tasks/workflow/*.py`、`run.sh`、`requirements.txt`、`env/` 內快照、以及根目錄文件 `paper_outline_zh.md`、`paper內容.md`、`pipeline&modules.md`。
 - `outputs/`、`resources/`、`external/`、`models/` 所有檔案視為使用者資產，除非獲得明確授權，禁止刪除、覆寫或重新命名。
 
-## 暫存問題紀錄
+## 暫存問題紀錄（已廢棄）
 
-- 已建立 `docs/temporary_issues/` 目錄，用於集中紀錄各階段暫時性問題與分析；具體維護步驟請遵循 `docs/guides/temporary_issue_maintenance.md`。
-- 最新紀錄為 `docs/temporary_issues/spacing_glitch.md`，整理 PDF spacing glitch 的觀察、根因分析、建議處理流程與待辦事項，供後續代理延續工作。
+> ⚠️ **注意**: 本章節已過時，請參考 **Section 12) 問題追蹤與歸檔流程**。
+
+- ~~已建立 `docs/temporary_issues/` 目錄，用於集中紀錄各階段暫時性問題與分析~~
+- ~~最新紀錄為 `docs/temporary_issues/spacing_glitch.md`~~
+- **新流程**: 已解決問題已歸檔至 `docs/resolved_issues/latex_citation_fix/`

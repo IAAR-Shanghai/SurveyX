@@ -1,0 +1,111 @@
+
+\definecolor{color_root}{HTML}{f3e6f1}
+\definecolor{color_node}{HTML}{96a25f}
+\definecolor{color_list}{HTML}{c77fa1}
+
+
+
+\begin{figure}[h]
+   \centering
+   \begin{adjustbox}{max width=\textwidth, center}
+      \begin{tikzpicture}[
+         start chain = going below,
+         node distance=1mm,
+         sibling distance=40mm,
+         edge from parent/.style={->,draw},
+         >=latex,
+         basic/.style  = {
+            draw, text width=1cm, drop shadow, rectangle
+         },
+         root/.style   = {
+            basic, rounded corners=2pt, 
+            thin, align=center,text width=15em, 
+            font=\small\bfseries,
+            fill=blue!20
+         },
+         nodeB/.style = {
+            basic, rounded corners=5pt, 
+            thin,align=center, fill=green!20,
+            font=\scriptsize,
+            text width=8em
+         },
+         nodeL/.style = {
+            basic, thin, 
+            align=center, 
+            font=\scriptsize\itshape, fill=pink!20, text width=9em
+         }
+      ]
+   
+\node[root, fill=color_root!60] {Diagnostics for speech representation quality} child {node[nodeB, fill=color_node!40] (leaf_45) {Phonetic discriminability and invariance metrics}}child {node[nodeB, fill=color_node!40] (leaf_46) {Token stability and alignment tests}}child {node[nodeB, fill=color_node!40] (leaf_47) {Beyond-semantic competence and robustness benchmarks}} ;
+\begin{scope}[start chain=45 going below]
+\chainin (leaf_45) [on chain, join];
+\node[nodeL, on chain, fill=color_list!15, xshift=6mm, yshift=-5mm] (l450) {Fast ABX LibriSpeech\\cite{poli2025fastabxlibraryefficientcomputationabxdis}};
+\node[nodeL, on chain, fill=color_list!15] (l451) {Phoneme vs speaker};
+\node[nodeL, on chain, fill=color_list!15] (l452) {MFCC baseline controls};
+\node[nodeL, on chain, fill=color_list!15] (l453) {PanPhon correlation\\cite{poli2025fastabxlibraryefficientcomputationabxdis}};
+\node[nodeL, on chain, fill=color_list!15] (l454) {Layer-wise profiles};
+\node[nodeL, on chain, fill=color_list!15] (l455) {Window/snippet sweeps\\cite{fily2024establishingdegreesclosenessbetweenaudio}};
+\node[nodeL, on chain, fill=color_list!15] (l456) {Within/across conditions};
+\node[nodeL, on chain, fill=color_list!15] (l457) {ABX-Meta leakage\\cite{fily2024establishingdegreesclosenessbetweenaudio}};
+
+\end{scope}
+\draw[->] ($(leaf_45.south west) + (2mm, 0)$) |- (l450.west);
+\draw[->] ($(leaf_45.south west) + (2mm, 0)$) |- (l451.west);
+\draw[->] ($(leaf_45.south west) + (2mm, 0)$) |- (l452.west);
+\draw[->] ($(leaf_45.south west) + (2mm, 0)$) |- (l453.west);
+\draw[->] ($(leaf_45.south west) + (2mm, 0)$) |- (l454.west);
+\draw[->] ($(leaf_45.south west) + (2mm, 0)$) |- (l455.west);
+\draw[->] ($(leaf_45.south west) + (2mm, 0)$) |- (l456.west);
+\draw[->] ($(leaf_45.south west) + (2mm, 0)$) |- (l457.west);
+
+
+
+\begin{scope}[start chain=46 going below]
+\chainin (leaf_46) [on chain, join];
+\node[nodeL, on chain, fill=color_list!15, xshift=6mm, yshift=-5mm] (l460) {TER prosody edits\\cite{onda2025benchmarkingprosodyencodingdiscretespeec}};
+\node[nodeL, on chain, fill=color_list!15] (l461) {MTER speaker pairs\\cite{onda2025benchmarkingprosodyencodingdiscretespeec}};
+\node[nodeL, on chain, fill=color_list!15] (l462) {Segment TER emphasis\\cite{onda2025benchmarkingprosodyencodingdiscretespeec}};
+\node[nodeL, on chain, fill=color_list!15] (l463) {PNMI alignment\\cite{onda2025benchmarkingprosodyencodingdiscretespeec}};
+\node[nodeL, on chain, fill=color_list!15] (l464) {Matched bitrate};
+\node[nodeL, on chain, fill=color_list!15] (l465) {PAST rate–latency\\cite{har-tuv2025pastphoneticacousticspeechtokenizer}};
+\node[nodeL, on chain, fill=color_list!15] (l466) {Layer/rate curves};
+
+\end{scope}
+\draw[->] ($(leaf_46.south west) + (2mm, 0)$) |- (l460.west);
+\draw[->] ($(leaf_46.south west) + (2mm, 0)$) |- (l461.west);
+\draw[->] ($(leaf_46.south west) + (2mm, 0)$) |- (l462.west);
+\draw[->] ($(leaf_46.south west) + (2mm, 0)$) |- (l463.west);
+\draw[->] ($(leaf_46.south west) + (2mm, 0)$) |- (l464.west);
+\draw[->] ($(leaf_46.south west) + (2mm, 0)$) |- (l465.west);
+\draw[->] ($(leaf_46.south west) + (2mm, 0)$) |- (l466.west);
+
+
+
+\begin{scope}[start chain=47 going below]
+\chainin (leaf_47) [on chain, join];
+\node[nodeL, on chain, fill=color_list!15, xshift=6mm, yshift=-5mm] (l470) {BoSS affect probes\\cite{wang2025bossbeyondsemanticspeech}};
+\node[nodeL, on chain, fill=color_list!15] (l471) {BoSS dialect probes\\cite{wang2025bossbeyondsemanticspeech}};
+\node[nodeL, on chain, fill=color_list!15] (l472) {SALMON consistency\\cite{maimon2025salmonsuiteacousticlanguagemodelevaluati}};
+\node[nodeL, on chain, fill=color_list!15] (l473) {SALMON alignment\\cite{maimon2025salmonsuiteacousticlanguagemodelevaluati}};
+\node[nodeL, on chain, fill=color_list!15] (l474) {ASR/SID/LID/KWS/QbE};
+\node[nodeL, on chain, fill=color_list!15] (l475) {Multilingual robustness suites};
+
+\end{scope}
+\draw[->] ($(leaf_47.south west) + (2mm, 0)$) |- (l470.west);
+\draw[->] ($(leaf_47.south west) + (2mm, 0)$) |- (l471.west);
+\draw[->] ($(leaf_47.south west) + (2mm, 0)$) |- (l472.west);
+\draw[->] ($(leaf_47.south west) + (2mm, 0)$) |- (l473.west);
+\draw[->] ($(leaf_47.south west) + (2mm, 0)$) |- (l474.west);
+\draw[->] ($(leaf_47.south west) + (2mm, 0)$) |- (l475.west);
+
+
+
+
+
+\end{tikzpicture}
+\end{adjustbox}
+
+\caption{Figure: Hierarchical diagnostics for speech representation quality. The suite organizes (1) phonetic discriminability/invariance via fast ABX with MFCC baselines, PanPhon correlations, layer-wise profiles, and snippet sweeps to expose leakage across factors; (2) decoder-free token stability and linguistic alignment using TER/MTER under controlled WORLD prosody edits, segment-restricted TER for emphasis, PNMI, and PAST operating points to select layer/rate–latency–fidelity trade-offs; and (3) beyond-semantic competence and robustness through BoSS affect/dialect probes and SALMON consistency/alignment tasks, extensible to broader multilingual ASR/SID/LID/KWS/QbE coverage.}
+\label{fig:tiny_tree_figure_1}
+
+\end{figure}

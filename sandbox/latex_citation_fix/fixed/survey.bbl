@@ -1,0 +1,1201 @@
+\begin{thebibliography}{149}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Ma et~al.(2024)Ma, Song, Du, Cong, Chen, Wang, Wang, and
+  Chen]{ma2024languagemodelcanlistenwhilespeaking}
+Ziyang Ma, Yakun Song, Chenpeng Du, Jian Cong, Zhuo Chen, Yuping Wang, Yuxuan
+  Wang, and Xie Chen.
+\newblock Language model can listen while speaking, 2024.
+\newblock URL \url{https://arxiv.org/abs/2408.02622}.
+
+\bibitem[Wang and Éva
+  Székely(2024)]{wang2024evaluatingtextspeechsynthesislargediscre}
+Siyang Wang and Éva Székely.
+\newblock Evaluating text-to-speech synthesis from a large discrete token-based
+  speech language model, 2024.
+\newblock URL \url{https://arxiv.org/abs/2405.09768}.
+
+\bibitem[Wang et~al.(2023)Wang, Han, Shafran, Wu, Chiu, Cao, Wang, Chen, Zhang,
+  Soltau, Rubenstein, Zilka, Yu, Meng, Pundak, Siddhartha, Schalkwyk, and
+  Wu]{wang2023slmbridgethingapbetweenspeechtextfoundat}
+Mingqiu Wang, Wei Han, Izhak Shafran, Zelin Wu, Chung-Cheng Chiu, Yuan Cao,
+  Yongqiang Wang, Nanxin Chen, Yu~Zhang, Hagen Soltau, Paul Rubenstein, Lukas
+  Zilka, Dian Yu, Zhong Meng, Golan Pundak, Nikhil Siddhartha, Johan Schalkwyk,
+  and Yonghui Wu.
+\newblock Slm: Bridge the thin gap between speech and text foundation models,
+  2023.
+\newblock URL \url{https://arxiv.org/abs/2310.00230}.
+
+\bibitem[Zeng et~al.(2024{\natexlab{a}})Zeng, Du, Liu, Zhang, Jiang, Dong, and
+  Tang]{zeng2024scalingspeechtextpretrainingsyntheticint}
+Aohan Zeng, Zhengxiao Du, Mingdao Liu, Lei Zhang, Shengmin Jiang, Yuxiao Dong,
+  and Jie Tang.
+\newblock Scaling speech-text pre-training with synthetic interleaved data,
+  2024{\natexlab{a}}.
+\newblock URL \url{https://arxiv.org/abs/2411.17607}.
+
+\bibitem[Peng et~al.(2024{\natexlab{a}})Peng, Kulikov, Yang, Popuri, Lu, Wang,
+  and Gong]{peng2024mslms2stmultitaskspeechlanguagemodeltext}
+Yifan Peng, Ilia Kulikov, Yilin Yang, Sravya Popuri, Hui Lu, Changhan Wang, and
+  Hongyu Gong.
+\newblock Mslm-s2st: A multitask speech language model for textless
+  speech-to-speech translation with speaker style preservation,
+  2024{\natexlab{a}}.
+\newblock URL \url{https://arxiv.org/abs/2403.12408}.
+
+\bibitem[Nakata et~al.(2024)Nakata, Seki, Yanaka, Saito, Takamichi, and
+  Saruwatari]{nakata2024jchatjapaneselargescalespokendialoguecor}
+Wataru Nakata, Kentaro Seki, Hitomi Yanaka, Yuki Saito, Shinnosuke Takamichi,
+  and Hiroshi Saruwatari.
+\newblock J-chat: Japanese large-scale spoken dialogue corpus for spoken
+  dialogue language modeling, 2024.
+\newblock URL \url{https://arxiv.org/abs/2407.15828}.
+
+\bibitem[Wang et~al.(2024{\natexlab{a}})Wang, Liao, Huang, Wu, Zong, and
+  Zhang]{wang2024blspemotowardsempatheticlargespeechlangu}
+Chen Wang, Minpeng Liao, Zhongqiang Huang, Junhong Wu, Chengqing Zong, and
+  Jiajun Zhang.
+\newblock Blsp-emo: Towards empathetic large speech-language models,
+  2024{\natexlab{a}}.
+\newblock URL \url{https://arxiv.org/abs/2406.03872}.
+
+\bibitem[Guo et~al.(2025{\natexlab{a}})Guo, Li, Wang, Li, Shao, Zhang, Du,
+  Chen, Liu, and Yu]{guo2025recentadvancesdiscretespeechtokensreview}
+Yiwei Guo, Zhihan Li, Hankun Wang, Bohan Li, Chongtian Shao, Hanglei Zhang,
+  Chenpeng Du, Xie Chen, Shujie Liu, and Kai Yu.
+\newblock Recent advances in discrete speech tokens: A review,
+  2025{\natexlab{a}}.
+\newblock URL \url{https://arxiv.org/abs/2502.06490}.
+
+\bibitem[Mousavi et~al.(2024{\natexlab{a}})Mousavi, Libera, Duret, Ploujnikov,
+  Subakan, and Ravanelli]{mousavi2024dasbdiscreteaudiospeechbenchmark}
+Pooneh Mousavi, Luca~Della Libera, Jarod Duret, Artem Ploujnikov, Cem Subakan,
+  and Mirco Ravanelli.
+\newblock Dasb - discrete audio and speech benchmark, 2024{\natexlab{a}}.
+\newblock URL \url{https://arxiv.org/abs/2406.14294}.
+
+\bibitem[Lu et~al.(2024{\natexlab{a}})Lu, Chen, Fu, Huang, Ginsburg, Wang, and
+  yi~Lee]{lu2024destaenhancingspeechlanguagemodelsthroug}
+Ke-Han Lu, Zhehuai Chen, Szu-Wei Fu, He~Huang, Boris Ginsburg, Yu-Chiang~Frank
+  Wang, and Hung yi~Lee.
+\newblock Desta: Enhancing speech language models through descriptive
+  speech-text alignment, 2024{\natexlab{a}}.
+\newblock URL \url{https://arxiv.org/abs/2406.18871}.
+
+\bibitem[Chou et~al.(2023)Chou, Chien, Hsu, Livescu, Babu, Conneau, Baevski,
+  and Auli]{entry2025towardjointlanguagemodelingspeechunitste}
+Ju-Chieh Chou, Chung-Ming Chien, Wei-Ning Hsu, Karen Livescu, Arun Babu, Alexis
+  Conneau, Alexei Baevski, and Michael Auli.
+\newblock Toward joint language modeling for speech units and text.
+\newblock In \emph{Findings of the Association for Computational Linguistics:
+  EMNLP 2023}, page 6582–6593. Association for Computational Linguistics,
+  2023.
+\newblock \doi{10.18653/v1/2023.findings-emnlp.438}.
+\newblock URL \url{http://dx.doi.org/10.18653/v1/2023.findings-emnlp.438}.
+
+\bibitem[Ji et~al.(2025)Ji, Fang, Zuo, Jiang, Wang, Wang, Huang, and
+  Zhao]{ji2025languagecodecbridgingdiscreterepresentat}
+Shengpeng Ji, Minghui Fang, Jialong Zuo, Ziyue Jiang, Dingdong Wang, Hanting
+  Wang, Hai Huang, and Zhou Zhao.
+\newblock Language-codec: Bridging discrete codec representations and speech
+  language models, 2025.
+\newblock URL \url{https://arxiv.org/abs/2402.12208}.
+
+\bibitem[Yang et~al.(2025{\natexlab{a}})Yang, Li, Sung, Shih, Dooley, Centazzo,
+  and Rajeswaran]{yang2025diffsoundstreamefficientspeechtokenizati}
+Yang Yang, Yunpeng Li, George Sung, Shao-Fu Shih, Craig Dooley, Alessio
+  Centazzo, and Ramanan Rajeswaran.
+\newblock Diffsoundstream: Efficient speech tokenization via diffusion
+  decoding, 2025{\natexlab{a}}.
+\newblock URL \url{https://arxiv.org/abs/2506.22362}.
+
+\bibitem[Wang et~al.(2025{\natexlab{a}})Wang, Chen, Zhang, Zhang, Li, and
+  Wu]{wang2025tadicodectextawarediffusionspeechtokeniz}
+Yuancheng Wang, Dekun Chen, Xueyao Zhang, Junan Zhang, Jiaqi Li, and Zhizheng
+  Wu.
+\newblock Tadicodec: Text-aware diffusion speech tokenizer for speech language
+  modeling, 2025{\natexlab{a}}.
+\newblock URL \url{https://arxiv.org/abs/2508.16790}.
+
+\bibitem[Baade et~al.(2024)Baade, Peng, and
+  Harwath]{baade2024syllablelmlearningcoarsesemanticunitsspe}
+Alan Baade, Puyuan Peng, and David Harwath.
+\newblock Syllablelm: Learning coarse semantic units for speech language
+  models, 2024.
+\newblock URL \url{https://arxiv.org/abs/2410.04029}.
+
+\bibitem[Zeng et~al.(2024{\natexlab{b}})Zeng, Du, Liu, Wang, Jiang, Zhao, Dong,
+  and Tang]{zeng2024glm4voicetowardsintelligenthumanlikeends}
+Aohan Zeng, Zhengxiao Du, Mingdao Liu, Kedong Wang, Shengmin Jiang, Lei Zhao,
+  Yuxiao Dong, and Jie Tang.
+\newblock Glm-4-voice: Towards intelligent and human-like end-to-end spoken
+  chatbot, 2024{\natexlab{b}}.
+\newblock URL \url{https://arxiv.org/abs/2412.02612}.
+
+\bibitem[Chang et~al.(2024)Chang, Gong, Wang, Glass, and
+  Chung]{chang2024dcspinspeakerinvariantspeechtokenizerspo}
+Heng-Jui Chang, Hongyu Gong, Changhan Wang, James Glass, and Yu-An Chung.
+\newblock Dc-spin: A speaker-invariant speech tokenizer for spoken language
+  models, 2024.
+\newblock URL \url{https://arxiv.org/abs/2410.24177}.
+
+\bibitem[Tan et~al.(2025{\natexlab{a}})Tan, Inaguma, Dong, Tomasello, and
+  Ma]{tan2025ssralignmentawaremodalityconnectorspeech}
+Weiting Tan, Hirofumi Inaguma, Ning Dong, Paden Tomasello, and Xutai Ma.
+\newblock Ssr: Alignment-aware modality connector for speech language models,
+  2025{\natexlab{a}}.
+\newblock URL \url{https://arxiv.org/abs/2410.00168}.
+
+\bibitem[Wang et~al.(2024{\natexlab{b}})Wang, Duan, Tai, and
+  Tang]{wang2024c3llmconditionalmultimodalcontentgenerat}
+Zixuan Wang, Qinkai Duan, Yu-Wing Tai, and Chi-Keung Tang.
+\newblock C3llm: Conditional multimodal content generation using large language
+  models, 2024{\natexlab{b}}.
+\newblock URL \url{https://arxiv.org/abs/2405.16136}.
+
+\bibitem[Li et~al.(2025{\natexlab{a}})Li, Xie, Sun, Cheng, and
+  Kang]{li2025continuousspeechtokenizertext}
+Yixing Li, Ruobing Xie, Xingwu Sun, Yu~Cheng, and Zhanhui Kang.
+\newblock Continuous speech tokenizer in text to speech, 2025{\natexlab{a}}.
+\newblock URL \url{https://arxiv.org/abs/2410.17081}.
+
+\bibitem[Har-Tuv et~al.(2025)Har-Tuv, Tal, and
+  Adi]{har-tuv2025pastphoneticacousticspeechtokenizer}
+Nadav Har-Tuv, Or~Tal, and Yossi Adi.
+\newblock Past: Phonetic-acoustic speech tokenizer, 2025.
+\newblock URL \url{https://arxiv.org/abs/2505.14470}.
+
+\bibitem[Turetzky and
+  Adi(2024)]{turetzky2024lastlanguagemodelawarespeechtokenization}
+Arnon Turetzky and Yossi Adi.
+\newblock Last: Language model aware speech tokenization, 2024.
+\newblock URL \url{https://arxiv.org/abs/2409.03701}.
+
+\bibitem[Liu et~al.(2024{\natexlab{a}})Liu, Guo, Xu, Lv, Chu, Zhao, and
+  Lin]{liu2024analyzingmitigatinginconsistencydiscrete}
+Wenrui Liu, Zhifang Guo, Jin Xu, Yuanjun Lv, Yunfei Chu, Zhou Zhao, and Junyang
+  Lin.
+\newblock Analyzing and mitigating inconsistency in discrete audio tokens for
+  neural codec language models, 2024{\natexlab{a}}.
+\newblock URL \url{https://arxiv.org/abs/2409.19283}.
+
+\bibitem[Ye et~al.(2024)Ye, Sun, Lei, Lin, Tan, Dai, Kong, Chen, Pan, Liu, Guo,
+  and Xue]{ye2024codecdoesmatterexploringsemanticshortcom}
+Zhen Ye, Peiwen Sun, Jiahe Lei, Hongzhan Lin, Xu~Tan, Zheqi Dai, Qiuqiang Kong,
+  Jianyi Chen, Jiahao Pan, Qifeng Liu, Yike Guo, and Wei Xue.
+\newblock Codec does matter: Exploring the semantic shortcoming of codec for
+  audio language model, 2024.
+\newblock URL \url{https://arxiv.org/abs/2408.17175}.
+
+\bibitem[Huang et~al.(2024)Huang, Meng, and
+  Ko]{huang2024repcodecspeechrepresentationcodectokeniz}
+Zhichao Huang, Chutong Meng, and Tom Ko.
+\newblock Repcodec: A speech representation codec for speech tokenization,
+  2024.
+\newblock URL \url{https://arxiv.org/abs/2309.00169}.
+
+\bibitem[Mousavi et~al.(2024{\natexlab{b}})Mousavi, Duret, Zaiem, Libera,
+  Ploujnikov, Subakan, and
+  Ravanelli]{mousavi2024howshouldweextractdiscreteaudiotokenssel}
+Pooneh Mousavi, Jarod Duret, Salah Zaiem, Luca~Della Libera, Artem Ploujnikov,
+  Cem Subakan, and Mirco Ravanelli.
+\newblock How should we extract discrete audio tokens from self-supervised
+  models?, 2024{\natexlab{b}}.
+\newblock URL \url{https://arxiv.org/abs/2406.10735}.
+
+\bibitem[Verma(2024)]{verma2024whispergpthybridrepresentationaudiolarge}
+Prateek Verma.
+\newblock Whisper-gpt: A hybrid representation audio large language model,
+  2024.
+\newblock URL \url{https://arxiv.org/abs/2412.11449}.
+
+\bibitem[Li et~al.(2024{\natexlab{a}})Li, Wang, Wang, Qian, Zhou, Liu, Yousefi,
+  Li, Tsai, Xiao, Liu, Chen, Zhao, Li, Wu, and
+  Zeng]{li2024investigatingneuralaudiocodecsspeechlang}
+Jiaqi Li, Dongmei Wang, Xiaofei Wang, Yao Qian, Long Zhou, Shujie Liu, Midia
+  Yousefi, Canrun Li, Chung-Hsien Tsai, Zhen Xiao, Yanqing Liu, Junkun Chen,
+  Sheng Zhao, Jinyu Li, Zhizheng Wu, and Michael Zeng.
+\newblock Investigating neural audio codecs for speech language model-based
+  speech generation, 2024{\natexlab{a}}.
+\newblock URL \url{https://arxiv.org/abs/2409.04016}.
+
+\bibitem[Messica and
+  Adi(2024)]{messica2024nastnoiseawarespeechtokenizationlanguage}
+Shoval Messica and Yossi Adi.
+\newblock Nast: Noise aware speech tokenization for speech language models,
+  2024.
+\newblock URL \url{https://arxiv.org/abs/2406.11037}.
+
+\bibitem[Noroozi et~al.(2024)Noroozi, Chen, Majumdar, Huang, Balam, and
+  Ginsburg]{noroozi2024instructiondatagenerationunsupervisedada}
+Vahid Noroozi, Zhehuai Chen, Somshubra Majumdar, Steve Huang, Jagadeesh Balam,
+  and Boris Ginsburg.
+\newblock Instruction data generation and unsupervised adaptation for speech
+  language models, 2024.
+\newblock URL \url{https://arxiv.org/abs/2406.12946}.
+
+\bibitem[Hsiao et~al.(2025)Hsiao, Lu, Chang, Yang, Chen, and
+  yi~Lee]{hsiao2025analyzingmitigationstrategiescatastrophi}
+Chi-Yuan Hsiao, Ke-Han Lu, Kai-Wei Chang, Chih-Kai Yang, Wei-Chih Chen, and
+  Hung yi~Lee.
+\newblock Analyzing mitigation strategies for catastrophic forgetting in
+  end-to-end training of spoken language models, 2025.
+\newblock URL \url{https://arxiv.org/abs/2505.17496}.
+
+\bibitem[Lu et~al.(2025{\natexlab{a}})Lu, Chen, Fu, Yang, Balam, Ginsburg,
+  Wang, and yi~Lee]{lu2025desta2developinginstructionfollowingspee}
+Ke-Han Lu, Zhehuai Chen, Szu-Wei Fu, Chao-Han~Huck Yang, Jagadeesh Balam, Boris
+  Ginsburg, Yu-Chiang~Frank Wang, and Hung yi~Lee.
+\newblock Desta2: Developing instruction-following speech language model
+  without speech instruction-tuning data, 2025{\natexlab{a}}.
+\newblock URL \url{https://arxiv.org/abs/2409.20007}.
+
+\bibitem[Wu et~al.(2023)Wu, Chang, Wu, and
+  yi~Lee]{wu2023speechgenunlockinggenerativepowerspeechl}
+Haibin Wu, Kai-Wei Chang, Yuan-Kuei Wu, and Hung yi~Lee.
+\newblock Speechgen: Unlocking the generative power of speech language models
+  with prompts, 2023.
+\newblock URL \url{https://arxiv.org/abs/2306.02207}.
+
+\bibitem[Hu et~al.(2025)Hu, Hosseini-Asl, Chen, Casanova, Ghosh, Żelasko,
+  Chen, Li, Balam, and
+  Ginsburg]{hu2025salmduplexefficientdirectmodelingspeechl}
+Ke~Hu, Ehsan Hosseini-Asl, Chen Chen, Edresson Casanova, Subhankar Ghosh, Piotr
+  Żelasko, Zhehuai Chen, Jason Li, Jagadeesh Balam, and Boris Ginsburg.
+\newblock Salm-duplex: Efficient and direct duplex modeling for
+  speech-to-speech language model, 2025.
+\newblock URL \url{https://arxiv.org/abs/2505.15670}.
+
+\bibitem[Cui et~al.(2025{\natexlab{a}})Cui, Zhu, Li, Guo, Bai, Hou, and
+  King]{cui2025thinkbeforeyoutalkenhancingmeaningfuldia}
+Wenqian Cui, Lei Zhu, Xiaohui Li, Zhihan Guo, Haoli Bai, Lu~Hou, and Irwin
+  King.
+\newblock Think before you talk: Enhancing meaningful dialogue generation in
+  full-duplex speech language models with planning-inspired text guidance,
+  2025{\natexlab{a}}.
+\newblock URL \url{https://arxiv.org/abs/2508.07375}.
+
+\bibitem[Javed et~al.(2023)Javed, Bhogale, Raman, Kumar, Kunchukuttan, and
+  Khapra]{entry2025indicsuperbspeechprocessinguniversalperf}
+Tahir Javed, Kaushal Bhogale, Abhigyan Raman, Pratyush Kumar, Anoop
+  Kunchukuttan, and Mitesh~M. Khapra.
+\newblock Indicsuperb: A speech processing universal performance benchmark for
+  indian languages.
+\newblock \emph{Proceedings of the AAAI Conference on Artificial Intelligence},
+  37\penalty0 (11):\penalty0 12942–12950, June 2023.
+\newblock ISSN 2159-5399.
+\newblock \doi{10.1609/aaai.v37i11.26521}.
+\newblock URL \url{http://dx.doi.org/10.1609/aaai.v37i11.26521}.
+
+\bibitem[Wang et~al.(2025{\natexlab{b}})Wang, Sailor, Wong, Liu, Sun, Zhang,
+  Huzaifah, Chen, and Aw]{wang2025incorporatingcontextualparalinguisticund}
+Qiongqiong Wang, Hardik~B. Sailor, Jeremy H.~M. Wong, Tianchi Liu, Shuo Sun,
+  Wenyu Zhang, Muhammad Huzaifah, Nancy Chen, and Ai~Ti Aw.
+\newblock Incorporating contextual paralinguistic understanding in large
+  speech-language models, 2025{\natexlab{b}}.
+\newblock URL \url{https://arxiv.org/abs/2508.07273}.
+
+\bibitem[Hassid et~al.(2024)Hassid, Remez, Nguyen, Gat, Conneau, Kreuk, Copet,
+  Defossez, Synnaeve, Dupoux, Schwartz, and
+  Adi]{hassid2024textuallypretrainedspeechlanguagemodels}
+Michael Hassid, Tal Remez, Tu~Anh Nguyen, Itai Gat, Alexis Conneau, Felix
+  Kreuk, Jade Copet, Alexandre Defossez, Gabriel Synnaeve, Emmanuel Dupoux, Roy
+  Schwartz, and Yossi Adi.
+\newblock Textually pretrained speech language models, 2024.
+\newblock URL \url{https://arxiv.org/abs/2305.13009}.
+
+\bibitem[Onda et~al.(2025)Onda, Fukayama, Saito, and
+  Minematsu]{onda2025benchmarkingprosodyencodingdiscretespeec}
+Kentaro Onda, Satoru Fukayama, Daisuke Saito, and Nobuaki Minematsu.
+\newblock Benchmarking prosody encoding in discrete speech tokens, 2025.
+\newblock URL \url{https://arxiv.org/abs/2508.11224}.
+
+\bibitem[Vashishth et~al.(2024)Vashishth, Singh, Bharadwaj, Ganapathy,
+  Asawaroengchai, Audhkhasi, Rosenberg, Bapna, and
+  Ramabhadran]{vashishth2024stabspeechtokenizerassessmentbenchmark}
+Shikhar Vashishth, Harman Singh, Shikhar Bharadwaj, Sriram Ganapathy, Chulayuth
+  Asawaroengchai, Kartik Audhkhasi, Andrew Rosenberg, Ankur Bapna, and Bhuvana
+  Ramabhadran.
+\newblock Stab: Speech tokenizer assessment benchmark, 2024.
+\newblock URL \url{https://arxiv.org/abs/2409.02384}.
+
+\bibitem[Maimon et~al.(2025{\natexlab{a}})Maimon, Roth, and
+  Adi]{maimon2025salmonsuiteacousticlanguagemodelevaluati}
+Gallil Maimon, Amit Roth, and Yossi Adi.
+\newblock Salmon: A suite for acoustic language model evaluation,
+  2025{\natexlab{a}}.
+\newblock URL \url{https://arxiv.org/abs/2409.07437}.
+
+\bibitem[Zhao et~al.(2024{\natexlab{a}})Zhao, Moritz, Lakomkin, Xie, Xiu,
+  Zmolikova, Ahmed, Gaur, Le, and
+  Fuegen]{zhao2024textlessstreamingspeechtranslationsemant}
+Jinzheng Zhao, Niko Moritz, Egor Lakomkin, Ruiming Xie, Zhiping Xiu, Katerina
+  Zmolikova, Zeeshan Ahmed, Yashesh Gaur, Duc Le, and Christian Fuegen.
+\newblock Textless streaming speech-to-speech translation using semantic speech
+  tokens, 2024{\natexlab{a}}.
+\newblock URL \url{https://arxiv.org/abs/2410.03298}.
+
+\bibitem[Min et~al.(2025)Min, Mundnich, Lapastora, Soltanmohammadi, Ronanki,
+  and Han]{min2025speechretrievalaugmentedgenerationwithou}
+Do~June Min, Karel Mundnich, Andy Lapastora, Erfan Soltanmohammadi, Srikanth
+  Ronanki, and Kyu Han.
+\newblock Speech retrieval-augmented generation without automatic speech
+  recognition, 2025.
+\newblock URL \url{https://arxiv.org/abs/2412.16500}.
+
+\bibitem[Wang et~al.(2025{\natexlab{c}})Wang, Yang, Shao, Chen, Zhao, Wu, Meng,
+  and Wu]{wang2025dualspeechlmtowardsunifiedspeechundersta}
+Yuanyuan Wang, Dongchao Yang, Yiwen Shao, Hangting Chen, Jiankun Zhao, Zhiyong
+  Wu, Helen Meng, and Xixin Wu.
+\newblock Dualspeechlm: Towards unified speech understanding and generation via
+  dual speech token modeling with large language models, 2025{\natexlab{c}}.
+\newblock URL \url{https://arxiv.org/abs/2508.08961}.
+
+\bibitem[Cui et~al.(2025{\natexlab{b}})Cui, Jiao, Meng, and
+  King]{cui2025voxevalbenchmarkingknowledgeunderstandin}
+Wenqian Cui, Xiaoqi Jiao, Ziqiao Meng, and Irwin King.
+\newblock Voxeval: Benchmarking the knowledge understanding capabilities of
+  end-to-end spoken language models, 2025{\natexlab{b}}.
+\newblock URL \url{https://arxiv.org/abs/2501.04962}.
+
+\bibitem[Fily et~al.(2024)Fily, Wisniewski, Guillaume, Adda, and
+  Michaud]{fily2024establishingdegreesclosenessbetweenaudio}
+Maxime Fily, Guillaume Wisniewski, Severine Guillaume, Gilles Adda, and Alexis
+  Michaud.
+\newblock Establishing degrees of closeness between audio recordings along
+  different dimensions using large-scale cross-lingual models, 2024.
+\newblock URL \url{https://arxiv.org/abs/2402.05581}.
+
+\bibitem[Wang et~al.(2025{\natexlab{d}})Wang, Li, Lv, Chen, Song, Kang, Lian,
+  Li, Li, He, and Li]{wang2025bossbeyondsemanticspeech}
+Qing Wang, Zehan Li, Hang Lv, Hongjie Chen, Yaodong Song, Jian Kang, Jie Lian,
+  Jie Li, Yongxiang Li, Zhongjiang He, and Xuelong Li.
+\newblock Boss: Beyond-semantic speech, 2025{\natexlab{d}}.
+\newblock URL \url{https://arxiv.org/abs/2507.17563}.
+
+\bibitem[Chiang et~al.(2025{\natexlab{a}})Chiang, Wang, Li, Lin, Lin, Liu,
+  Wang, Yang, yi~Lee, and
+  Wang]{chiang2025stitchsimultaneousthinkingtalkingchunked}
+Cheng-Han Chiang, Xiaofei Wang, Linjie Li, Chung-Ching Lin, Kevin Lin, Shujie
+  Liu, Zhendong Wang, Zhengyuan Yang, Hung yi~Lee, and Lijuan Wang.
+\newblock Stitch: Simultaneous thinking and talking with chunked reasoning for
+  spoken language models, 2025{\natexlab{a}}.
+\newblock URL \url{https://arxiv.org/abs/2507.15375}.
+
+\bibitem[Jo et~al.(2025)Jo, Yun, Roh, and
+  Kim]{jo2025lmsptalignedsemanticdistillationspeechto}
+Daejin Jo, Jeeyoung Yun, Byungseok Roh, and Sungwoong Kim.
+\newblock Lm-spt: Lm-aligned semantic distillation for speech tokenization,
+  2025.
+\newblock URL \url{https://arxiv.org/abs/2506.16738}.
+
+\bibitem[Liu et~al.(2024{\natexlab{b}})Liu, Li, Zhang, Dinkel, Wang, Yan, Wang,
+  and Wang]{liu2024enhancingautomatedaudiocaptioninglargela}
+Jizhong Liu, Gang Li, Junbo Zhang, Heinrich Dinkel, Yongqing Wang, Zhiyong Yan,
+  Yujun Wang, and Bin Wang.
+\newblock Enhancing automated audio captioning via large language models with
+  optimized audio encoding, 2024{\natexlab{b}}.
+\newblock URL \url{https://arxiv.org/abs/2406.13275}.
+
+\bibitem[Dao et~al.(2025)Dao, Vu, and
+  Ha]{dao2025ichigomixedmodalearlyfusionrealtimevoice}
+Alan Dao, Dinh~Bach Vu, and Huy~Hoang Ha.
+\newblock Ichigo: Mixed-modal early-fusion realtime voice assistant, 2025.
+\newblock URL \url{https://arxiv.org/abs/2410.15316}.
+
+\bibitem[Shu et~al.(2023)Shu, Dong, Chen, Huang, Zhang, Shi, Xiang, and
+  Shi]{shu2023llasmlargelanguagespeechmodel}
+Yu~Shu, Siwei Dong, Guangyao Chen, Wenhao Huang, Ruihua Zhang, Daochen Shi,
+  Qiqi Xiang, and Yemin Shi.
+\newblock Llasm: Large language and speech model, 2023.
+\newblock URL \url{https://arxiv.org/abs/2308.15930}.
+
+\bibitem[Poli et~al.(2025)Poli, Chemla, and
+  Dupoux]{poli2025fastabxlibraryefficientcomputationabxdis}
+Maxime Poli, Emmanuel Chemla, and Emmanuel Dupoux.
+\newblock fastabx: A library for efficient computation of abx discriminability,
+  2025.
+\newblock URL \url{https://arxiv.org/abs/2505.02692}.
+
+\bibitem[Bai et~al.(2025)Bai, Likhomanenko, Zhang, Gu, Aldeneh, and
+  Jaitly]{bai2025dmelspeechtokenizationmadesimple}
+Richard~He Bai, Tatiana Likhomanenko, Ruixiang Zhang, Zijin Gu, Zakaria
+  Aldeneh, and Navdeep Jaitly.
+\newblock dmel: Speech tokenization made simple, 2025.
+\newblock URL \url{https://arxiv.org/abs/2407.15835}.
+
+\bibitem[Elmakies et~al.(2025)Elmakies, Abend, and
+  Adi]{elmakies2025unsupervisedspeechsegmentationgeneralapp}
+Avishai Elmakies, Omri Abend, and Yossi Adi.
+\newblock Unsupervised speech segmentation: A general approach using speech
+  language models, 2025.
+\newblock URL \url{https://arxiv.org/abs/2501.03711}.
+
+\bibitem[Yang et~al.(2025{\natexlab{b}})Yang, Liu, Guo, Zhao, Wang, Wang, Ju,
+  Liu, Chen, Tan, Wu, and
+  Meng]{yang2025almtokenizerlowbitratesemanticrichaudioc}
+Dongchao Yang, Songxiang Liu, Haohan Guo, Jiankun Zhao, Yuanyuan Wang, Helin
+  Wang, Zeqian Ju, Xubo Liu, Xueyuan Chen, Xu~Tan, Xixin Wu, and Helen Meng.
+\newblock Almtokenizer: A low-bitrate and semantic-rich audio codec tokenizer
+  for audio language modeling, 2025{\natexlab{b}}.
+\newblock URL \url{https://arxiv.org/abs/2504.10344}.
+
+\bibitem[Maimon et~al.(2025{\natexlab{b}})Maimon, Hassid, Roth, and
+  Adi]{maimon2025scalinganalysisinterleavedspeechtextlang}
+Gallil Maimon, Michael Hassid, Amit Roth, and Yossi Adi.
+\newblock Scaling analysis of interleaved speech-text language models,
+  2025{\natexlab{b}}.
+\newblock URL \url{https://arxiv.org/abs/2504.02398}.
+
+\bibitem[Tseng et~al.(2025{\natexlab{a}})Tseng, Parcollet, van Dalen, Zhang,
+  and Bhattacharya]{tseng2025evaluationllmsspeechisoftenflawedtestset}
+Yuan Tseng, Titouan Parcollet, Rogier van Dalen, Shucong Zhang, and Sourav
+  Bhattacharya.
+\newblock Evaluation of llms in speech is often flawed: Test set contamination
+  in large language models for speech recognition, 2025{\natexlab{a}}.
+\newblock URL \url{https://arxiv.org/abs/2505.22251}.
+
+\bibitem[Wang et~al.(2024{\natexlab{c}})Wang, Wang, Guo, Li, Du, Chen, and
+  Yu]{wang2024whydospeechlanguagemodelsfailgeneratesem}
+Hankun Wang, Haoran Wang, Yiwei Guo, Zhihan Li, Chenpeng Du, Xie Chen, and Kai
+  Yu.
+\newblock Why do speech language models fail to generate semantically coherent
+  outputs? a modality evolving perspective, 2024{\natexlab{c}}.
+\newblock URL \url{https://arxiv.org/abs/2412.17048}.
+
+\bibitem[Nguyen et~al.(2025)Nguyen, Hoang, and
+  Tran]{nguyen2025qwenvsgemmaintegrationwhispercomparative}
+Tuan Nguyen, Long-Vu Hoang, and Huy-Dat Tran.
+\newblock Qwen vs. gemma integration with whisper: A comparative study in
+  multilingual speechllm systems, 2025.
+\newblock URL \url{https://arxiv.org/abs/2506.13596}.
+
+\bibitem[Li et~al.(2025{\natexlab{b}})Li, Xu, and
+  Zhang]{li2025seewossubmissionmlcslmlessonslearnedspee}
+Bo~Li, Chengben Xu, and Wufeng Zhang.
+\newblock Seewo's submission to mlc-slm: Lessons learned from speech reasoning
+  language models, 2025{\natexlab{b}}.
+\newblock URL \url{https://arxiv.org/abs/2506.13300}.
+
+\bibitem[Tsunoo et~al.(2024)Tsunoo, Futami, Kashiwagi, Arora, and
+  Watanabe]{tsunoo2024decoderonlyarchitecturespeechrecognition}
+Emiru Tsunoo, Hayato Futami, Yosuke Kashiwagi, Siddhant Arora, and Shinji
+  Watanabe.
+\newblock Decoder-only architecture for speech recognition with ctc prompts and
+  text data augmentation, 2024.
+\newblock URL \url{https://arxiv.org/abs/2309.08876}.
+
+\bibitem[Kando et~al.(2025)Kando, Miyao, and
+  Takamichi]{kando2025exploringeffectsegmentationvocabularysiz}
+Shunsuke Kando, Yusuke Miyao, and Shinnosuke Takamichi.
+\newblock Exploring the effect of segmentation and vocabulary size on speech
+  tokenization for speech language models, 2025.
+\newblock URL \url{https://arxiv.org/abs/2505.17446}.
+
+\bibitem[Wu et~al.(2024)Wu, Maiti, Peng, Zhang, Li, Wang, Wang, Watanabe, and
+  Song]{wu2024speechcomposerunifyingmultiplespeechtask}
+Yihan Wu, Soumi Maiti, Yifan Peng, Wangyou Zhang, Chenda Li, Yuyue Wang, Xihua
+  Wang, Shinji Watanabe, and Ruihua Song.
+\newblock Speechcomposer: Unifying multiple speech tasks with prompt
+  composition, 2024.
+\newblock URL \url{https://arxiv.org/abs/2401.18045}.
+
+\bibitem[Chen et~al.(2023)Chen, Chang, Peng, Ni, Maiti, and
+  Watanabe]{chen2023reducingbarriersselfsupervisedlearninghu}
+William Chen, Xuankai Chang, Yifan Peng, Zhaoheng Ni, Soumi Maiti, and Shinji
+  Watanabe.
+\newblock Reducing barriers to self-supervised learning: Hubert pre-training
+  with academic compute, 2023.
+\newblock URL \url{https://arxiv.org/abs/2306.06672}.
+
+\bibitem[Shen et~al.(2023)Shen, Alishahi, Bisazza, and
+  Chrupała]{shen2023wavesyntaxprobingspokenlanguagemodels}
+Gaofei Shen, Afra Alishahi, Arianna Bisazza, and Grzegorz Chrupała.
+\newblock Wave to syntax: Probing spoken language models for syntax, 2023.
+\newblock URL \url{https://arxiv.org/abs/2305.18957}.
+
+\bibitem[Hsu et~al.(2024)Hsu, Chang, Li, and
+  yi~Lee]{hsu2024exploringcontextlearningtextlessspeechla}
+Ming-Hao Hsu, Kai-Wei Chang, Shang-Wen Li, and Hung yi~Lee.
+\newblock Exploring in-context learning of textless speech language model for
+  speech classification tasks, 2024.
+\newblock URL \url{https://arxiv.org/abs/2310.12477}.
+
+\bibitem[Shen et~al.(2024)Shen, Guo, Du, Chen, and
+  Yu]{shen2024acousticbpespeechgenerationdiscretetoken}
+Feiyu Shen, Yiwei Guo, Chenpeng Du, Xie Chen, and Kai Yu.
+\newblock Acoustic bpe for speech generation with discrete tokens, 2024.
+\newblock URL \url{https://arxiv.org/abs/2310.14580}.
+
+\bibitem[Xue et~al.(2024)Xue, Deng, Han, Gao, and
+  Li]{xue2024improvingaudiocodecbasedzeroshottextspee}
+Jinlong Xue, Yayue Deng, Yicheng Han, Yingming Gao, and Ya~Li.
+\newblock Improving audio codec-based zero-shot text-to-speech synthesis with
+  multi-modal context and large language model, 2024.
+\newblock URL \url{https://arxiv.org/abs/2406.03706}.
+
+\bibitem[Huang et~al.(2023)Huang, Peloquin, Kao, Wang, Gong, Salesky, Adi, Lee,
+  and Chen]{huang2023holisticcascadesystembenchmarkhumanevalu}
+Wen-Chin Huang, Benjamin Peloquin, Justine Kao, Changhan Wang, Hongyu Gong,
+  Elizabeth Salesky, Yossi Adi, Ann Lee, and Peng-Jen Chen.
+\newblock A holistic cascade system, benchmark, and human evaluation protocol
+  for expressive speech-to-speech translation, 2023.
+\newblock URL \url{https://arxiv.org/abs/2301.10606}.
+
+\bibitem[Qian et~al.(2025)Qian, Fan, Ni, Shechtman, Hasegawa-Johnson, Gan, and
+  Zhang]{qian2025prosodylmuncoveringemergingprosodyproces}
+Kaizhi Qian, Xulin Fan, Junrui Ni, Slava Shechtman, Mark Hasegawa-Johnson,
+  Chuang Gan, and Yang Zhang.
+\newblock Prosodylm: Uncovering the emerging prosody processing capabilities in
+  speech language models, 2025.
+\newblock URL \url{https://arxiv.org/abs/2507.20091}.
+
+\bibitem[Chen et~al.(2025{\natexlab{a}})Chen, Gou, Huang, Liu, Tan, Xu, Wang,
+  Zhu, Zeng, Yang, Wang, Xiang, Li, Bai, Han, Li, Jin, Xie, Zhang, Kwok, Zhao,
+  Liang, Yeung, Chen, Li, Zhang, Liu, Yao, Hong, Hou, and
+  Xu]{chen2025emovaempoweringlanguagemodelsseehearspea}
+Kai Chen, Yunhao Gou, Runhui Huang, Zhili Liu, Daxin Tan, Jing Xu, Chunwei
+  Wang, Yi~Zhu, Yihan Zeng, Kuo Yang, Dingdong Wang, Kun Xiang, Haoyuan Li,
+  Haoli Bai, Jianhua Han, Xiaohui Li, Weike Jin, Nian Xie, Yu~Zhang, James~T.
+  Kwok, Hengshuang Zhao, Xiaodan Liang, Dit-Yan Yeung, Xiao Chen, Zhenguo Li,
+  Wei Zhang, Qun Liu, Jun Yao, Lanqing Hong, Lu~Hou, and Hang Xu.
+\newblock Emova: Empowering language models to see, hear and speak with vivid
+  emotions, 2025{\natexlab{a}}.
+\newblock URL \url{https://arxiv.org/abs/2409.18042}.
+
+\bibitem[Sadok et~al.(2025)Sadok, Leglaive, and
+  Séguier]{sadok2025vectorquantizedmaskedautoencoderaudiovis}
+Samir Sadok, Simon Leglaive, and Renaud Séguier.
+\newblock A vector quantized masked autoencoder for audiovisual speech emotion
+  recognition, 2025.
+\newblock URL \url{https://arxiv.org/abs/2305.03568}.
+
+\bibitem[yu~Huang et~al.(2025)yu~Huang, Chen, wen Yang, Liu, Li, Lin, Tseng,
+  Diwan, Shih, Shi, Chen, Yang, Ren, Chen, Hsiao, Peng, Wang, Kuan, Lu, Chang,
+  Ritter-Gutierrez, Huang, Arora, Lin, Chuang, Yeo, Chang, Chien, Choi, Wang,
+  Hsieh, Lin, Yu, Chiu, Guimarães, Han, Lin, Lin, Chang, Chang, Chen, Chen,
+  Chen, Cheng, Dhawan, Fang, Fang, Chiang, Fu, Hsiao, Hsu, Huang, Wei, Lin,
+  Lin, Lin, Lin, Liu, Lu, Pai, Pasad, Kuan, Shon, Tang, Tsai, Wei, Wei, Wu, Wu,
+  Yang, Yang, Yip, Yuan, Noroozi, Chen, Wu, Livescu, Harwath, Watanabe, and
+  yi~Lee]{huang2025dynamicsuperbphase2collaborativelyexpand}
+Chien yu~Huang, Wei-Chih Chen, Shu wen Yang, Andy~T. Liu, Chen-An Li, Yu-Xiang
+  Lin, Wei-Cheng Tseng, Anuj Diwan, Yi-Jen Shih, Jiatong Shi, William Chen,
+  Chih-Kai Yang, Wenze Ren, Xuanjun Chen, Chi-Yuan Hsiao, Puyuan Peng,
+  Shih-Heng Wang, Chun-Yi Kuan, Ke-Han Lu, Kai-Wei Chang, Fabian
+  Ritter-Gutierrez, Kuan-Po Huang, Siddhant Arora, You-Kuan Lin, Ming~To
+  Chuang, Eunjung Yeo, Kalvin Chang, Chung-Ming Chien, Kwanghee Choi, Jun-You
+  Wang, Cheng-Hsiu Hsieh, Yi-Cheng Lin, Chee-En Yu, I-Hsiang Chiu, Heitor~R.
+  Guimarães, Jionghao Han, Tzu-Quan Lin, Tzu-Yuan Lin, Homu Chang, Ting-Wu
+  Chang, Chun~Wei Chen, Shou-Jen Chen, Yu-Hua Chen, Hsi-Chun Cheng, Kunal
+  Dhawan, Jia-Lin Fang, Shi-Xin Fang, Kuan-Yu~Fang Chiang, Chi~An Fu, Hsien-Fu
+  Hsiao, Ching~Yu Hsu, Shao-Syuan Huang, Lee~Chen Wei, Hsi-Che Lin, Hsuan-Hao
+  Lin, Hsuan-Ting Lin, Jian-Ren Lin, Ting-Chun Liu, Li-Chun Lu, Tsung-Min Pai,
+  Ankita Pasad, Shih-Yun~Shan Kuan, Suwon Shon, Yuxun Tang, Yun-Shao Tsai,
+  Jui-Chiang Wei, Tzu-Chieh Wei, Chengxi Wu, Dien-Ruei Wu, Chao-Han~Huck Yang,
+  Chieh-Chi Yang, Jia~Qi Yip, Shao-Xiang Yuan, Vahid Noroozi, Zhehuai Chen,
+  Haibin Wu, Karen Livescu, David Harwath, Shinji Watanabe, and Hung yi~Lee.
+\newblock Dynamic-superb phase-2: A collaboratively expanding benchmark for
+  measuring the capabilities of spoken language models with 180 tasks, 2025.
+\newblock URL \url{https://arxiv.org/abs/2411.05361}.
+
+\bibitem[Fan et~al.(2025)Fan, Sun, Gao, Xiong, Yan, Cao, Sun, Li, Zhang, Xi,
+  Zhou, Jin, Jiang, Ye, Zhang, Zheng, Han, Zhang, Yan, Dong, Ji, Gui, Zhang,
+  and Huang]{fan2025whatmakesgoodspeechtokenizerllmcentricge}
+Xiaoran Fan, Zhichao Sun, Yangfan Gao, Jingfei Xiong, Hang Yan, Yifei Cao,
+  Jiajun Sun, Shuo Li, Zhihao Zhang, Zhiheng Xi, Yuhao Zhou, Senjie Jin,
+  Changhao Jiang, Junjie Ye, Ming Zhang, Rui Zheng, Zhenhua Han, Yunke Zhang,
+  Demei Yan, Shaokang Dong, Tao Ji, Tao Gui, Qi~Zhang, and Xuanjing Huang.
+\newblock What makes a good speech tokenizer for llm-centric speech generation?
+  a systematic study, 2025.
+\newblock URL \url{https://arxiv.org/abs/2506.12537}.
+
+\bibitem[Algayres et~al.(2023)Algayres, Adi, Nguyen, Copet, Synnaeve, Sagot,
+  and Dupoux]{algayres2023generativespokenlanguagemodelbasedcontin}
+Robin Algayres, Yossi Adi, Tu~Anh Nguyen, Jade Copet, Gabriel Synnaeve, Benoit
+  Sagot, and Emmanuel Dupoux.
+\newblock Generative spoken language model based on continuous word-sized audio
+  tokens, 2023.
+\newblock URL \url{https://arxiv.org/abs/2310.05224}.
+
+\bibitem[Ahasan et~al.(2025)Ahasan, Fahim, Mohiuddin, Rahman, Chadha, Iqbal,
+  Amin, Islam, and Ali]{ahasan2025dmcodecdistillingmultimodalrepresentatio}
+Md~Mubtasim Ahasan, Md~Fahim, Tasnim Mohiuddin, A~K M~Mahbubur Rahman, Aman
+  Chadha, Tariq Iqbal, M~Ashraful Amin, Md~Mofijul Islam, and Amin~Ahsan Ali.
+\newblock Dm-codec: Distilling multimodal representations for speech
+  tokenization, 2025.
+\newblock URL \url{https://arxiv.org/abs/2410.15017}.
+
+\bibitem[Tseng et~al.(2025{\natexlab{b}})Tseng, Chen, Lee, Shiu, and
+  yi~Lee]{tseng2025tastetextalignedspeechtokenizationembedd}
+Liang-Hsuan Tseng, Yi-Chang Chen, Kuan-Yi Lee, Da-Shan Shiu, and Hung yi~Lee.
+\newblock Taste: Text-aligned speech tokenization and embedding for spoken
+  language modeling, 2025{\natexlab{b}}.
+\newblock URL \url{https://arxiv.org/abs/2504.07053}.
+
+\bibitem[Visser and
+  Kamper(2025)]{visser2025spokenlanguagemodelingdurationpenalizeds}
+Nicol Visser and Herman Kamper.
+\newblock Spoken language modeling with duration-penalized self-supervised
+  units, 2025.
+\newblock URL \url{https://arxiv.org/abs/2505.23494}.
+
+\bibitem[Gong et~al.(2025)Gong, Jin, Deng, Zhang, Zhang, Cheng, Fei, Li, and
+  Qiu]{gong2025xytokenizermitigatingsemanticacousticcon}
+Yitian Gong, Luozhijie Jin, Ruifan Deng, Dong Zhang, Xin Zhang, Qinyuan Cheng,
+  Zhaoye Fei, Shimin Li, and Xipeng Qiu.
+\newblock Xy-tokenizer: Mitigating the semantic-acoustic conflict in
+  low-bitrate speech codecs, 2025.
+\newblock URL \url{https://arxiv.org/abs/2506.23325}.
+
+\bibitem[Zhang et~al.(2025)Zhang, Liu, Zhang, Zhang, Hu, Zhao, Tian, Yang,
+  Garcia, and Chng]{zhang2025impactframeratesspeechtokenizercasestudy}
+Haoyang Zhang, Hexin Liu, Xiangyu Zhang, Qiquan Zhang, Yuchen Hu, Junqi Zhao,
+  Fei Tian, Xuerui Yang, Leibny~Paola Garcia, and Eng~Siong Chng.
+\newblock Impact of frame rates on speech tokenizer: A case study on mandarin
+  and english, 2025.
+\newblock URL \url{https://arxiv.org/abs/2505.17076}.
+
+\bibitem[Li et~al.(2024{\natexlab{b}})Li, Shen, Guo, Wang, Chen, and
+  Yu]{li2024effectivenessacousticbpedecoderonlytts}
+Bohan Li, Feiyu Shen, Yiwei Guo, Shuai Wang, Xie Chen, and Kai Yu.
+\newblock On the effectiveness of acoustic bpe in decoder-only tts,
+  2024{\natexlab{b}}.
+\newblock URL \url{https://arxiv.org/abs/2407.03892}.
+
+\bibitem[Zhang et~al.(2024)Zhang, Zhang, Li, Zhou, and
+  Qiu]{zhang2024speechtokenizerunifiedspeechtokenizerlar}
+Xin Zhang, Dong Zhang, Shimin Li, Yaqian Zhou, and Xipeng Qiu.
+\newblock Speechtokenizer: Unified speech tokenizer for speech large language
+  models, 2024.
+\newblock URL \url{https://arxiv.org/abs/2308.16692}.
+
+\bibitem[Chen et~al.(2024)Chen, Huang, Hrinchuk, Puvvada, Koluguri, Żelasko,
+  Balam, and Ginsburg]{chen2024bestowefficientstreamablespeechlanguagem}
+Zhehuai Chen, He~Huang, Oleksii Hrinchuk, Krishna~C. Puvvada, Nithin~Rao
+  Koluguri, Piotr Żelasko, Jagadeesh Balam, and Boris Ginsburg.
+\newblock Bestow: Efficient and streamable speech language model with the best
+  of two worlds in gpt and t5, 2024.
+\newblock URL \url{https://arxiv.org/abs/2406.19954}.
+
+\bibitem[Xu et~al.(2025)Xu, Wang, Yu, Chen, Gao, and
+  Deng]{xu2025optimaltransportregularizationspeechtext}
+Wenze Xu, Chun Wang, Jiazhen Yu, Sheng Chen, Liang Gao, and Weihong Deng.
+\newblock Optimal transport regularization for speech text alignment in spoken
+  language models, 2025.
+\newblock URL \url{https://arxiv.org/abs/2508.08131}.
+
+\bibitem[Lavechin et~al.(2023)Lavechin, Sy, Titeux, Blandón, Räsänen,
+  Bredin, Dupoux, and
+  Cristia]{lavechin2023babyslmlanguageacquisitionfriendlybenchm}
+Marvin Lavechin, Yaya Sy, Hadrien Titeux, María Andrea~Cruz Blandón, Okko
+  Räsänen, Hervé Bredin, Emmanuel Dupoux, and Alejandrina Cristia.
+\newblock Babyslm: language-acquisition-friendly benchmark of self-supervised
+  spoken language models, 2023.
+\newblock URL \url{https://arxiv.org/abs/2306.01506}.
+
+\bibitem[Li et~al.(2025{\natexlab{c}})Li, Zhu, Jiang, and
+  Zhu]{li2025transsionmultilingualspeechrecognitionsy}
+Xiaoxiao Li, An~Zhu, Youhai Jiang, and Fengjie Zhu.
+\newblock Transsion multilingual speech recognition system for mlc-slm 2025
+  challenge, 2025{\natexlab{c}}.
+\newblock URL \url{https://arxiv.org/abs/2508.14916}.
+
+\bibitem[Lin et~al.(2024)Lin, Ge, Wang, Li, and
+  Feng]{entry2025selectivehubertselfsupervisedpretraining}
+Jingru Lin, Meng Ge, Wupeng Wang, Haizhou Li, and Mengling Feng.
+\newblock Selective hubert: Self-supervised pre-training for target speaker in
+  clean and mixture speech.
+\newblock \emph{IEEE Signal Processing Letters}, 31:\penalty0 1014–1018,
+  2024.
+\newblock ISSN 1558-2361.
+\newblock \doi{10.1109/lsp.2024.3383794}.
+\newblock URL \url{http://dx.doi.org/10.1109/lsp.2024.3383794}.
+
+\bibitem[Hussein et~al.(2025)Hussein, Khurana, Wichern, Germain, and
+  Roux]{hussein2025hasrdhierarchicalacousticsemanticreprese}
+Amir Hussein, Sameer Khurana, Gordon Wichern, Francois~G. Germain, and
+  Jonathan~Le Roux.
+\newblock Hasrd: Hierarchical acoustic and semantic representation
+  disentanglement, 2025.
+\newblock URL \url{https://arxiv.org/abs/2506.00843}.
+
+\bibitem[Mei et~al.(2025)Mei, Zheng, Xu, and
+  Long]{mei2025shnumultilingualconversationalspeechreco}
+Yuxiang Mei, Yuang Zheng, Dongxing Xu, and Yanhua Long.
+\newblock Shnu multilingual conversational speech recognition system for
+  interspeech 2025 mlc-slm challenge, 2025.
+\newblock URL \url{https://arxiv.org/abs/2507.03343}.
+
+\bibitem[Lin et~al.(2025{\natexlab{a}})Lin, Cheng, Li, and
+  Li]{lin2025dkusystemmultispeakerautomaticspeechreco}
+Yuke Lin, Ming Cheng, Ze~Li, and Ming Li.
+\newblock The dku system for multi-speaker automatic speech recognition in
+  mlc-slm challenge, 2025{\natexlab{a}}.
+\newblock URL \url{https://arxiv.org/abs/2507.09499}.
+
+\bibitem[Tan et~al.(2025{\natexlab{b}})Tan, Chen, Wang, Deng, Zhang, Cheng, Yu,
+  Zhang, Lv, Zhao, Zhang, Ma, Chen, Wang, Liu, and
+  Ye]{tan2025drvoiceparallelspeechtextvoiceconversati}
+Chao-Hong Tan, Qian Chen, Wen Wang, Chong Deng, Qinglin Zhang, Luyao Cheng, Hai
+  Yu, Xin Zhang, Xiang Lv, Tianyu Zhao, Chong Zhang, Yukun Ma, Yafeng Chen, Hui
+  Wang, Jiaqing Liu, and Jieping Ye.
+\newblock Drvoice: Parallel speech-text voice conversation model via
+  dual-resolution speech representations, 2025{\natexlab{b}}.
+\newblock URL \url{https://arxiv.org/abs/2506.09349}.
+
+\bibitem[Deng et~al.(2025)Deng, Chen, Chen, and
+  Woodland]{deng2025simuls2sllmunlockingsimultaneousinferenc}
+Keqi Deng, Wenxi Chen, Xie Chen, and Philip~C. Woodland.
+\newblock Simuls2s-llm: Unlocking simultaneous inference of speech llms for
+  speech-to-speech translation, 2025.
+\newblock URL \url{https://arxiv.org/abs/2504.15509}.
+
+\bibitem[Cho et~al.(2025)Cho, Lee, Gupta, Agarwal, Chen, Black, and
+  Anumanchipalli]{cho2025sylbersyllabicembeddingrepresentationspe}
+Cheol~Jun Cho, Nicholas Lee, Akshat Gupta, Dhruv Agarwal, Ethan Chen, Alan~W
+  Black, and Gopala~K. Anumanchipalli.
+\newblock Sylber: Syllabic embedding representation of speech from raw audio,
+  2025.
+\newblock URL \url{https://arxiv.org/abs/2410.07168}.
+
+\bibitem[Gao et~al.(2024)Gao, Zhang, Deng, and
+  Feng]{gao2024gendistillerdistillingpretrainedlanguage}
+Yingying Gao, Shilei Zhang, Chao Deng, and Junlan Feng.
+\newblock Gendistiller: Distilling pre-trained language models based on an
+  autoregressive generative model, 2024.
+\newblock URL \url{https://arxiv.org/abs/2406.09444}.
+
+\bibitem[Yuan et~al.(2024)Yuan, Liu, Liu, and
+  Zhao]{yuan2024continuousspeechtokensmakesllmsrobustmul}
+Ze~Yuan, Yanqing Liu, Shujie Liu, and Sheng Zhao.
+\newblock Continuous speech tokens makes llms robust multi-modality learners,
+  2024.
+\newblock URL \url{https://arxiv.org/abs/2412.04917}.
+
+\bibitem[Wang et~al.(2024{\natexlab{d}})Wang, Cui, Yang, Chen, and
+  Meng]{wang2024comparativestudydiscretespeechtokenssema}
+Dingdong Wang, Mingyu Cui, Dongchao Yang, Xueyuan Chen, and Helen Meng.
+\newblock A comparative study of discrete speech tokens for semantic-related
+  tasks with large language models, 2024{\natexlab{d}}.
+\newblock URL \url{https://arxiv.org/abs/2411.08742}.
+
+\bibitem[Guo et~al.(2025{\natexlab{b}})Guo, Li, Liu, Chen, and
+  Feng]{guo2025streamuniachievingstreamingspeechtransla}
+Shoutao Guo, Xiang Li, Mengge Liu, Wei Chen, and Yang Feng.
+\newblock Streamuni: Achieving streaming speech translation with a unified
+  large speech-language model, 2025{\natexlab{b}}.
+\newblock URL \url{https://arxiv.org/abs/2507.07803}.
+
+\bibitem[Chou et~al.(2025)Chou, Zhou, and
+  Livescu]{chou2025flowslmjointlearninglinguisticacousticin}
+Ju-Chieh Chou, Jiawei Zhou, and Karen Livescu.
+\newblock Flow-slm: Joint learning of linguistic and acoustic information for
+  spoken language modeling, 2025.
+\newblock URL \url{https://arxiv.org/abs/2508.09350}.
+
+\bibitem[Song et~al.(2025)Song, Chen, Lian, Zhang, Xia, Li, Zhao, Kang, Li, Li,
+  and Li]{song2025goatttsexpressiverealisticspeechgenerati}
+Yaodong Song, Hongjie Chen, Jie Lian, Yuxin Zhang, Guangmin Xia, Zehan Li,
+  Genliang Zhao, Jian Kang, Jie Li, Yongxiang Li, and Xuelong Li.
+\newblock Goat-tts: Expressive and realistic speech generation via a
+  dual-branch llm, 2025.
+\newblock URL \url{https://arxiv.org/abs/2504.12339}.
+
+\bibitem[Chen et~al.(2025{\natexlab{b}})Chen, Higuchi, Aldeneh, Abdelaziz, and
+  Rudnicky]{chen2025variationalframeworkimprovingnaturalness}
+Li-Wei Chen, Takuya Higuchi, Zakaria Aldeneh, Ahmed~Hussen Abdelaziz, and
+  Alexander Rudnicky.
+\newblock A variational framework for improving naturalness in generative
+  spoken language models, 2025{\natexlab{b}}.
+\newblock URL \url{https://arxiv.org/abs/2506.14767}.
+
+\bibitem[Jiang et~al.(2025)Jiang, Peng, Zhang, and
+  Lu]{jiang2025universalspeechtokenlearninglowbitratene}
+Xue Jiang, Xiulian Peng, Yuan Zhang, and Yan Lu.
+\newblock Universal speech token learning via low-bitrate neural codec and
+  pretrained representations, 2025.
+\newblock URL \url{https://arxiv.org/abs/2503.12115}.
+
+\bibitem[Fang et~al.(2025{\natexlab{a}})Fang, Guo, Zhou, Ma, Zhang, and
+  Feng]{fang2025llamaomniseamlessspeechinteractionlargel}
+Qingkai Fang, Shoutao Guo, Yan Zhou, Zhengrui Ma, Shaolei Zhang, and Yang Feng.
+\newblock Llama-omni: Seamless speech interaction with large language models,
+  2025{\natexlab{a}}.
+\newblock URL \url{https://arxiv.org/abs/2409.06666}.
+
+\bibitem[Maimon et~al.(2025{\natexlab{c}})Maimon, Elmakies, and
+  Adi]{maimon2025slammingtrainingspeechlanguagemodelonegp}
+Gallil Maimon, Avishai Elmakies, and Yossi Adi.
+\newblock Slamming: Training a speech language model on one gpu in a day,
+  2025{\natexlab{c}}.
+\newblock URL \url{https://arxiv.org/abs/2502.15814}.
+
+\bibitem[Cuervo et~al.(2025)Cuervo, Moumen, Labrak, Khurana, Laurent, Rouvier,
+  and Marxer]{cuervo2025textspeechlanguagemodelsimprovedcrossmod}
+Santiago Cuervo, Adel Moumen, Yanis Labrak, Sameer Khurana, Antoine Laurent,
+  Mickael Rouvier, and Ricard Marxer.
+\newblock Text-speech language models with improved cross-modal transfer by
+  aligning abstraction levels, 2025.
+\newblock URL \url{https://arxiv.org/abs/2503.06211}.
+
+\bibitem[Shao et~al.(2025)Shao, Gao, Shen, Chen, Li, Long, Tong, Li, and
+  Sun]{shao2025deeptalktowardsseamlesssmartspeechintera}
+Hang Shao, Heting Gao, Yunhang Shen, Jiawei Chen, Lijiang Li, Zuwei Long,
+  Bo~Tong, Ke~Li, and Xing Sun.
+\newblock Deeptalk: Towards seamless and smart speech interaction with adaptive
+  modality-specific moe, 2025.
+\newblock URL \url{https://arxiv.org/abs/2506.21864}.
+
+\bibitem[Park et~al.(2025)Park, Salazar, Jansen, Kinoshita, Ro, and
+  Skerry-Ryan]{park2025longformspeechgenerationspokenlanguagemo}
+Se~Jin Park, Julian Salazar, Aren Jansen, Keisuke Kinoshita, Yong~Man Ro, and
+  RJ~Skerry-Ryan.
+\newblock Long-form speech generation with spoken language models, 2025.
+\newblock URL \url{https://arxiv.org/abs/2412.18603}.
+
+\bibitem[Cuervo and
+  Marxer(2024)]{cuervo2024scalingpropertiesspeechlanguagemodels}
+Santiago Cuervo and Ricard Marxer.
+\newblock Scaling properties of speech language models, 2024.
+\newblock URL \url{https://arxiv.org/abs/2404.00685}.
+
+\bibitem[Nachmani et~al.(2024)Nachmani, Levkovitch, Hirsch, Salazar,
+  Asawaroengchai, Mariooryad, Rivlin, Skerry-Ryan, and
+  Ramanovich]{nachmani2024spokenquestionansweringspeechcontinuatio}
+Eliya Nachmani, Alon Levkovitch, Roy Hirsch, Julian Salazar, Chulayuth
+  Asawaroengchai, Soroosh Mariooryad, Ehud Rivlin, RJ~Skerry-Ryan, and
+  Michelle~Tadmor Ramanovich.
+\newblock Spoken question answering and speech continuation using
+  spectrogram-powered llm, 2024.
+\newblock URL \url{https://arxiv.org/abs/2305.15255}.
+
+\bibitem[Sun et~al.(2023)Sun, Ahmed, Ma, Liu, Kabela, Pang, and
+  Kalinli]{sun2023contextualbiasingnamedentitieslargelangu}
+Chuanneng Sun, Zeeshan Ahmed, Yingyi Ma, Zhe Liu, Lucas Kabela, Yutong Pang,
+  and Ozlem Kalinli.
+\newblock Contextual biasing of named-entities with large language models,
+  2023.
+\newblock URL \url{https://arxiv.org/abs/2309.00723}.
+
+\bibitem[Peng et~al.(2025)Peng, Puvvada, Chen, Zelasko, Huang, Dhawan, Hu,
+  Watanabe, Balam, and
+  Ginsburg]{peng2025voicetextblenderaugmentinglargelanguagem}
+Yifan Peng, Krishna~C. Puvvada, Zhehuai Chen, Piotr Zelasko, He~Huang, Kunal
+  Dhawan, Ke~Hu, Shinji Watanabe, Jagadeesh Balam, and Boris Ginsburg.
+\newblock Voicetextblender: Augmenting large language models with speech
+  capabilities via single-stage joint speech-text supervised fine-tuning, 2025.
+\newblock URL \url{https://arxiv.org/abs/2410.17485}.
+
+\bibitem[Chen et~al.(2025{\natexlab{c}})Chen, Li, Song, Deng, Yao, Zhang, Lv,
+  Zhu, Kang, Lian, Li, Wang, Song, Li, He, and
+  Li]{chen2025goatslmspokenlanguagemodelparalinguistic}
+Hongjie Chen, Zehan Li, Yaodong Song, Wenming Deng, Yitong Yao, Yuxin Zhang,
+  Hang Lv, Xuechao Zhu, Jian Kang, Jie Lian, Jie Li, Chao Wang, Shuangyong
+  Song, Yongxiang Li, Zhongjiang He, and Xuelong Li.
+\newblock Goat-slm: A spoken language model with paralinguistic and speaker
+  characteristic awareness, 2025{\natexlab{c}}.
+\newblock URL \url{https://arxiv.org/abs/2507.18119}.
+
+\bibitem[Tian et~al.(2025)Tian, Shi, Chen, Arora, Masuyama, Maekaku, Wu, Peng,
+  Bharadwaj, Zhao, Cornell, Peng, Yue, Yang, Neubig, and
+  Watanabe]{tian2025espnetspeechlmopenspeechlanguagemodeltoo}
+Jinchuan Tian, Jiatong Shi, William Chen, Siddhant Arora, Yoshiki Masuyama,
+  Takashi Maekaku, Yihan Wu, Junyi Peng, Shikhar Bharadwaj, Yiwen Zhao, Samuele
+  Cornell, Yifan Peng, Xiang Yue, Chao-Han~Huck Yang, Graham Neubig, and Shinji
+  Watanabe.
+\newblock Espnet-speechlm: An open speech language model toolkit, 2025.
+\newblock URL \url{https://arxiv.org/abs/2502.15218}.
+
+\bibitem[Yang et~al.(2024)Yang, Fu, Li, Lin, Lin, Chen, Chung, Kuan, Huang, Lu,
+  Lin, Wang, Hu, Hsu, Tseng, Chiu, Sanga, Chen, chun Hsu, wen Yang, and
+  yi~Lee]{yang2024buildingtaiwanesemandarinspokenlanguagem}
+Chih-Kai Yang, Yu-Kuan Fu, Chen-An Li, Yi-Cheng Lin, Yu-Xiang Lin, Wei-Chih
+  Chen, Ho~Lam Chung, Chun-Yi Kuan, Wei-Ping Huang, Ke-Han Lu, Tzu-Quan Lin,
+  Hsiu-Hsuan Wang, En-Pei Hu, Chan-Jan Hsu, Liang-Hsuan Tseng, I-Hsiang Chiu,
+  Ulin Sanga, Xuanjun Chen, Po~chun Hsu, Shu wen Yang, and Hung yi~Lee.
+\newblock Building a taiwanese mandarin spoken language model: A first attempt,
+  2024.
+\newblock URL \url{https://arxiv.org/abs/2411.07111}.
+
+\bibitem[Song et~al.(2024)Song, Chen, Wang, Ma, and
+  Chen]{song2024ellavstableneuralcodeclanguagemodelingal}
+Yakun Song, Zhuo Chen, Xiaofei Wang, Ziyang Ma, and Xie Chen.
+\newblock Ella-v: Stable neural codec language modeling with alignment-guided
+  sequence reordering, 2024.
+\newblock URL \url{https://arxiv.org/abs/2401.07333}.
+
+\bibitem[Li et~al.(2024{\natexlab{c}})Li, Wang, and
+  Liu]{li2024masksrmaskedlanguagemodelfullbandspeechr}
+Xu~Li, Qirui Wang, and Xiaoyu Liu.
+\newblock Masksr: Masked language model for full-band speech restoration,
+  2024{\natexlab{c}}.
+\newblock URL \url{https://arxiv.org/abs/2406.02092}.
+
+\bibitem[Lu et~al.(2024{\natexlab{b}})Lu, Song, Yang, and
+  Watanabe]{lu2024fastadaspmultitaskadaptedefficientinfere}
+Yichen Lu, Jiaqi Song, Chao-Han~Huck Yang, and Shinji Watanabe.
+\newblock Fastadasp: Multitask-adapted efficient inference for large speech
+  language model, 2024{\natexlab{b}}.
+\newblock URL \url{https://arxiv.org/abs/2410.03007}.
+
+\bibitem[Peri et~al.(2024)Peri, Jayanthi, Ronanki, Bhatia, Mundnich, Dingliwal,
+  Das, Hou, Huybrechts, Vishnubhotla, Garcia-Romero, Srinivasan, Han, and
+  Kirchhoff]{peri2024speechguardexploringadversarialrobustnes}
+Raghuveer Peri, Sai~Muralidhar Jayanthi, Srikanth Ronanki, Anshu Bhatia, Karel
+  Mundnich, Saket Dingliwal, Nilaksh Das, Zejiang Hou, Goeric Huybrechts,
+  Srikanth Vishnubhotla, Daniel Garcia-Romero, Sundararajan Srinivasan, Kyu~J
+  Han, and Katrin Kirchhoff.
+\newblock Speechguard: Exploring the adversarial robustness of multimodal large
+  language models, 2024.
+\newblock URL \url{https://arxiv.org/abs/2405.08317}.
+
+\bibitem[Djanibekov et~al.(2025)Djanibekov, Mukhituly, Inui, Aldarmaki, and
+  Lukas]{djanibekov2025spiritpatchingspeechlanguagemodelsagains}
+Amirbek Djanibekov, Nurdaulet Mukhituly, Kentaro Inui, Hanan Aldarmaki, and
+  Nils Lukas.
+\newblock Spirit: Patching speech language models against jailbreak attacks,
+  2025.
+\newblock URL \url{https://arxiv.org/abs/2505.13541}.
+
+\bibitem[Wang et~al.(2025{\natexlab{e}})Wang, Liu, Xu, and
+  Deng]{wang2025dualinformationspeechlanguagemodelsemoti}
+Chun Wang, Chenyang Liu, Wenze Xu, and Weihong Deng.
+\newblock Dual information speech language models for emotional conversations,
+  2025{\natexlab{e}}.
+\newblock URL \url{https://arxiv.org/abs/2508.08095}.
+
+\bibitem[Futeral et~al.(2025)Futeral, Agostinelli, Tagliasacchi, Zeghidour, and
+  Kharitonov]{futeral2025madspeechmeasuresacousticdiversity}
+Matthieu Futeral, Andrea Agostinelli, Marco Tagliasacchi, Neil Zeghidour, and
+  Eugene Kharitonov.
+\newblock Mad speech: Measures of acoustic diversity of speech, 2025.
+\newblock URL \url{https://arxiv.org/abs/2404.10419}.
+
+\bibitem[Peng et~al.(2024{\natexlab{b}})Peng, Kulikov, Yang, Popuri, Lu, Wang,
+  and Gong]{peng2024empiricalstudyspeechlanguagemodelsprompt}
+Yifan Peng, Ilia Kulikov, Yilin Yang, Sravya Popuri, Hui Lu, Changhan Wang, and
+  Hongyu Gong.
+\newblock An empirical study of speech language models for prompt-conditioned
+  speech synthesis, 2024{\natexlab{b}}.
+\newblock URL \url{https://arxiv.org/abs/2403.12402}.
+
+\bibitem[Chiang et~al.(2025{\natexlab{b}})Chiang, Wang, Lin, Lin, Li, Kopetz,
+  Qian, Wang, Yang, yi~Lee, and
+  Wang]{chiang2025audioawarelargelanguagemodelsasjudgesspe}
+Cheng-Han Chiang, Xiaofei Wang, Chung-Ching Lin, Kevin Lin, Linjie Li, Radu
+  Kopetz, Yao Qian, Zhendong Wang, Zhengyuan Yang, Hung yi~Lee, and Lijuan
+  Wang.
+\newblock Audio-aware large language models as judges for speaking styles,
+  2025{\natexlab{b}}.
+\newblock URL \url{https://arxiv.org/abs/2506.05984}.
+
+\bibitem[Gong and
+  Veluri(2024)]{gong2024seamlessexpressivelmspeechlanguagemodele}
+Hongyu Gong and Bandhav Veluri.
+\newblock Seamlessexpressivelm: Speech language model for expressive
+  speech-to-speech translation with chain-of-thought, 2024.
+\newblock URL \url{https://arxiv.org/abs/2405.20410}.
+
+\bibitem[Sun et~al.(2025)Sun, Geng, Wei, Chen, Yang, Chen, Zhang, and
+  Shen]{sun2025llasofoundationalframeworkreproduciblere}
+Yirong Sun, Yizhong Geng, Peidong Wei, Yanjun Chen, Jinghan Yang, Rongfei Chen,
+  Wei Zhang, and Xiaoyu Shen.
+\newblock Llaso: A foundational framework for reproducible research in large
+  language and speech model, 2025.
+\newblock URL \url{https://arxiv.org/abs/2508.15418}.
+
+\bibitem[Li et~al.(2025{\natexlab{d}})Li, Chen, Zhang, Zhou, Wang, Lv, Du,
+  Song, Lian, Kang, Li, Li, He, and
+  Li]{li2025televaldynamicbenchmarkdesignedspokenlan}
+Zehan Li, Hongjie Chen, Yuxin Zhang, Jing Zhou, Xuening Wang, Hang Lv, Mengjie
+  Du, Yaodong Song, Jie Lian, Jian Kang, Jie Li, Yongxiang Li, Zhongjiang He,
+  and Xuelong Li.
+\newblock Televal: A dynamic benchmark designed for spoken language models in
+  chinese interactive scenarios, 2025{\natexlab{d}}.
+\newblock URL \url{https://arxiv.org/abs/2507.18061}.
+
+\bibitem[Sheng et~al.(2025)Sheng, Du, Zhang, Yan, Yang, and
+  Ling]{sheng2025syncspeechlowlatencyefficientdualstreamt}
+Zhengyan Sheng, Zhihao Du, Shiliang Zhang, Zhijie Yan, Yexin Yang, and Zhenhua
+  Ling.
+\newblock Syncspeech: Low-latency and efficient dual-stream text-to-speech
+  based on temporal masked transformer, 2025.
+\newblock URL \url{https://arxiv.org/abs/2502.11094}.
+
+\bibitem[Ouyang et~al.(2025)Ouyang, Xu, and
+  Li]{ouyang2025cmusiwslt2025simultaneousspeechtranslati}
+Siqi Ouyang, Xi~Xu, and Lei Li.
+\newblock Cmu's iwslt 2025 simultaneous speech translation system, 2025.
+\newblock URL \url{https://arxiv.org/abs/2506.13143}.
+
+\bibitem[Fang et~al.(2025{\natexlab{b}})Fang, Zhou, Guo, Zhang, and
+  Feng]{fang2025llamaomni2llmbasedrealtimespokenchatbota}
+Qingkai Fang, Yan Zhou, Shoutao Guo, Shaolei Zhang, and Yang Feng.
+\newblock Llama-omni2: Llm-based real-time spoken chatbot with autoregressive
+  streaming speech synthesis, 2025{\natexlab{b}}.
+\newblock URL \url{https://arxiv.org/abs/2505.02625}.
+
+\bibitem[Dhawan et~al.(2024)Dhawan, Koluguri, Jukić, Langman, Balam, and
+  Ginsburg]{dhawan2024codecasrtrainingperformantautomaticspeec}
+Kunal Dhawan, Nithin~Rao Koluguri, Ante Jukić, Ryan Langman, Jagadeesh Balam,
+  and Boris Ginsburg.
+\newblock Codec-asr: Training performant automatic speech recognition systems
+  with discrete speech representations, 2024.
+\newblock URL \url{https://arxiv.org/abs/2407.03495}.
+
+\bibitem[Lu et~al.(2025{\natexlab{b}})Lu, Cheng, Luo, Zhang, Qian, and
+  Zhang]{lu2025slideintegratingspeechlanguagemodelllmsp}
+Haitian Lu, Gaofeng Cheng, Liuping Luo, Leying Zhang, Yanmin Qian, and Pengyuan
+  Zhang.
+\newblock Slide: Integrating speech language model with llm for spontaneous
+  spoken dialogue generation, 2025{\natexlab{b}}.
+\newblock URL \url{https://arxiv.org/abs/2501.00805}.
+
+\bibitem[Fu et~al.(2024)Fu, Lee, Wang, and
+  yi~Lee]{fu2024investigatingeffectslargescalepseudoster}
+Yu-Kuan Fu, Cheng-Kuang Lee, Hsiu-Hsuan Wang, and Hung yi~Lee.
+\newblock Investigating the effects of large-scale pseudo-stereo data and
+  different speech foundation model on dialogue generative spoken language
+  model, 2024.
+\newblock URL \url{https://arxiv.org/abs/2407.01911}.
+
+\bibitem[Fu et~al.(2025)Fu, Shi, Huang, Liu, Kian, Song, and
+  Matarić]{fu2025personalizedsociallyassistiverobotsendsp}
+Mengxue Fu, Zhonghao Shi, Minyu Huang, Siqi Liu, Mina Kian, Yirui Song, and
+  Maja~J. Matarić.
+\newblock Personalized socially assistive robots with end-to-end
+  speech-language models for well-being support, 2025.
+\newblock URL \url{https://arxiv.org/abs/2507.14412}.
+
+\bibitem[Wang et~al.(2025{\natexlab{f}})Wang, Meng, Cui, Zhang, Wu, Wu, King,
+  Chen, and Zhao]{wang2025ntppgenerativespeechlanguagemodelingdual}
+Qichao Wang, Ziqiao Meng, Wenqian Cui, Yifei Zhang, Pengcheng Wu, Bingzhe Wu,
+  Irwin King, Liang Chen, and Peilin Zhao.
+\newblock Ntpp: Generative speech language modeling for dual-channel spoken
+  dialogue via next-token-pair prediction, 2025{\natexlab{f}}.
+\newblock URL \url{https://arxiv.org/abs/2506.00975}.
+
+\bibitem[Guo et~al.(2025{\natexlab{c}})Guo, Zhang, Fang, Ma, Zhang, and
+  Feng]{guo2025fastlongspeechenhancinglargespeechlangua}
+Shoutao Guo, Shaolei Zhang, Qingkai Fang, Zhengrui Ma, Min Zhang, and Yang
+  Feng.
+\newblock Fastlongspeech: Enhancing large speech-language models for efficient
+  long-speech processing, 2025{\natexlab{c}}.
+\newblock URL \url{https://arxiv.org/abs/2507.14815}.
+
+\bibitem[Park et~al.(2023)Park, Takamichi, Nakamura, Seki, Xin, and
+  Saruwatari]{park2023howgenerativespokenlanguagemodelingencod}
+Joonyong Park, Shinnosuke Takamichi, Tomohiko Nakamura, Kentaro Seki, Detai
+  Xin, and Hiroshi Saruwatari.
+\newblock How generative spoken language modeling encodes noisy speech:
+  Investigation from phonetics to syntactics, 2023.
+\newblock URL \url{https://arxiv.org/abs/2306.00697}.
+
+\bibitem[Wang et~al.(2025{\natexlab{g}})Wang, Liu, and
+  Bell]{wang2025roleaudiovisualintegrationtimecoursephon}
+Yi~Wang, Oli~Danyi Liu, and Peter Bell.
+\newblock The role of audio-visual integration in the time course of phonetic
+  encoding in self-supervised speech models, 2025{\natexlab{g}}.
+\newblock URL \url{https://arxiv.org/abs/2506.20361}.
+
+\bibitem[Zhu et~al.(2024)Zhu, Su, He, Xu, and
+  Yu]{zhu2024generativepretrainedspeechlanguagemodele}
+Yongxin Zhu, Dan Su, Liqiang He, Linli Xu, and Dong Yu.
+\newblock Generative pre-trained speech language model with efficient
+  hierarchical transformer, 2024.
+\newblock URL \url{https://arxiv.org/abs/2406.00976}.
+
+\bibitem[Zhao et~al.(2024{\natexlab{b}})Zhao, Guo, Xiang, Wan, Niu, Zou, and
+  Li]{zhao2024advancingspeechlanguagemodelsscalingsupe}
+Shuaijiang Zhao, Tingwei Guo, Bajian Xiang, Tongtang Wan, Qiang Niu, Wei Zou,
+  and Xiangang Li.
+\newblock Advancing speech language models by scaling supervised fine-tuning
+  with over 60,000 hours of synthetic speech dialogue data, 2024{\natexlab{b}}.
+\newblock URL \url{https://arxiv.org/abs/2412.01078}.
+
+\bibitem[Lin et~al.(2025{\natexlab{b}})Lin, Shivakumar, Gourav, Gu, Gandhe,
+  yi~Lee, and Bulyko]{lin2025alignslmtextlessspokenlanguagemodelsrein}
+Guan-Ting Lin, Prashanth~Gurunath Shivakumar, Aditya Gourav, Yile Gu, Ankur
+  Gandhe, Hung yi~Lee, and Ivan Bulyko.
+\newblock Align-slm: Textless spoken language models with reinforcement
+  learning from ai feedback, 2025{\natexlab{b}}.
+\newblock URL \url{https://arxiv.org/abs/2411.01834}.
+
+\bibitem[Gat et~al.(2023)Gat, Kreuk, Anh~Nguyen, Lee, Copet, Synnaeve, Dupoux,
+  and Adi]{entry2025augmentationinvariantdiscreterepresentat}
+Itai Gat, Felix Kreuk, Tu~Anh~Nguyen, Ann Lee, Jade Copet, Gabriel Synnaeve,
+  Emmanuel Dupoux, and Yossi Adi.
+\newblock Augmentation invariant discrete representation for generative spoken
+  language modeling.
+\newblock In \emph{Proceedings of the 20th International Conference on Spoken
+  Language Translation (IWSLT 2023)}, page 465–477. Association for
+  Computational Linguistics, 2023.
+\newblock \doi{10.18653/v1/2023.iwslt-1.46}.
+\newblock URL \url{http://dx.doi.org/10.18653/v1/2023.iwslt-1.46}.
+
+\bibitem[Ma et~al.(2025)Ma, Feng, Shao, Meng, Zhou, and
+  Zhang]{ma2025efficientspeechlanguagemodelingenergydis}
+Zhengrui Ma, Yang Feng, Chenze Shao, Fandong Meng, Jie Zhou, and Min Zhang.
+\newblock Efficient speech language modeling via energy distance in continuous
+  latent space, 2025.
+\newblock URL \url{https://arxiv.org/abs/2505.13181}.
+
+\bibitem[Long et~al.(2025)Long, Shen, Fu, Gao, Li, Chen, Zhang, Shao, Li, Peng,
+  Cao, Li, Ji, and Sun]{long2025vitaaudiofastinterleavedcrossmodaltokeng}
+Zuwei Long, Yunhang Shen, Chaoyou Fu, Heting Gao, Lijiang Li, Peixian Chen,
+  Mengdan Zhang, Hang Shao, Jian Li, Jinlong Peng, Haoyu Cao, Ke~Li, Rongrong
+  Ji, and Xing Sun.
+\newblock Vita-audio: Fast interleaved cross-modal token generation for
+  efficient large speech-language model, 2025.
+\newblock URL \url{https://arxiv.org/abs/2505.03739}.
+
+\bibitem[Xue et~al.(2025)Xue, Niu, Hu, Yin, Yao, and
+  Yang]{xue2025hhcodechighcompressionfidelitydiscretene}
+Rongkun Xue, Yazhe Niu, Shuai Hu, Zixin Yin, Yongqiang Yao, and Jing Yang.
+\newblock Hh-codec: High compression high-fidelity discrete neural codec for
+  spoken language modeling, 2025.
+\newblock URL \url{https://arxiv.org/abs/2507.18897}.
+
+\bibitem[Kim et~al.(2024)Kim, Jung, Lee, and
+  Woo]{kim2024enclapcombiningneuralaudiocodectextjoint}
+Jaeyeon Kim, Jaeyoon Jung, Jinjoo Lee, and Sang~Hoon Woo.
+\newblock Enclap: Combining neural audio codec and audio-text joint embedding
+  for automated audio captioning, 2024.
+\newblock URL \url{https://arxiv.org/abs/2401.17690}.
+
+\bibitem[Wang et~al.(2025{\natexlab{h}})Wang, Yu, Hai, Chen, Hu, Chen, Dehak,
+  and Yu]{wang2025ssrspeechtowardsstablesaferobustzeroshot}
+Helin Wang, Meng Yu, Jiarui Hai, Chen Chen, Yuchen Hu, Rilin Chen, Najim Dehak,
+  and Dong Yu.
+\newblock Ssr-speech: Towards stable, safe and robust zero-shot text-based
+  speech editing and synthesis, 2025{\natexlab{h}}.
+\newblock URL \url{https://arxiv.org/abs/2409.07556}.
+
+\bibitem[Roll et~al.(2025)Roll, Graham, Tatsumi, Nguyen, Sumner, and
+  Jurafsky]{roll2025contextlearningboostsspeechrecognitionhu}
+Nathan Roll, Calbert Graham, Yuka Tatsumi, Kim~Tien Nguyen, Meghan Sumner, and
+  Dan Jurafsky.
+\newblock In-context learning boosts speech recognition via human-like
+  adaptation to speakers and language varieties, 2025.
+\newblock URL \url{https://arxiv.org/abs/2505.14887}.
+
+\bibitem[Sicherman and
+  Adi(2023)]{sicherman2023analysingdiscreteselfsupervisedspeechrep}
+Amitay Sicherman and Yossi Adi.
+\newblock Analysing discrete self supervised speech representation for spoken
+  language modeling, 2023.
+\newblock URL \url{https://arxiv.org/abs/2301.00591}.
+
+\bibitem[Wang et~al.(2025{\natexlab{i}})Wang, Peng, Yang, Bai, Wang, Lin, Jia,
+  Wu, Wang, Zong, and Zhang]{wang2025opens2sadvancingfullyopensourceendempath}
+Chen Wang, Tianyu Peng, Wen Yang, Yinan Bai, Guangfu Wang, Jun Lin, Lanpeng
+  Jia, Lingxiang Wu, Jinqiao Wang, Chengqing Zong, and Jiajun Zhang.
+\newblock Opens2s: Advancing fully open-source end-to-end empathetic large
+  speech language model, 2025{\natexlab{i}}.
+\newblock URL \url{https://arxiv.org/abs/2507.05177}.
+
+\end{thebibliography}

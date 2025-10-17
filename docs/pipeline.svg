@@ -1,0 +1,52 @@
+<svg width="600" height="900" viewBox="0 0 600 900" xmlns="http://www.w3.org/2000/svg" font-family="Arial, Helvetica, sans-serif">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="0" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#ff0000" />
+    </marker>
+  </defs>
+
+  <!-- Phase 1: Preparation Phase -->
+  <rect x="50" y="30" width="500" height="340" rx="10" ry="10" fill="#f0f0f0" />
+  <text x="300" y="60" text-anchor="middle" font-size="22px" font-weight="bold" fill="#333">Phase 1: Preparation Phase (準備階段)</text>
+
+  <!-- Module 1: Reference Acquisition -->
+  <rect x="150" y="100" width="300" height="80" rx="10" ry="10" fill="#eaf4ff" stroke="#b0c4de" stroke-width="2" />
+  <text x="300" y="130" text-anchor="middle" font-size="18px" font-weight="bold" fill="#333">Reference Acquisition (文獻獲取)</text>
+  <text x="300" y="155" text-anchor="middle" font-size="14px" fill="#555">Agent: Researcher Agent (研究員 Agent)</text>
+
+  <!-- Arrow -->
+  <line x1="300" y1="180" x2="300" y2="210" stroke="#ff0000" stroke-width="2" marker-end="url(#arrowhead)" />
+
+  <!-- Module 2: Material Preprocessing -->
+  <rect x="150" y="210" width="300" height="80" rx="10" ry="10" fill="#eaf4ff" stroke="#b0c4de" stroke-width="2" />
+  <text x="300" y="240" text-anchor="middle" font-size="18px" font-weight="bold" fill="#333">Material Preprocessing (材料預處理)</text>
+  <text x="300" y="265" text-anchor="middle" font-size="14px" fill="#555">Agent: Analyst Agent (分析師 Agent)</text>
+
+  <!-- Arrow between phases -->
+  <line x1="300" y1="290" x2="300" y2="400" stroke="#ff0000" stroke-width="2" marker-end="url(#arrowhead)" />
+
+  <!-- Phase 2: Generation Phase -->
+  <rect x="50" y="400" width="500" height="470" rx="10" ry="10" fill="#f0f0f0" />
+  <text x="300" y="430" text-anchor="middle" font-size="22px" font-weight="bold" fill="#333">Phase 2: Generation Phase (生成階段)</text>
+
+  <!-- Module 3: Outline Generation -->
+  <rect x="150" y="470" width="300" height="80" rx="10" ry="10" fill="#eaf4ff" stroke="#b0c4de" stroke-width="2" />
+  <text x="300" y="500" text-anchor="middle" font-size="18px" font-weight="bold" fill="#333">Outline Generation (大綱生成)</text>
+  <text x="300" y="525" text-anchor="middle" font-size="14px" fill="#555">Agent: Planner Agent (規劃師 Agent)</text>
+
+  <!-- Arrow -->
+  <line x1="300" y1="550" x2="300" y2="580" stroke="#ff0000" stroke-width="2" marker-end="url(#arrowhead)" />
+
+  <!-- Module 4: Content Generation & Refinement -->
+  <rect x="150" y="580" width="300" height="80" rx="10" ry="10" fill="#eaf4ff" stroke="#b0c4de" stroke-width="2" />
+  <text x="300" y="610" text-anchor="middle" font-size="18px" font-weight="bold" fill="#333">Content Generation & Refinement (內容生成與精煉)</text>
+  <text x="300" y="635" text-anchor="middle" font-size="14px" fill="#555">Agents: Writer Agent (寫作 Agent) & Editor Agent (編輯 Agent)</text>
+
+  <!-- Arrow -->
+  <line x1="300" y1="660" x2="300" y2="690" stroke="#ff0000" stroke-width="2" marker-end="url(#arrowhead)" />
+
+  <!-- Module 5: Multimodal Output -->
+  <rect x="150" y="690" width="300" height="80" rx="10" ry="10" fill="#eaf4ff" stroke="#b0c4de" stroke-width="2" />
+  <text x="300" y="720" text-anchor="middle" font-size="18px" font-weight="bold" fill="#333">Multimodal Output (多模態輸出)</text>
+  <text x="300" y="745" text-anchor="middle" font-size="14px" fill="#555">Agent: Layout & Visualization Agent (排版與視覺化 Agent)</text>
+</svg>

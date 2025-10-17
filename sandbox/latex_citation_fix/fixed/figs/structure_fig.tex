@@ -1,0 +1,154 @@
+% 定义颜色和样式
+\definecolor{hidden-draw}{RGB}{128, 128, 128}
+
+% 大纲总样式
+\tikzstyle{ot}=[
+    rectangle,
+    draw=hidden-draw,
+    rounded corners,
+    align=left,
+    text opacity=1,
+    text=black,
+    minimum height=2.5em,
+    minimum width=5em,
+    inner xsep=2pt,
+    inner ysep=4pt,
+    line width=0.8pt,
+    font=\normalsize,
+]
+
+% 大纲主样式-root
+\tikzstyle{root}=[
+    ot,
+    draw=gray!80, 
+    fill=gray!35,  
+]
+
+% 大纲主样式-1级
+\tikzstyle{ot1}=[
+    ot, 
+]
+
+% 大纲主样式-2级
+\tikzstyle{ot2}=[
+    ot,
+    minimum height=.5em,
+]
+
+% 大纲主样式-3级
+\tikzstyle{ot3}=[
+    ot, 
+    minimum height=1.5em,
+]
+\definecolor{c0}{HTML}{c77fa1}
+
+\definecolor{c1}{HTML}{c1c8cd}
+
+\definecolor{c2}{HTML}{96a25f}
+
+\definecolor{c3}{HTML}{D3E0EA}
+
+\definecolor{c4}{HTML}{9C7C7C}
+
+\definecolor{c5}{HTML}{bc966f}
+
+\definecolor{c6}{HTML}{a44c34}
+
+\definecolor{c7}{HTML}{727b83}
+
+\definecolor{c8}{HTML}{fdcee4}
+
+\definecolor{c9}{HTML}{b9ac99}
+
+\definecolor{c10}{HTML}{b8a9a9}
+
+\definecolor{c11}{HTML}{f3e6f1}
+
+\begin{figure}[htbp]
+    \centering
+    \resizebox{1\textwidth}{!}
+    {
+        \begin{forest}
+            % forked edges,
+            for tree={
+                grow=east,
+                reversed=true,
+                anchor=base west,
+                parent anchor=east,
+                child anchor=west,
+                base=left,
+                font=\normalsize,
+                rectangle,
+                draw=hidden-draw,
+                rounded corners,
+                align=left,
+                minimum width=1em,
+                edge+={darkgray, line width=1pt},
+                s sep=10pt,
+                inner xsep=0pt,
+                inner ysep=3pt,
+                line width=0.8pt,
+                ver/.style={rotate=90, child anchor=north, parent anchor=south, anchor=center},
+            }, 
+            [\textbf{Speech Tokenizers and Speech Language Models: A Survey of Representations, Modeling, and Systems}, root, ver [ \S \ref{sec:Introduction}.\ Introduction, ot1, draw=c0, fill=c0, fill opacity=0.3, text width=23em,
+[ \ \ {}, edge={transparent},draw=none,fill=none,], 
+][ \S \ref{sec:Background and Core Concepts}.\ Background and Core Concepts, ot1, draw=c1, fill=c1, fill opacity=0.3, text width=23em,
+[ \ \ {}, edge={transparent},draw=none,fill=none,], 
+][ \S \ref{sec:Speech Tokenization and Neural Audio Codecs}.\ Speech Tokenization and Neural Audio Codecs, ot1, draw=c2, fill=c2, fill opacity=0.3, text width=23em,
+[ \ \ref{subsec:Tokenization objectives and interfaces: the LM-facing contract} \ Tokenization objectives and interfaces: the LM-facing contract, ot2, draw=c2, fill=c2, fill opacity=0.3, text width=36em], 
+[ \ \ref{subsec:Quantization mechanisms and codec families} \ Quantization mechanisms and codec families, ot2, draw=c2, fill=c2, fill opacity=0.3, text width=36em], 
+[ \ \ref{subsec:From continuous features to units: discretization and codebook design} \ From continuous features to units: discretization and codebook design, ot2, draw=c2, fill=c2, fill opacity=0.3, text width=36em], 
+[ \ \ref{subsec:Rate and sequence management} \ Rate and sequence management, ot2, draw=c2, fill=c2, fill opacity=0.3, text width=36em], 
+[ \ \ref{subsec:Disentanglement and mixed-token designs} \ Disentanglement and mixed-token designs, ot2, draw=c2, fill=c2, fill opacity=0.3, text width=36em], 
+[ \ \ref{subsec:Continuous and codec-free interfaces} \ Continuous and codec-free interfaces, ot2, draw=c2, fill=c2, fill opacity=0.3, text width=36em], 
+[ \ \ref{subsec:Representative methods and empirical findings} \ Representative methods and empirical findings, ot2, draw=c2, fill=c2, fill opacity=0.3, text width=36em], 
+[ \ \ref{subsec:Comparative evaluation axes and open issues} \ Comparative evaluation axes and open issues, ot2, draw=c2, fill=c2, fill opacity=0.3, text width=36em], 
+][ \S \ref{sec:Speech Encoders and Representations}.\ Speech Encoders and Representations, ot1, draw=c3, fill=c3, fill opacity=0.3, text width=23em,
+[ \ \ {}, edge={transparent},draw=none,fill=none,], 
+][ \S \ref{sec:Token to Speech Decoding and Vocoders}.\ Token to Speech Decoding and Vocoders, ot1, draw=c4, fill=c4, fill opacity=0.3, text width=23em,
+[ \ \ {}, edge={transparent},draw=none,fill=none,], 
+][ \S \ref{sec:Language Modeling over Speech Tokens}.\ Language Modeling over Speech Tokens, ot1, draw=c5, fill=c5, fill opacity=0.3, text width=23em,
+[ \ \ {}, edge={transparent},draw=none,fill=none,], 
+][ \S \ref{sec:Training Paradigms and Modality Alignment}.\ Training Paradigms and Modality Alignment, ot1, draw=c6, fill=c6, fill opacity=0.3, text width=23em,
+[ \ \ {}, edge={transparent},draw=none,fill=none,], 
+][ \S \ref{sec:System Architectures and Generation Strategies}.\ System Architectures and Generation Strategies, ot1, draw=c7, fill=c7, fill opacity=0.3, text width=23em,
+[ \ \ {}, edge={transparent},draw=none,fill=none,], 
+][ \S \ref{sec:Expressivity Paralinguistics and Style Control}.\ Expressivity Paralinguistics and Style Control, ot1, draw=c8, fill=c8, fill opacity=0.3, text width=23em,
+[ \ \ {}, edge={transparent},draw=none,fill=none,], 
+][ \S \ref{sec:Real Time Streaming and Duplex Dialogue}.\ Real Time Streaming and Duplex Dialogue, ot1, draw=c9, fill=c9, fill opacity=0.3, text width=23em,
+[ \ \ {}, edge={transparent},draw=none,fill=none,], 
+][ \S \ref{sec:Datasets Benchmarks and Tasks}.\ Datasets Benchmarks and Tasks, ot1, draw=c10, fill=c10, fill opacity=0.3, text width=23em,
+[ \ \ {}, edge={transparent},draw=none,fill=none,], 
+][ \S \ref{sec:Evaluation Metrics and Methodology}.\ Evaluation Metrics and Methodology, ot1, draw=c11, fill=c11, fill opacity=0.3, text width=23em,
+[ \ \ {}, edge={transparent},draw=none,fill=none,], 
+][ \S \ref{sec:Efficiency Compression and Deployment}.\ Efficiency Compression and Deployment, ot1, draw=c12, fill=c12, fill opacity=0.3, text width=23em,
+[ \ \ref{subsec:Parameter and training efficiency} \ Parameter and training efficiency, ot2, draw=c12, fill=c12, fill opacity=0.3, text width=20em], 
+[ \ \ref{subsec:Model and sequence efficiency} \ Model and sequence efficiency, ot2, draw=c12, fill=c12, fill opacity=0.3, text width=20em], 
+[ \ \ref{subsec:Fast decoding and streaming} \ Fast decoding and streaming, ot2, draw=c12, fill=c12, fill opacity=0.3, text width=20em], 
+      13.2 Token-Free and Continuous Architectures, ot2,
+         draw=c12, fill=c12, fill opacity=0.3, text width=20em],
+      
+      [ \ \ref{subsec:Bandwidth and edge--server trade-offs} \ Bandwidth and edge--server trade-offs, ot2,
+         draw=c12, fill=c12, fill opacity=0.3, text width=20em], 
+[ \ \ref{subsec:Implementation recipes and benchmarks} \ Implementation recipes and benchmarks, ot2, draw=c12, fill=c12, fill opacity=0.3, text width=20em], 
+][ \S \ref{sec:Safety Robustness and Ethics}.\ Safety Robustness and Ethics, ot1, draw=c13, fill=c13, fill opacity=0.3, text width=23em,
+[ \ \ {}, edge={transparent},draw=none,fill=none,], 
+][ \S \ref{sec:Open Toolkits Frameworks and Reproducibility}.\ Open Toolkits Frameworks and Reproducibility, ot1, draw=c14, fill=c14, fill opacity=0.3, text width=23em,
+[ \ \ {}, edge={transparent},draw=none,fill=none,], 
+][ \S \ref{sec:Open Challenges and Future Directions}.\ Open Challenges and Future Directions, ot1, draw=c15, fill=c15, fill opacity=0.3, text width=23em,
+[ \ \ref{subsec:Unified vs multi-stream tokens and disentanglement} \ Unified vs multi-stream tokens and disentanglement, ot2, draw=c15, fill=c15, fill opacity=0.3, text width=27em], 
+[ \ \ref{subsec:Long context and conversational memory} \ Long context and conversational memory, ot2, draw=c15, fill=c15, fill opacity=0.3, text width=27em], 
+[ \ \ref{subsec:Low-resource and multilingual generalization} \ Low-resource and multilingual generalization, ot2, draw=c15, fill=c15, fill opacity=0.3, text width=27em], 
+[ \ \ref{subsec:Alignment with text knowledge without forgetting} \ Alignment with text knowledge without forgetting, ot2, draw=c15, fill=c15, fill opacity=0.3, text width=27em], 
+[ \ \ref{subsec:Toward a theory of rate vs capacity} \ Toward a theory of rate vs capacity, ot2, draw=c15, fill=c15, fill opacity=0.3, text width=27em], 
+[ \ \ref{subsec:Trade-offs and limitations} \ Trade-offs and limitations, ot2, draw=c15, fill=c15, fill opacity=0.3, text width=27em], 
+][ \S \ref{sec:Conclusion}.\ Conclusion, ot1, draw=c16, fill=c16, fill opacity=0.3, text width=23em,
+[ \ \ {}, edge={transparent},draw=none,fill=none,], 
+]]
+        \end{forest}
+    }
+    \caption{chapter structure}
+    \label{fig:chapter_structure}
+\vspace{-0.3cm}
+\end{figure}
+    

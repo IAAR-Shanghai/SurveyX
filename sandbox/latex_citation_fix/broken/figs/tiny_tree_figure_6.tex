@@ -1,0 +1,111 @@
+
+\definecolor{color_root}{HTML}{D3E0EA}
+\definecolor{color_node}{HTML}{c1c8cd}
+\definecolor{color_list}{HTML}{f3e6f1}
+
+
+
+\begin{figure}[h]
+   \centering
+   \begin{adjustbox}{max width=\textwidth, center}
+      \begin{tikzpicture}[
+         start chain = going below,
+         node distance=1mm,
+         sibling distance=40mm,
+         edge from parent/.style={->,draw},
+         >=latex,
+         basic/.style  = {
+            draw, text width=1cm, drop shadow, rectangle
+         },
+         root/.style   = {
+            basic, rounded corners=2pt, 
+            thin, align=center,text width=15em, 
+            font=\small\bfseries,
+            fill=blue!20
+         },
+         nodeB/.style = {
+            basic, rounded corners=5pt, 
+            thin,align=center, fill=green!20,
+            font=\scriptsize,
+            text width=8em
+         },
+         nodeL/.style = {
+            basic, thin, 
+            align=center, 
+            font=\scriptsize\itshape, fill=pink!20, text width=9em
+         }
+      ]
+   
+\node[root, fill=color_root!60] {Prosody, identity, and emotion modeling} child {node[nodeB, fill=color_node!40] (leaf_60) {Factorized style and local prosody architecture}}child {node[nodeB, fill=color_node!40] (leaf_61) {Lightweight affect and identity control surfaces}}child {node[nodeB, fill=color_node!40] (leaf_62) {Scaling recipes, resources, and rate-aware decoding}} ;
+\begin{scope}[start chain=60 going below]
+\chainin (leaf_60) [on chain, join];
+\node[nodeL, on chain, fill=color_list!15, xshift=6mm, yshift=-5mm] (l600) {Global style embedding\\cite{huang2023holisticcascadesystembenchmarkhumanevalu}};
+\node[nodeL, on chain, fill=color_list!15] (l601) {Word-synchronous F0/duration\\cite{huang2023holisticcascadesystembenchmarkhumanevalu}};
+\node[nodeL, on chain, fill=color_list!15] (l602) {Two-branch semantic–acoustic\\cite{wang2023slmbridgethingapbetweenspeechtextfoundat}};
+\node[nodeL, on chain, fill=color_list!15] (l603) {Expressivity–identity trade-off\\cite{wang2024evaluatingtextspeechsynthesislargediscre}};
+
+\end{scope}
+\draw[->] ($(leaf_60.south west) + (2mm, 0)$) |- (l600.west);
+\draw[->] ($(leaf_60.south west) + (2mm, 0)$) |- (l601.west);
+\draw[->] ($(leaf_60.south west) + (2mm, 0)$) |- (l602.west);
+\draw[->] ($(leaf_60.south west) + (2mm, 0)$) |- (l603.west);
+
+
+
+\begin{scope}[start chain=61 going below]
+\chainin (leaf_61) [on chain, join];
+\node[nodeL, on chain, fill=color_list!15, xshift=6mm, yshift=-5mm] (l610) {Short enrollment prompts\\cite{wang2024evaluatingtextspeechsynthesislargediscre}};
+\node[nodeL, on chain, fill=color_list!15] (l611) {Label-efficient emo adapters\\cite{wang2024blspemotowardsempatheticlargespeechlangu}};
+\node[nodeL, on chain, fill=color_list!15] (l612) {Interpretable style heads\\cite{chen2025emovaempoweringlanguagemodelsseehearspea}};
+\node[nodeL, on chain, fill=color_list!15] (l613) {Dual-adapter representation disentanglement\\cite{wang2025dualinformationspeechlanguagemodelsemoti}};
+\node[nodeL, on chain, fill=color_list!15] (l614) {Audio–visual fusion cues\\cite{chen2025emovaempoweringlanguagemodelsseehearspea}};
+\node[nodeL, on chain, fill=color_list!15] (l615) {Time-aligned affect labels\\cite{wang2025incorporatingcontextualparalinguisticund}};
+\node[nodeL, on chain, fill=color_list!15] (l616) {Phonetic–acoustic tokenizer PAST\\cite{har-tuv2025pastphoneticacousticspeechtokenizer}};
+\node[nodeL, on chain, fill=color_list!15] (l617) {Thin bridges, adapters\\cite{wang2023slmbridgethingapbetweenspeechtextfoundat}};
+\node[nodeL, on chain, fill=color_list!15] (l618) {Identity heads regularization\\cite{wang2025bossbeyondsemanticspeech}};
+
+\end{scope}
+\draw[->] ($(leaf_61.south west) + (2mm, 0)$) |- (l610.west);
+\draw[->] ($(leaf_61.south west) + (2mm, 0)$) |- (l611.west);
+\draw[->] ($(leaf_61.south west) + (2mm, 0)$) |- (l612.west);
+\draw[->] ($(leaf_61.south west) + (2mm, 0)$) |- (l613.west);
+\draw[->] ($(leaf_61.south west) + (2mm, 0)$) |- (l614.west);
+\draw[->] ($(leaf_61.south west) + (2mm, 0)$) |- (l615.west);
+\draw[->] ($(leaf_61.south west) + (2mm, 0)$) |- (l616.west);
+\draw[->] ($(leaf_61.south west) + (2mm, 0)$) |- (l617.west);
+\draw[->] ($(leaf_61.south west) + (2mm, 0)$) |- (l618.west);
+
+
+
+\begin{scope}[start chain=62 going below]
+\chainin (leaf_62) [on chain, join];
+\node[nodeL, on chain, fill=color_list!15, xshift=6mm, yshift=-5mm] (l620) {Freeze strong foundations\\cite{maimon2025scalinganalysisinterleavedspeechtextlang}};
+\node[nodeL, on chain, fill=color_list!15] (l621) {Prioritize model size\\cite{maimon2025scalinganalysisinterleavedspeechtextlang}};
+\node[nodeL, on chain, fill=color_list!15] (l622) {Interleaved speech–text multitask\\cite{maimon2025scalinganalysisinterleavedspeechtextlang}};
+\node[nodeL, on chain, fill=color_list!15] (l623) {Leverage synthetic data\\cite{maimon2025scalinganalysisinterleavedspeechtextlang}};
+\node[nodeL, on chain, fill=color_list!15] (l624) {LM-SPT semantic tokens\\cite{jo2025lmsptalignedsemanticdistillationspeechto}};
+\node[nodeL, on chain, fill=color_list!15] (l625) {SpeechRAG for QA\\cite{min2025speechretrievalaugmentedgenerationwithou}};
+\node[nodeL, on chain, fill=color_list!15] (l626) {fastabx discriminability tests\\cite{poli2025fastabxlibraryefficientcomputationabxdis}};
+\node[nodeL, on chain, fill=color_list!15] (l627) {Multi-token prediction decoding\\cite{qian2025prosodylmuncoveringemergingprosodyproces}};
+
+\end{scope}
+\draw[->] ($(leaf_62.south west) + (2mm, 0)$) |- (l620.west);
+\draw[->] ($(leaf_62.south west) + (2mm, 0)$) |- (l621.west);
+\draw[->] ($(leaf_62.south west) + (2mm, 0)$) |- (l622.west);
+\draw[->] ($(leaf_62.south west) + (2mm, 0)$) |- (l623.west);
+\draw[->] ($(leaf_62.south west) + (2mm, 0)$) |- (l624.west);
+\draw[->] ($(leaf_62.south west) + (2mm, 0)$) |- (l625.west);
+\draw[->] ($(leaf_62.south west) + (2mm, 0)$) |- (l626.west);
+\draw[->] ($(leaf_62.south west) + (2mm, 0)$) |- (l627.west);
+
+
+
+
+
+\end{tikzpicture}
+\end{adjustbox}
+
+\caption{Figure: Hierarchical summary of prosody, identity, and emotion modeling. Top-level branches emphasize: (1) factorized architectures that preserve global style while controlling local, word-aligned prosody; (2) lightweight, streamable control surfaces and supervision that disentangle affect and identity with adapters, interpretable heads, AV fusion, signal-aligned labels, and phonetic–acoustic tokenizers; and (3) practical scaling with frozen foundations, interleaved multitask training, new resources/diagnostics, and rate-aware decoding that ties expressivity to lexical timing. The structure highlights the expressivity–identity trade-off, promotes disentangled semantic/acoustic pathways, and aligns training/evaluation recipes with BoSS-style capability gaps.}
+\label{fig:tiny_tree_figure_6}
+
+\end{figure}

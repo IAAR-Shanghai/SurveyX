@@ -1,4 +1,65 @@
-# Git Helper Scripts
+````markdown
+# Scripts Directory
+
+這個資料夾包含專案的輔助腳本，分為以下類別：
+
+## Unicode Glitch 工具 (新增)
+
+用於偵測與修復 LaTeX 檔案中的 Unicode 數學符號問題，這些符號會導致 PDF 產生 spacing glitch。
+
+### detect_unicode_glitches.py
+偵測 LaTeX 檔案中的 Unicode 數學符號並生成報告。
+
+**使用方式**:
+```bash
+# 生成報告到檔案
+python scripts/detect_unicode_glitches.py outputs/xxx/latex/survey.tex -o report.txt
+
+# 輸出到螢幕
+python scripts/detect_unicode_glitches.py outputs/xxx/latex/survey.tex
+```
+
+### fix_unicode_glitches.py
+自動修復 LaTeX 檔案中的 Unicode 數學符號,將其替換為對應的 LaTeX 巨集。
+
+**使用方式**:
+```bash
+# 預覽變更 (不修改檔案)
+python scripts/fix_unicode_glitches.py outputs/xxx/latex/survey.tex --preview
+
+# 修復並建立備份
+python scripts/fix_unicode_glitches.py outputs/xxx/latex/survey.tex
+
+# 修復並儲存為新檔案
+python scripts/fix_unicode_glitches.py outputs/xxx/latex/survey.tex -o survey_fixed.tex
+
+# 修復且不建立備份
+python scripts/fix_unicode_glitches.py outputs/xxx/latex/survey.tex --no-backup
+```
+
+### fix_and_recompile.py / fix_and_recompile.sh (一鍵修復)
+自動偵測、修復 Unicode 符號並重新編譯 LaTeX,生成新的 PDF。
+
+**使用方式**:
+```bash
+# Python 版本 (推薦,更可靠)
+python scripts/fix_and_recompile.py 2025-10-09-1630_speec
+
+# Bash 版本
+bash scripts/fix_and_recompile.sh 2025-10-09-1630_speec
+```
+
+**執行步驟**:
+1. 偵測 Unicode 符號並生成報告
+2. 備份原始 .tex 檔案
+3. 修復所有 Unicode 符號
+4. 重新編譯 LaTeX 並生成 PDF (含浮水印版本)
+
+**詳細說明**: 請參閱 `docs/temporary_issues/spacing_glitch_solution.md`
+
+---
+
+## Git Helper Scripts
 
 這個資料夾包含 Git 輔助腳本，用於：
 1) 建立並維護「舊版穩定線 + 最新開發線」的分支策略。
