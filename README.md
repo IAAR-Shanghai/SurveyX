@@ -4,34 +4,13 @@
   <i>
 ✨Welcome to SurveyX! If you want to experience the full features, please log in to our website. This open-source code only provides offline processing capabilities.✨
   </i>
-  <br>
-  <a href="https://arxiv.org/abs/2502.14776">
-      <img src="https://img.shields.io/badge/arXiv-Paper-red.svg?logo=arxiv" alt="arxiv paper">
-  </a>
-  <a href="http://www.surveyx.cn">
-    <img src="https://img.shields.io/badge/SurveyX-Web-blue?style=flat" alt="surveyx.cn">
-  </a>
-  <a href="https://huggingface.co/papers/2502.14776">
-    <img src="https://img.shields.io/badge/Huggingface-🤗-yellow?style=flat" alt="huggingface paper">
-  </a>
-  <a href="https://github.com/IAAR-Shanghai/SurveyX">
-    <img src="https://img.shields.io/github/stars/IAAR-Shanghai/SurveyX?style=flat&logo=github&color=yellow" alt="github stars">
-  </a>
-    <img src="https://img.shields.io/github/last-commit/IAAR-Shanghai/SurveyX?display_timestamp=author&style=flat&color=green" alt="last commit">
-  </a>
-  <br>
-  <a href="https://github.com/IAAR-Shanghai/SurveyX/blob/main/assets/user_groups_123.jpg">
-    <img src="https://img.shields.io/badge/Wechat-Group-07c160?style=flat&logo=wechat" alt="Wechat Group">
-  </a>
 </p>
 
 <div align="center">
     <strong><a>If you find our work helpful, don't forget to give us a star! ⭐️</a></strong>
     <br>
-  👉 <strong><a href="https://surveyx.cn/">Visit SurveyX</a></strong> 👈
+  👉 <strong><a>Visit SurveyX</a></strong> 👈
 </div>
-
-\[English | [中文](README_zh.md)\]
 
 ## 🤔What is SurveyX?
 
@@ -43,9 +22,10 @@
 
 ## 🆚 Full Version vs. Offline Open Source Version
 
-The open-source code in this repository only provides offline processing capabilities. If you want to experience the full features, please log in to [our website](https://www.surveyx.cn).
+The open-source code in this repository only provides offline processing capabilities. If you want to experience the full features, please log in to [our website]().
 
 **Missing features in the open-source version:**
+
 1. **Real-time online search:** You can only generate surveys based on your own uploaded `.md` format references. The open-source version lacks access to our paper database, web crawler system, keyword expansion algorithms, and dual-layer semantic filtering for literature acquisition.
 2. **Multimodal document parsing:** The generated survey will not include image understanding or illustrations from the references.
 
@@ -67,12 +47,14 @@ sudo apt update && sudo apt install texlive-full
 ### 2. Installation
 
 1. Clone the repository:
+
 ```bash
-git clone https://github.com/IAAR-Shanghai/SurveyX.git
+git clone xxx.git
 cd SurveyX
 ```
 
 2. Install Python dependencies:
+
 ```bash
 pip install -r requirements.txt
 ```
@@ -82,6 +64,7 @@ pip install -r requirements.txt
 Edit `src/configs/config.py` to provide your LLM API URL, token, and model information before running the pipeline.
 
 Example:
+
 ```python
 REMOTE_URL = "https://api.openai.com/v1/chat/completions"
 TOKEN = "sk-xxxx..."
@@ -96,11 +79,13 @@ EMBED_TOKEN = "your embed token here"
 Each run creates a unique result folder under `outputs/`, named by the task id `outputs/<task_id>` (e.g., `outputs/2025-06-18-0935_keyword/`).
 
 Run the full pipeline:
+
 ```bash
 python tasks/offline_run.py --title "Your Survey Title" --key_words "keyword1, keyword2, ..." --ref_path "path/to/your/reference/dir"
 ```
 
 Or run step by step:
+
 ```bash
 export task_id="your_task_id"
 python tasks/workflow/03_gen_outlines.py --task_id $task_id
@@ -125,11 +110,11 @@ python tasks/workflow/06_gen_latex.py --task_id $task_id
 
 | Title                                                        | Keywords                                                     |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
-|[A Survey of NoSQL Database Systems for Flexible and Scalable Data Management](./examples/Database/A_Survey_of_NoSQL_Database_Systems_for_Flexible_and_Scalable_Data_Management.pdf) | NoSQL, Database Systems, Flexibility, Scalability, Data Management |
-|[Vector Databases and Their Role in Modern Data Management and Retrieval A Survey](./examples/Database/Vector_Databases_and_Their_Role_in_Modern_Data_Management_and_Retrieval_A_Survey.pdf) | Vector Databases, Data Management, Data Retrieval, Modern Applications |
-|[Graph Databases A Survey on Models, Data Modeling, and Applications](./examples/Database/Graph_Databases_A_Survey_on_Models.pdf) | Graph Databases, Data Modeling |
-|[A Survey on Large Language Model Integration with Databases for Enhanced Data Management and Survey Analysis](./examples/Database/A_Survey_on_Large_Language_Model_Integration_with_Databases_for_Enhanced_Data_Management_and_Survey_Analysis.pdf) | Large Language Models, Database Integration, Data Management, Survey Analysis, Enhanced Processing |
-|[A Survey of Temporal Databases Real-Time Databases and Data Management Systems](./examples/Database/A_Survey_of_Temporal_Databases_Real.pdf) | Temporal Databases, Real-Time Databases, Data Management |
+| [A Survey of NoSQL Database Systems for Flexible and Scalable Data Management](./examples/Database/A_Survey_of_NoSQL_Database_Systems_for_Flexible_and_Scalable_Data_Management.pdf) | NoSQL, Database Systems, Flexibility, Scalability, Data Management |
+| [Vector Databases and Their Role in Modern Data Management and Retrieval A Survey](./examples/Database/Vector_Databases_and_Their_Role_in_Modern_Data_Management_and_Retrieval_A_Survey.pdf) | Vector Databases, Data Management, Data Retrieval, Modern Applications |
+| [Graph Databases A Survey on Models, Data Modeling, and Applications](./examples/Database/Graph_Databases_A_Survey_on_Models.pdf) | Graph Databases, Data Modeling                               |
+| [A Survey on Large Language Model Integration with Databases for Enhanced Data Management and Survey Analysis](./examples/Database/A_Survey_on_Large_Language_Model_Integration_with_Databases_for_Enhanced_Data_Management_and_Survey_Analysis.pdf) | Large Language Models, Database Integration, Data Management, Survey Analysis, Enhanced Processing |
+| [A Survey of Temporal Databases Real-Time Databases and Data Management Systems](./examples/Database/A_Survey_of_Temporal_Databases_Real.pdf) | Temporal Databases, Real-Time Databases, Data Management     |
 | [From BERT to GPT-4: A Survey of Architectural Innovations in Pre-trained Language Models](./examples/Computation_and_Language/Transformer.pdf) | Transformer, BERT, GPT-3, self-attention, masked language modeling, cross-lingual transfer, model scaling |
 | [Unsupervised Cross-Lingual Word Embedding Alignment: Techniques and Applications](./examples/Computation_and_Language/low.pdf) | low-resource NLP, few-shot learning, data augmentation, unsupervised alignment, synthetic corpora, NLLB, zero-shot transfer |
 | [Vision-Language Pre-training: Architectures, Benchmarks, and Emerging Trends](./examples/Computation_and_Language/multimodal.pdf) | multimodal learning, CLIP, Whisper, cross-modal retrieval, modality fusion, video-language models, contrastive learning |
@@ -160,35 +145,6 @@ python tasks/workflow/06_gen_latex.py --task_id $task_id
 | [Edge Caching in Content Delivery Networks: Algorithms and Economic Incentives](examples/Networking_and_Internet_Architecture/CDN.pdf) | CDN, Akamai, cache replacement policies, DASH (Dynamic Adaptive Streaming), QoE optimization, edge server placement, bandwidth cost reduction |
 | [A survey on  flow batteries](examples/Other/battery.pdf)    | battery electrolyte formulation                              |
 | [Research on battery electrolyte formulation](examples/Other/flow_battery.pdf) | flow batteries                                               |
-
-## 📃Citing SurveyX
-
-Please cite us if you find this project helpful for your project/paper:
-
-```plain text
-@misc{liang2025surveyxacademicsurveyautomation,
-      title={SurveyX: Academic Survey Automation via Large Language Models}, 
-      author={Xun Liang and Jiawei Yang and Yezhaohui Wang and Chen Tang and Zifan Zheng and Shichao Song and Zehao Lin and Yebin Yang and Simin Niu and Hanyu Wang and Bo Tang and Feiyu Xiong and Keming Mao and Zhiyu li},
-      year={2025},
-      eprint={2502.14776},
-      archivePrefix={arXiv},
-      primaryClass={cs.CL},
-      url={https://arxiv.org/abs/2502.14776}, 
-}
-```
-
-<hr style="border: 1px solid #ecf0f1;">
-
-
-## Open Source Version Notice
-This open source version of Surveyx is a simplified edition. It relies entirely on user-provided local reference documents and does not include advanced features such as:
-- Keyword expansion and filtering algorithms
-- Multimodal image parsing or figure extraction
-- Online reference search or automatic data fetching
-
-These advanced modules are only available in the full version of Surveyx, which is hosted by MemTensor (Shanghai) Technology Co., Ltd. If you would like to experience the complete features, please visit our official website: [surveyx.cn](https://surveyx.cn)
-
-For questions or issues, please open an issue on the repository.
 
 ## ⚠️ Disclaimer
 
